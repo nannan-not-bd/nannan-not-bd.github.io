@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows 安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org) 3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然后c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows基于hexo+github page 的个人博客搭建">
+<meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/index.html">
+<meta property="og:site_name" content="nannan_blog">
+<meta property="og:description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows 安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org) 3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然后c">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201723491.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201802657.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201834167.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201901327.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201942721.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614202427538.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614202516142.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614202736001.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614202823942.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614203727209.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614204531766.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614204557645.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614204725949.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/7e1108d90d5c09d075c55f58a4009a02.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/e6e03058342072bdc9e0e8717569fd25.png">
+<meta property="article:published_time" content="2024-06-14T12:52:41.000Z">
+<meta property="article:modified_time" content="2024-06-14T13:47:20.263Z">
+<meta property="article:author" content="nannankk">
+<meta property="article:tag" content="deployment">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240614201723491.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>windows基于hexo+github page 的个人博客搭建</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2024/06/14/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&text=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&is_video=false&description=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=windows基于hexo+github page 的个人博客搭建&body=Check out this article: https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&name=windows基于hexo+github page 的个人博客搭建&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&t=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E5%9F%BA%E4%BA%8Ehexo-github-page-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">windows基于hexo+github page 的个人博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.</span> <span class="toc-text">1. 安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.3.</span> <span class="toc-text">2. 安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.4.</span> <span class="toc-text">3. 安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">4. GitHub创建个人仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0GitHub"><span class="toc-number">1.6.</span> <span class="toc-text">5. 生成SSH添加到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="toc-number">1.7.</span> <span class="toc-text">6. 将hexo部署到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-%E4%BB%A5cactus%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.8.</span> <span class="toc-text">7.主题配置教程(以cactus为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cactus%E4%B8%BB%E9%A2%98"><span class="toc-number">1.8.1.</span> <span class="toc-text">安装cactus主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.8.2.</span> <span class="toc-text">切换主题的风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3"><span class="toc-number">1.8.3.</span> <span class="toc-text">导航栏相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.4.</span> <span class="toc-text">在导航栏添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.5.</span> <span class="toc-text">新增标签功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.6.</span> <span class="toc-text">开启评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.8.7.</span> <span class="toc-text">增加数据分析</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        windows基于hexo+github page 的个人博客搭建
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">nannankk</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-06-14T12:52:41.000Z" class="dt-published" itemprop="datePublished">2024-06-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/deployment/" rel="tag">deployment</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="windows基于hexo-github-page-的个人博客搭建"><a href="#windows基于hexo-github-page-的个人博客搭建" class="headerlink" title="windows基于hexo+github page 的个人博客搭建"></a>windows基于hexo+github page 的个人博客搭建</h1><h2 id="Hexo搭建步骤"><a href="#Hexo搭建步骤" class="headerlink" title="Hexo搭建步骤"></a>Hexo搭建步骤</h2><h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1. 安装Git"></a>1. 安装Git</h2><p><a target="_blank" rel="noopener" href="https://gitforwindows.org/">Git for Windows</a></p>
+<p>安装好之后用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get --version</span><br></pre></td></tr></table></figure>
+
+<p>查看版本</p>
+<h2 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2. 安装nodejs"></a>2. 安装nodejs</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager">Node.js — Download Node.js® (nodejs.org)</a></p>
+<h2 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h2><p>在安装好git和nodejs之后呢，现在来安装hexo。</p>
+<p>先创建一个文件夹blog，然后cd到该blog文件夹下或直接右键文件夹点git bash打开。</p>
+<p><img src="/pic/image-20240614201723491.png" alt="image-20240614201723491"></p>
+<p>进入到：</p>
+<p><img src="/pic/image-20240614201802657.png" alt="image-20240614201802657"></p>
+<p>输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>再用：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+<p>查看版本。</p>
+<p>现在就全部安装好啦。</p>
+<p>接下来我们来初始化hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog【你自己博客的名字】</span><br></pre></td></tr></table></figure>
+
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p><img src="/pic/image-20240614201834167.png" alt="image-20240614201834167"></p>
+<p>然后点Open：</p>
+<p><img src="/pic/image-20240614201901327.png" alt="image-20240614201901327"></p>
+<p>就可以进去啦：</p>
+<p><img src="/pic/image-20240614201942721.png" alt="image-20240614201942721"></p>
+<p>控制台按ctrl+c可以关闭。</p>
+<h2 id="4-GitHub创建个人仓库"><a href="#4-GitHub创建个人仓库" class="headerlink" title="4. GitHub创建个人仓库"></a>4. GitHub创建个人仓库</h2><p>首先，要有一个GitHub账户，然后我们创建一个新的仓库(New repository)</p>
+<p>仓库名称就叫：用户名.github.io</p>
+<h2 id="5-生成SSH添加到GitHub"><a href="#5-生成SSH添加到GitHub" class="headerlink" title="5. 生成SSH添加到GitHub"></a>5. 生成SSH添加到GitHub</h2><p>再回到git bash控制台输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后创建ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后就能在我们的电脑中找到.ssh文件夹了。</p>
+<p><img src="/pic/image-20240614202427538.png" alt="image-20240614202427538"></p>
+<p>我们点进去：</p>
+<p><img src="/pic/image-20240614202516142.png" alt="image-20240614202516142"></p>
+<p><code>id_rsa.pub</code>是公共秘钥，把这个公钥放在GitHub上。</p>
+<p>在GitHub的setting中，找到SSH keys的设置选项，点击<code>New SSH key</code><br>把你的<code>id_rsa.pub</code>里面的信息复制进去。</p>
+<p><img src="/pic/image-20240614202736001.png" alt="image-20240614202736001"></p>
+<p><img src="/pic/image-20240614202823942.png" alt="image-20240614202823942"></p>
+<p>然后在git bash中看是否成功:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-将hexo部署到GitHub"><a href="#6-将hexo部署到GitHub" class="headerlink" title="6. 将hexo部署到GitHub"></a>6. 将hexo部署到GitHub</h2><p>我们打开配置文件(_config.yml)找到以下，并修改为:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>至此你就可以在：<a target="_blank" rel="noopener" href="http://yourname.github.io/">http://yourname.github.io</a> 看见自己的博客啦。</p>
+<h2 id="7-主题配置教程-以cactus为例"><a href="#7-主题配置教程-以cactus为例" class="headerlink" title="7.主题配置教程(以cactus为例)"></a>7.主题配置教程(以cactus为例)</h2><h3 id="安装cactus主题"><a href="#安装cactus主题" class="headerlink" title="安装cactus主题"></a>安装cactus主题</h3><p>还是右键myblog点git bash</p>
+<p>执行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure>
+
+<p>如果timeout就用ssh连接:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cline git@github.com:probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>./_config.yml</code>中修改<code>theme</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line">theme: cactus</span><br></pre></td></tr></table></figure>
+
+<h3 id="切换主题的风格"><a href="#切换主题的风格" class="headerlink" title="切换主题的风格"></a>切换主题的风格</h3><ul>
+<li>前面提到了cactus主题有四个风格，切换风格只需要进入<code>./themes/cactus/_config.yml</code>中找到<code>colorscheme</code>修改就完事，注意每次修改完都需要<code>hexo clean</code> <code>hexo g</code>才会生效</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the color scheme.</span></span><br><span class="line"><span class="comment"># Available color schemes are &#x27;dark&#x27;, &#x27;light&#x27;, &#x27;classic&#x27; and &#x27;white&#x27;.</span></span><br><span class="line"><span class="comment"># Alternatively, add your own custom color scheme to source/css/_colors.</span></span><br><span class="line">colorscheme: dark</span><br></pre></td></tr></table></figure>
+
+<h3 id="导航栏相关"><a href="#导航栏相关" class="headerlink" title="导航栏相关"></a>导航栏相关</h3><ul>
+<li>在<code>./themes/cactus/_config.yml</code>找到<code>nav</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: /</span><br><span class="line">  about: /about/</span><br><span class="line">  articles: /archives/</span><br><span class="line">  projects: http://github.com/probberechts</span><br><span class="line">  LINK_NAME: URL</span><br></pre></td></tr></table></figure>
+
+<h3 id="在导航栏添加搜索功能"><a href="#在导航栏添加搜索功能" class="headerlink" title="在导航栏添加搜索功能"></a>在导航栏添加搜索功能</h3><ul>
+<li>在<code>./themes/cactus/_config.yml</code>中找到<code>nav</code> 新建search标签</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  search: /search/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行<code>npm install hexo-generator-search --save</code></li>
+<li>执行<code>hexo new page search</code></li>
+<li>进入<code>./themes/cactus/source/serch/index.md</code>，修改<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=md%E6%96%87%E4%BB%B6&spm=1001.2101.3001.7020">md文件</a>的头为</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Search</span><br><span class="line"><span class="built_in">type</span>: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新之后进入网站，点击search就可以搜索了</li>
+</ul>
+<p><img src="/pic/image-20240614203727209.png" alt="image-20240614203727209"></p>
+<h3 id="新增标签功能"><a href="#新增标签功能" class="headerlink" title="新增标签功能"></a>新增标签功能</h3><p>只需要在每篇文章的头部添加</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: Tags and Categories</span><br><span class="line">date: 2017-12-24 23:29:53</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">-</span> Foo</span><br><span class="line"><span class="bullet">-</span> Bar</span><br></pre></td></tr></table></figure>
+
+<h3 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h3><p>这里以Gitalk为例</p>
+<ol>
+<li><p>登录<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a>，进入Setting&#x2F;Developer settings，新创建一个OAuth App,填写应用名，主页url，回调url</p>
+</li>
+<li><p>在 Hexo 的 cactus 主题中集成 Gitalk</p>
+<p> 在 <code>themes/cactus/_config.yml</code> 配置文件中，配置 Gitalk。</p>
+ <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">disqus:</span><br><span class="line"><span class="code">    enabled: false # 确定 disqus 评论是关闭的</span></span><br><span class="line"><span class="code">    shortname: cactus-1</span></span><br><span class="line"><span class="code">gitalk:</span></span><br><span class="line"><span class="code">    enabled: true # 开关开启</span></span><br><span class="line"><span class="code">    owner: al-liu # 你的 github 用户名</span></span><br><span class="line"><span class="code">    repo: al-liu.github.io # 保存评论的 repo 库</span></span><br><span class="line"><span class="code">    admin: [&#x27;al-liu&#x27;] # 管理员，你的 github 用户名</span></span><br><span class="line"><span class="code">    clientID: xxx</span></span><br><span class="line"><span class="code">    clientSecret: xxx</span></span><br></pre></td></tr></table></figure>
+
+<p> 在 <code>themes/cactus/layout/_partial/comments.ejs</code> 中:</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// disqus 评论系统部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.disqus.enabled)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;blog-post-comments&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;disqus_thread&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>&lt;%= __(&#x27;comments.no_js&#x27;) %&gt;<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">// 下面添加 Gitalk 部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.gitalk.enabled)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;gitalk-container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> gitalk = <span class="keyword">new</span> <span class="title class_">Gitalk</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientID</span>: <span class="string">&#x27;&lt;%= theme.gitalk.clientID %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientSecret</span>: <span class="string">&#x27;&lt;%= theme.gitalk.clientSecret %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">id</span>: <span class="title function_">md5</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">repo</span>: <span class="string">&#x27;&lt;%= theme.gitalk.repo %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">owner</span>: <span class="string">&#x27;&lt;%= theme.gitalk.owner %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">admin</span>: <span class="string">&#x27;&lt;%= theme.gitalk.admin %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">distractionFreeMode</span>: <span class="string">&#x27;&lt;%= theme.gitalk.on %&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        gitalk.<span class="title function_">render</span>(<span class="string">&#x27;gitalk-container&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 然后有的小伙伴可能会报错：error: resource not accessible by integration.</p>
+<p> 怎么办呢？其实是权限不够</p>
+<p> <img src="/pic/image-20240614204531766.png" alt="image-20240614204531766"></p>
+<p> 然后往下翻：</p>
+<p> <img src="/pic/image-20240614204557645.png" alt="image-20240614204557645"></p>
+<p> 就可以啦。</p>
+<p> 我们再重新:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>​		然后再进去我们的博客看看，应该就可以啦！</p>
+<p><img src="/pic/image-20240614204725949.png" alt="image-20240614204725949"></p>
+<h3 id="增加数据分析"><a href="#增加数据分析" class="headerlink" title="增加数据分析"></a>增加数据分析</h3><ul>
+<li><p>以百度分析为统计，先去<a target="_blank" rel="noopener" href="https://tongji.baidu.com/web/38068506/welcome/login">百度统计官网</a>注册一个账号，然后在网站列表点击<code>新增网站</code></p>
+</li>
+<li><p>填写相关信息</p>
+</li>
+</ul>
+<p><img src="/pic/7e1108d90d5c09d075c55f58a4009a02.png" alt="image-20220119182152990"></p>
+<ul>
+<li>然后在<code>代码管理-&gt;代码获取</code>页面复制这一段，这就是你的<code>tracking_id</code></li>
+</ul>
+<p><img src="/pic/e6e03058342072bdc9e0e8717569fd25.png" alt="image-20220119182521144"></p>
+<ul>
+<li>然后回到<code>./themes/cactus/_config.yml</code>，修改这里的<code>id</code>，<code>enabled</code>设置为<code>true</code></li>
+</ul>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">baidu<span class="emphasis">_analytics:</span></span><br><span class="line"><span class="emphasis">  enabled: true</span></span><br><span class="line"><span class="emphasis">  id: 复制来的tracking_</span>id</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入百度统计的<code>代码管理-&gt;代码安装检查</code>，点击<code>开始检查</code>，如果显示代码安装正确，过一会就能显示你网站统计的数据了。</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liNc19amRt6FziAe',
+            clientSecret: 'd90443c2d7fa9b761c9965c938c179f28ce8604b',
+            id: md5(window.location.pathname),
+            repo: 'nannan-not-bd.github.io',
+            owner: 'nannan-not-bd',
+            admin: 'nannan-not-bd',
+            distractionFreeMode: ''
+        })
+        gitalk.render('gitalk-container')
+    </script>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/search/">Search</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E5%9F%BA%E4%BA%8Ehexo-github-page-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">windows基于hexo+github page 的个人博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.</span> <span class="toc-text">1. 安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.3.</span> <span class="toc-text">2. 安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.4.</span> <span class="toc-text">3. 安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">4. GitHub创建个人仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0GitHub"><span class="toc-number">1.6.</span> <span class="toc-text">5. 生成SSH添加到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="toc-number">1.7.</span> <span class="toc-text">6. 将hexo部署到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-%E4%BB%A5cactus%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.8.</span> <span class="toc-text">7.主题配置教程(以cactus为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cactus%E4%B8%BB%E9%A2%98"><span class="toc-number">1.8.1.</span> <span class="toc-text">安装cactus主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.8.2.</span> <span class="toc-text">切换主题的风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3"><span class="toc-number">1.8.3.</span> <span class="toc-text">导航栏相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.4.</span> <span class="toc-text">在导航栏添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.5.</span> <span class="toc-text">新增标签功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.6.</span> <span class="toc-text">开启评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.8.7.</span> <span class="toc-text">增加数据分析</span></a></li></ol></li></ol></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&text=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&is_video=false&description=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=windows基于hexo+github page 的个人博客搭建&body=Check out this article: https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&name=windows基于hexo+github page 的个人博客搭建&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&t=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    nannankk
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+      --><li><a href="/">Home</a></li><!--
+    --><!--
+      --><li><a href="/about/">About</a></li><!--
+    --><!--
+      --><li><a href="/archives/">Writing</a></li><!--
+    --><!--
+      --><li><a href="/search/">Search</a></li><!--
+    --><!--
+      --><li><a target="_blank" rel="noopener" href="http://github.com/probberechts">Projects</a></li><!--
+    -->
+      </ul>
+      <ul>
+        
+          <!-- 不蒜子统计 -->
+          <span id="busuanzi_container_site_pv">
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+          </span>
+          <span class="post-meta-divider">|</span>
+          <span id="busuanzi_container_site_uv" style='display:none'>
+                  本站访客数<span id="busuanzi_value_site_uv"></span>人
+          </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+      </ul>
+    </nav>
+  </div>
+  
+</footer>
+
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+  <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?525108d47c2032a3eefc089ad329055f";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?525108d47c2032a3eefc089ad329055f";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+      
+</body>
+</html>
