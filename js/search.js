@@ -71,7 +71,7 @@ var searchFunc = function(path, searchId, contentId) {
       var img = document.createElement("img");
       img.src = "/images/0.png"; // 图片的路径
       img.alt = "Descriptive Alt Text"; // 替代文本
-      img.id = "0"; // 给图片设置一个id，以便于通过CSS进行样式设置
+      img.id = "77"; // 给图片设置一个id，以便于通过CSS进行样式设置
       img.style.display = "block"; // 确保图片是块级元素，使其独占一行
       img.style.margin = "0 auto"; // 图片居中显示
       img.style.maxWidth = "100%"; // 限制图片的最大宽度，确保它不会超出父容器
@@ -79,7 +79,7 @@ var searchFunc = function(path, searchId, contentId) {
       img.style.marginBottom = "20px"; // 在图片和搜索结果之间添加一些间距
 
       // 确保图片只添加一次
-      var existingImg = document.getElementById("0");
+      var existingImg = document.getElementById("77");
       if (!existingImg) {
         $resultContent.parentNode.insertBefore(img, $resultContent);
       }
