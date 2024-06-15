@@ -66,7 +66,34 @@ var searchFunc = function(path, searchId, contentId) {
       if (!$input) { return; }
       var $resultContent = document.getElementById(contentId);
 
+
+      // 在这里插入图片
+      var img = document.createElement("img");
+      img.src = "/images/0.png"; // 图片的路径
+      img.alt = "Descriptive Alt Text"; // 替代文本
+      img.id = "0"; // 给图片设置一个id，以便于通过CSS进行样式设置
+      img.style.display = "block"; // 确保图片是块级元素，使其独占一行
+      img.style.margin = "0 auto"; // 图片居中显示
+      img.style.maxWidth = "100%"; // 限制图片的最大宽度，确保它不会超出父容器
+      img.style.height = "auto"; // 保持图片的原始宽高比
+      img.style.marginBottom = "20px"; // 在图片和搜索结果之间添加一些间距
+
+      // 确保图片只添加一次
+      var existingImg = document.getElementById("0");
+      if (!existingImg) {
+        $resultContent.parentNode.insertBefore(img, $resultContent);
+      }
+
+
+
       $input.addEventListener("input", function(){
+        // 先清空之前的搜索结果和图片
+        $resultContent.innerHTML = "";
+        var existingImg = document.getElementById("0");
+        if (existingImg) {
+            existingImg.remove(); // 如果图片已存在，则移除
+        }
+        // 接着是搜索逻辑...
         var resultList = [];
         var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
           .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
