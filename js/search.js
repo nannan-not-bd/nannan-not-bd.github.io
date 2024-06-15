@@ -89,7 +89,7 @@ var searchFunc = function(path, searchId, contentId) {
       $input.addEventListener("input", function(){
         // 先清空之前的搜索结果和图片
         $resultContent.innerHTML = "";
-        var existingImg = document.getElementById("0");
+        var existingImg = document.getElementById("77");
         if (existingImg) {
             existingImg.remove(); // 如果图片已存在，则移除
         }
