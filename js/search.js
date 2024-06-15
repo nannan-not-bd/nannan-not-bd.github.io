@@ -69,9 +69,9 @@ var searchFunc = function(path, searchId, contentId) {
 
       // 在这里插入图片
       var img = document.createElement("img");
-      img.src = "/images/0.png"; // 图片的路径
-      img.alt = "Descriptive Alt Text"; // 替代文本
-      img.id = "77"; // 给图片设置一个id，以便于通过CSS进行样式设置
+      img.src = "https://img.zcool.cn/community/01cb2f5a0eeb45a80121985c8ee8e4.gif"; // 动图的外部链接
+      img.alt = "Loading"; // 替代文本
+      img.id = "search-loading-gif"; // 给图片设置一个id，以便于通过CSS进行样式设置
       img.style.display = "block"; // 确保图片是块级元素，使其独占一行
       img.style.margin = "0 auto"; // 图片居中显示
       img.style.maxWidth = "100%"; // 限制图片的最大宽度，确保它不会超出父容器
@@ -79,20 +79,30 @@ var searchFunc = function(path, searchId, contentId) {
       img.style.marginBottom = "20px"; // 在图片和搜索结果之间添加一些间距
 
       // 确保图片只添加一次
-      var existingImg = document.getElementById("77");
+      var existingImg = document.getElementById("search-loading-gif");
       if (!existingImg) {
-        $resultContent.parentNode.insertBefore(img, $resultContent);
+          $resultContent.parentNode.insertBefore(img, $resultContent);
       }
 
 
 
       $input.addEventListener("input", function(){
-        // 先清空之前的搜索结果和图片
-        $resultContent.innerHTML = "";
-        var existingImg = document.getElementById("77");
-        if (existingImg) {
-            existingImg.remove(); // 如果图片已存在，则移除
+        // 显示动图
+        var existingImg = document.getElementById("search-loading-gif");
+        if (!existingImg) {
+            $resultContent.parentNode.insertBefore(img, $resultContent);
+        } else {
+            existingImg.style.display = 'block'; // 如果动图已存在，则显示
         }
+
+        // 先清空之前的搜索结果
+        $resultContent.innerHTML = "";
+        
+        // 搜索逻辑...
+        // 在搜索结果显示后隐藏动图
+        // if (existingImg) {
+        //     existingImg.style.display = 'none'; // 隐藏动图
+        // }
         // 接着是搜索逻辑...
         var resultList = [];
         var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
