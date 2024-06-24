@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="en">
 <head>
-    <!-- so meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows 安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org) 3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然后c">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="The Redefine Team">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/06/14/deploy a personal blog/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows  安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org)  3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows基于hexo+github page 的个人博客搭建">
 <meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/index.html">
 <meta property="og:site_name" content="nannan_blog">
-<meta property="og:description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows 安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org) 3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然后c">
+<meta property="og:description" content="windows基于hexo+github page 的个人博客搭建Hexo搭建步骤1. 安装GitGit for Windows  安装好之后用： 1get --version  查看版本 2. 安装nodejsNode.js — Download Node.js® (nodejs.org)  3. 安装hexo在安装好git和nodejs之后呢，现在来安装hexo。 先创建一个文件夹blog，然">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201723491.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240614201802657.png">
@@ -29,499 +41,1111 @@
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/7e1108d90d5c09d075c55f58a4009a02.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/e6e03058342072bdc9e0e8717569fd25.png">
 <meta property="article:published_time" content="2024-06-14T12:52:41.000Z">
-<meta property="article:modified_time" content="2024-06-15T02:26:16.829Z">
+<meta property="article:modified_time" content="2024-06-24T10:04:37.917Z">
 <meta property="article:author" content="nannankk">
 <meta property="article:tag" content="deployment">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240614201723491.png">
     
     
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
     
-    <!-- title -->
-    <title>windows基于hexo+github page 的个人博客搭建</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
+    <title>
+        
+            windows基于hexo+github page 的个人博客搭建 -
+        
+        Theme Redefine
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
 
 
-    <!-- Umami Analytics -->
+    <!--- Inject Part-->
+    
 
-
-    <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- persian styles -->
+
     
-    <!-- rss -->
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
     
     
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"nannan-not-bd.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Theme Redefine","subtitle":{"text":[],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
-<body class="max-width mx-auto px3 ltr">
+<body>
+<div class="progress-bar-container">
     
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/about/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a href="/search/">Search</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="https://github.com/nannan-not-bd/nannan-not-bd.github.io">Projects</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2024/06/14/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&text=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&is_video=false&description=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=windows基于hexo+github page 的个人博客搭建&body=Check out this article: https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&name=windows基于hexo+github page 的个人博客搭建&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&t=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
 
-    </div>
     
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
     
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E5%9F%BA%E4%BA%8Ehexo-github-page-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">windows基于hexo+github page 的个人博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.</span> <span class="toc-text">1. 安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.3.</span> <span class="toc-text">2. 安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.4.</span> <span class="toc-text">3. 安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">4. GitHub创建个人仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0GitHub"><span class="toc-number">1.6.</span> <span class="toc-text">5. 生成SSH添加到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="toc-number">1.7.</span> <span class="toc-text">6. 将hexo部署到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-%E4%BB%A5cactus%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.8.</span> <span class="toc-text">7.主题配置教程(以cactus为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cactus%E4%B8%BB%E9%A2%98"><span class="toc-number">1.8.1.</span> <span class="toc-text">安装cactus主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.8.2.</span> <span class="toc-text">切换主题的风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3"><span class="toc-number">1.8.3.</span> <span class="toc-text">导航栏相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.4.</span> <span class="toc-text">在导航栏添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.5.</span> <span class="toc-text">新增标签功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.6.</span> <span class="toc-text">开启评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.8.7.</span> <span class="toc-text">增加数据分析</span></a></li></ol></li></ol></li></ol>
-      </div>
-    
-  </span>
 </div>
 
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Theme Redefine
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
     
-    <div class="content index py4 ">
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Theme Redefine
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">windows基于hexo+github page 的个人博客搭建</h1>
+                </div>
+            
+            </div>
+
         
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">The Redefine Team</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-06-14 20:52:41</span>
+        <span class="mobile">2024-06-14 20:52:41</span>
+        <span class="hover-info">Created</span>
+    </span>
     
-    <h1 class="posttitle p-name" itemprop="name headline">
-        windows基于hexo+github page 的个人博客搭建
-    </h1>
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-06-24 18:04:37</span>
+            <span class="mobile">2024-06-24 18:04:37</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/deployment/">deployment</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
 
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">nannankk</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2024-06-14T12:52:41.000Z" class="dt-published" itemprop="datePublished">2024-06-14</time>
+                    </div>
+                </div>
+            </div>
         
-      
-    </div>
+
+        
 
 
-      
-    <div class="article-category">
-        <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/deployment/" rel="tag">deployment</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content e-content" itemprop="articleBody">
-    <h1 id="windows基于hexo-github-page-的个人博客搭建"><a href="#windows基于hexo-github-page-的个人博客搭建" class="headerlink" title="windows基于hexo+github page 的个人博客搭建"></a>windows基于hexo+github page 的个人博客搭建</h1><h2 id="Hexo搭建步骤"><a href="#Hexo搭建步骤" class="headerlink" title="Hexo搭建步骤"></a>Hexo搭建步骤</h2><h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1. 安装Git"></a>1. 安装Git</h2><p><a target="_blank" rel="noopener" href="https://gitforwindows.org/">Git for Windows</a></p>
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="windows基于hexo-github-page-的个人博客搭建"><a href="#windows基于hexo-github-page-的个人博客搭建" class="headerlink" title="windows基于hexo+github page 的个人博客搭建"></a>windows基于hexo+github page 的个人博客搭建</h1><h2 id="Hexo搭建步骤"><a href="#Hexo搭建步骤" class="headerlink" title="Hexo搭建步骤"></a>Hexo搭建步骤</h2><h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1. 安装Git"></a>1. 安装Git</h2><p><a class="link" target="_blank" rel="noopener" href="https://gitforwindows.org/">Git for Windows <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>安装好之后用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get --version</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get --version</span><br></pre></td></tr></table></figure></div>
 
 <p>查看版本</p>
-<h2 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2. 安装nodejs"></a>2. 安装nodejs</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager">Node.js — Download Node.js® (nodejs.org)</a></p>
+<h2 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2. 安装nodejs"></a>2. 安装nodejs</h2><p><a class="link" target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager">Node.js — Download Node.js® (nodejs.org) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h2 id="3-安装hexo"><a href="#3-安装hexo" class="headerlink" title="3. 安装hexo"></a>3. 安装hexo</h2><p>在安装好git和nodejs之后呢，现在来安装hexo。</p>
 <p>先创建一个文件夹blog，然后cd到该blog文件夹下或直接右键文件夹点git bash打开。</p>
-<p><img src="/pic/image-20240614201723491.png" alt="image-20240614201723491"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614201723491.png" alt="image-20240614201723491"></p>
 <p>进入到：</p>
-<p><img src="/pic/image-20240614201802657.png" alt="image-20240614201802657"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614201802657.png" alt="image-20240614201802657"></p>
 <p>输入命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></div>
 
 <p>再用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure></div>
 
 <p>查看版本。</p>
 <p>现在就全部安装好啦。</p>
 <p>接下来我们来初始化hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog【你自己博客的名字】</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog【你自己博客的名字】</span><br></pre></td></tr></table></figure></div>
 
 <p>然后</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></div>
 
-<p><img src="/pic/image-20240614201834167.png" alt="image-20240614201834167"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614201834167.png" alt="image-20240614201834167"></p>
 <p>然后点Open：</p>
-<p><img src="/pic/image-20240614201901327.png" alt="image-20240614201901327"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614201901327.png" alt="image-20240614201901327"></p>
 <p>就可以进去啦：</p>
-<p><img src="/pic/image-20240614201942721.png" alt="image-20240614201942721"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614201942721.png" alt="image-20240614201942721"></p>
 <p>控制台按ctrl+c可以关闭。</p>
 <h2 id="4-GitHub创建个人仓库"><a href="#4-GitHub创建个人仓库" class="headerlink" title="4. GitHub创建个人仓库"></a>4. GitHub创建个人仓库</h2><p>首先，要有一个GitHub账户，然后我们创建一个新的仓库(New repository)</p>
 <p>仓库名称就叫：用户名.github.io</p>
 <h2 id="5-生成SSH添加到GitHub"><a href="#5-生成SSH添加到GitHub" class="headerlink" title="5. 生成SSH添加到GitHub"></a>5. 生成SSH添加到GitHub</h2><p>再回到git bash控制台输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;yourname&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"yourname"</span></span><br><span class="line">git config --global user.email <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure></div>
 
 <p>然后创建ssh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;youremail&quot;</span></span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail"</span></span><br></pre></td></tr></table></figure></div>
 
 <p>然后就能在我们的电脑中找到.ssh文件夹了。</p>
-<p><img src="/pic/image-20240614202427538.png" alt="image-20240614202427538"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614202427538.png" alt="image-20240614202427538"></p>
 <p>我们点进去：</p>
-<p><img src="/pic/image-20240614202516142.png" alt="image-20240614202516142"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614202516142.png" alt="image-20240614202516142"></p>
 <p><code>id_rsa.pub</code>是公共秘钥，把这个公钥放在GitHub上。</p>
 <p>在GitHub的setting中，找到SSH keys的设置选项，点击<code>New SSH key</code><br>把你的<code>id_rsa.pub</code>里面的信息复制进去。</p>
-<p><img src="/pic/image-20240614202736001.png" alt="image-20240614202736001"></p>
-<p><img src="/pic/image-20240614202823942.png" alt="image-20240614202823942"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614202736001.png" alt="image-20240614202736001"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614202823942.png" alt="image-20240614202823942"></p>
 <p>然后在git bash中看是否成功:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="6-将hexo部署到GitHub"><a href="#6-将hexo部署到GitHub" class="headerlink" title="6. 将hexo部署到GitHub"></a>6. 将hexo部署到GitHub</h2><p>我们打开配置文件(_config.yml)找到以下，并修改为:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/YourgithubName/YourgithubName.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></div>
 
 <p>然后：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div>
 
 <p>然后：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></div>
 
-<p>至此你就可以在：<a target="_blank" rel="noopener" href="http://yourname.github.io/">http://yourname.github.io</a> 看见自己的博客啦。</p>
+<p>至此你就可以在：<a class="link" target="_blank" rel="noopener" href="http://yourname.github.io/">http://yourname.github.io <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 看见自己的博客啦。</p>
 <h2 id="7-主题配置教程-以cactus为例"><a href="#7-主题配置教程-以cactus为例" class="headerlink" title="7.主题配置教程(以cactus为例)"></a>7.主题配置教程(以cactus为例)</h2><h3 id="安装cactus主题"><a href="#安装cactus主题" class="headerlink" title="安装cactus主题"></a>安装cactus主题</h3><p>还是右键myblog点git bash</p>
 <p>执行:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure></div>
 
 <p>如果timeout就用ssh连接:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cline git@github.com:probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cline git@github.com:probberechts/hexo-theme-cactus.git themes/cactus</span><br></pre></td></tr></table></figure></div>
 
 <p>然后在<code>./_config.yml</code>中修改<code>theme</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line">theme: cactus</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># theme: landscape</span></span><br><span class="line">theme: cactus</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="切换主题的风格"><a href="#切换主题的风格" class="headerlink" title="切换主题的风格"></a>切换主题的风格</h3><ul>
 <li>前面提到了cactus主题有四个风格，切换风格只需要进入<code>./themes/cactus/_config.yml</code>中找到<code>colorscheme</code>修改就完事，注意每次修改完都需要<code>hexo clean</code> <code>hexo g</code>才会生效</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the color scheme.</span></span><br><span class="line"><span class="comment"># Available color schemes are &#x27;dark&#x27;, &#x27;light&#x27;, &#x27;classic&#x27; and &#x27;white&#x27;.</span></span><br><span class="line"><span class="comment"># Alternatively, add your own custom color scheme to source/css/_colors.</span></span><br><span class="line">colorscheme: dark</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set the color scheme.</span></span><br><span class="line"><span class="comment"># Available color schemes are 'dark', 'light', 'classic' and 'white'.</span></span><br><span class="line"><span class="comment"># Alternatively, add your own custom color scheme to source/css/_colors.</span></span><br><span class="line">colorscheme: dark</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="导航栏相关"><a href="#导航栏相关" class="headerlink" title="导航栏相关"></a>导航栏相关</h3><ul>
 <li>在<code>./themes/cactus/_config.yml</code>找到<code>nav</code></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: /</span><br><span class="line">  about: /about/</span><br><span class="line">  articles: /archives/</span><br><span class="line">  projects: http://github.com/probberechts</span><br><span class="line">  LINK_NAME: URL</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  home: /</span><br><span class="line">  about: /about/</span><br><span class="line">  articles: /archives/</span><br><span class="line">  projects: http://github.com/probberechts</span><br><span class="line">  LINK_NAME: URL</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="在导航栏添加搜索功能"><a href="#在导航栏添加搜索功能" class="headerlink" title="在导航栏添加搜索功能"></a>在导航栏添加搜索功能</h3><ul>
 <li>在<code>./themes/cactus/_config.yml</code>中找到<code>nav</code> 新建search标签</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  search: /search/</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nav:</span><br><span class="line">  search: /search/</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>执行<code>npm install hexo-generator-search --save</code></li>
 <li>执行<code>hexo new page search</code></li>
-<li>进入<code>./themes/cactus/source/serch/index.md</code>，修改<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=md%E6%96%87%E4%BB%B6&spm=1001.2101.3001.7020">md文件</a>的头为</li>
+<li>进入<code>./themes/cactus/source/serch/index.md</code>，修改<a class="link" target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=md%E6%96%87%E4%BB%B6&spm=1001.2101.3001.7020">md文件 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>的头为</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Search</span><br><span class="line"><span class="built_in">type</span>: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Search</span><br><span class="line"><span class="built_in">type</span>: search</span><br><span class="line">---</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>更新之后进入网站，点击search就可以搜索了</li>
 </ul>
-<p><img src="/pic/image-20240614203727209.png" alt="image-20240614203727209"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614203727209.png" alt="image-20240614203727209"></p>
 <h3 id="新增标签功能"><a href="#新增标签功能" class="headerlink" title="新增标签功能"></a>新增标签功能</h3><p>只需要在每篇文章的头部添加</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: Tags and Categories</span><br><span class="line">date: 2017-12-24 23:29:53</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">-</span> Foo</span><br><span class="line"><span class="bullet">-</span> Bar</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Md"><figure class="iseeu highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: Tags and Categories</span><br><span class="line">date: 2017-12-24 23:29:53</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">-</span> Foo</span><br><span class="line"><span class="bullet">-</span> Bar</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="开启评论功能"><a href="#开启评论功能" class="headerlink" title="开启评论功能"></a>开启评论功能</h3><p>这里以Gitalk为例</p>
 <ol>
-<li><p>登录<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github</a>，进入Setting&#x2F;Developer settings，新创建一个OAuth App,填写应用名，主页url，回调url</p>
+<li><p>登录<a class="link" target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=github&spm=1001.2101.3001.7020">github <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，进入Setting/Developer settings，新创建一个OAuth App,填写应用名，主页url，回调url</p>
 </li>
 <li><p>在 Hexo 的 cactus 主题中集成 Gitalk</p>
 <p> 在 <code>themes/cactus/_config.yml</code> 配置文件中，配置 Gitalk。</p>
- <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">disqus:</span><br><span class="line"><span class="code">    enabled: false # 确定 disqus 评论是关闭的</span></span><br><span class="line"><span class="code">    shortname: cactus-1</span></span><br><span class="line"><span class="code">gitalk:</span></span><br><span class="line"><span class="code">    enabled: true # 开关开启</span></span><br><span class="line"><span class="code">    owner: al-liu # 你的 github 用户名</span></span><br><span class="line"><span class="code">    repo: al-liu.github.io # 保存评论的 repo 库</span></span><br><span class="line"><span class="code">    admin: [&#x27;al-liu&#x27;] # 管理员，你的 github 用户名</span></span><br><span class="line"><span class="code">    clientID: xxx</span></span><br><span class="line"><span class="code">    clientSecret: xxx</span></span><br></pre></td></tr></table></figure>
+ <div class="highlight-container" data-rel="Md"><figure class="iseeu highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">disqus:</span><br><span class="line"><span class="code">    enabled: false # 确定 disqus 评论是关闭的</span></span><br><span class="line"><span class="code">    shortname: cactus-1</span></span><br><span class="line"><span class="code">gitalk:</span></span><br><span class="line"><span class="code">    enabled: true # 开关开启</span></span><br><span class="line"><span class="code">    owner: al-liu # 你的 github 用户名</span></span><br><span class="line"><span class="code">    repo: al-liu.github.io # 保存评论的 repo 库</span></span><br><span class="line"><span class="code">    admin: ['al-liu'] # 管理员，你的 github 用户名</span></span><br><span class="line"><span class="code">    clientID: xxx</span></span><br><span class="line"><span class="code">    clientSecret: xxx</span></span><br></pre></td></tr></table></figure></div>
 
 <p> 在 <code>themes/cactus/layout/_partial/comments.ejs</code> 中:</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// disqus 评论系统部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.disqus.enabled)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;blog-post-comments&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;disqus_thread&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>&lt;%= __(&#x27;comments.no_js&#x27;) %&gt;<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">// 下面添加 Gitalk 部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.gitalk.enabled)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;gitalk-container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> gitalk = <span class="keyword">new</span> <span class="title class_">Gitalk</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientID</span>: <span class="string">&#x27;&lt;%= theme.gitalk.clientID %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientSecret</span>: <span class="string">&#x27;&lt;%= theme.gitalk.clientSecret %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">id</span>: <span class="title function_">md5</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">repo</span>: <span class="string">&#x27;&lt;%= theme.gitalk.repo %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">owner</span>: <span class="string">&#x27;&lt;%= theme.gitalk.owner %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">admin</span>: <span class="string">&#x27;&lt;%= theme.gitalk.admin %&gt;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">distractionFreeMode</span>: <span class="string">&#x27;&lt;%= theme.gitalk.on %&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">        gitalk.<span class="title function_">render</span>(<span class="string">&#x27;gitalk-container&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+ <div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// disqus 评论系统部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.disqus.enabled){ %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post-comments"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>&lt;%= __('comments.no_js') %&gt;<span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&lt;% } %&gt;</span><br><span class="line">// 下面添加 Gitalk 部分</span><br><span class="line">&lt;% if(page.comments &amp;&amp; theme.gitalk.enabled){ %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"gitalk-container"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> gitalk = <span class="keyword">new</span> <span class="title class_">Gitalk</span>({</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientID</span>: <span class="string">'&lt;%= theme.gitalk.clientID %&gt;'</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">clientSecret</span>: <span class="string">'&lt;%= theme.gitalk.clientSecret %&gt;'</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">id</span>: <span class="title function_">md5</span>(<span class="variable language_">window</span>.<span class="property">location</span>.<span class="property">pathname</span>),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">repo</span>: <span class="string">'&lt;%= theme.gitalk.repo %&gt;'</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">owner</span>: <span class="string">'&lt;%= theme.gitalk.owner %&gt;'</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">admin</span>: <span class="string">'&lt;%= theme.gitalk.admin %&gt;'</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">distractionFreeMode</span>: <span class="string">'&lt;%= theme.gitalk.on %&gt;'</span></span></span><br><span class="line"><span class="language-javascript">        })</span></span><br><span class="line"><span class="language-javascript">        gitalk.<span class="title function_">render</span>(<span class="string">'gitalk-container'</span>)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;% } %&gt;</span><br></pre></td></tr></table></figure></div>
 
 <p> 然后有的小伙伴可能会报错：error: resource not accessible by integration.</p>
 <p> 怎么办呢？其实是权限不够</p>
-<p> <img src="/pic/image-20240614204531766.png" alt="image-20240614204531766"></p>
+<p> <img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614204531766.png" alt="image-20240614204531766"></p>
 <p> 然后往下翻：</p>
-<p> <img src="/pic/image-20240614204557645.png" alt="image-20240614204557645"></p>
+<p> <img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614204557645.png" alt="image-20240614204557645"></p>
 <p> 就可以啦。</p>
 <p> 我们再重新:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
+ <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></div></li>
 </ol>
 <p>​		然后再进去我们的博客看看，应该就可以啦！</p>
-<p><img src="/pic/image-20240614204725949.png" alt="image-20240614204725949"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240614204725949.png" alt="image-20240614204725949"></p>
 <h3 id="增加数据分析"><a href="#增加数据分析" class="headerlink" title="增加数据分析"></a>增加数据分析</h3><ul>
-<li><p>以百度分析为统计，先去<a target="_blank" rel="noopener" href="https://tongji.baidu.com/web/38068506/welcome/login">百度统计官网</a>注册一个账号，然后在网站列表点击<code>新增网站</code></p>
+<li><p>以百度分析为统计，先去<a class="link" target="_blank" rel="noopener" href="https://tongji.baidu.com/web/38068506/welcome/login">百度统计官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>注册一个账号，然后在网站列表点击<code>新增网站</code></p>
 </li>
 <li><p>填写相关信息</p>
 </li>
 </ul>
-<p><img src="/pic/7e1108d90d5c09d075c55f58a4009a02.png" alt="image-20220119182152990"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/7e1108d90d5c09d075c55f58a4009a02.png" alt="image-20220119182152990"></p>
 <ul>
 <li>然后在<code>代码管理-&gt;代码获取</code>页面复制这一段，这就是你的<code>tracking_id</code></li>
 </ul>
-<p><img src="/pic/e6e03058342072bdc9e0e8717569fd25.png" alt="image-20220119182521144"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/e6e03058342072bdc9e0e8717569fd25.png" alt="image-20220119182521144"></p>
 <ul>
 <li>然后回到<code>./themes/cactus/_config.yml</code>，修改这里的<code>id</code>，<code>enabled</code>设置为<code>true</code></li>
 </ul>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">baidu<span class="emphasis">_analytics:</span></span><br><span class="line"><span class="emphasis">  enabled: true</span></span><br><span class="line"><span class="emphasis">  id: 复制来的tracking_</span>id</span><br></pre></td></tr></table></figure>
+<div class="highlight-container" data-rel="Md"><figure class="iseeu highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">baidu<span class="emphasis">_analytics:</span></span><br><span class="line"><span class="emphasis">  enabled: true</span></span><br><span class="line"><span class="emphasis">  id: 复制来的tracking_</span>id</span><br></pre></td></tr></table></figure></div>
 
 <ul>
 <li>进入百度统计的<code>代码管理-&gt;代码安装检查</code>，点击<code>开始检查</code>，如果显示代码安装正确，过一会就能显示你网站统计的数据了。</li>
 </ul>
 
-  </div>
-</article>
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> windows基于hexo+github page 的个人博客搭建</li>
+        <li><strong>Author:</strong> The Redefine Team</li>
+        <li><strong>Created at
+                :</strong> 2024-06-14 20:52:41</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-06-24 18:04:37
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/14/Deploy a personal blog/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/deployment/">#deployment</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">藕的博客园文章</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/06/14/hello-world/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
 
 
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
 
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
 
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
 
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-    <div id="gitalk-container"></div>
-    <script type="text/javascript">
-        var gitalk = new Gitalk({
-            clientID: 'Ov23liNc19amRt6FziAe',
-            clientSecret: 'd90443c2d7fa9b761c9965c938c179f28ce8604b',
-            id: md5(window.location.pathname),
-            repo: 'nannan-not-bd.github.io',
-            owner: 'nannan-not-bd',
-            admin: 'nannan-not-bd',
-            distractionFreeMode: ''
-        })
-        gitalk.render('gitalk-container')
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
     </script>
 
 
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
 
-    <div id="nav-footer" style="display: none">
-      <ul>
         
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/about/">About</a></li>
-        
-          <li><a href="/archives/">Writing</a></li>
-        
-          <li><a href="/search/">Search</a></li>
-        
-          <li><a target="_blank" rel="noopener" href="https://github.com/nannan-not-bd/nannan-not-bd.github.io">Projects</a></li>
-        
-      </ul>
-    </div>
-
     
-    
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#windows%E5%9F%BA%E4%BA%8Ehexo-github-page-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="toc-number">1.</span> <span class="toc-text">windows基于hexo+github page 的个人博客搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.</span> <span class="toc-text">1. 安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85nodejs"><span class="toc-number">1.3.</span> <span class="toc-text">2. 安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.4.</span> <span class="toc-text">3. 安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">4. GitHub创建个人仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0GitHub"><span class="toc-number">1.6.</span> <span class="toc-text">5. 生成SSH添加到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="toc-number">1.7.</span> <span class="toc-text">6. 将hexo部署到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-%E4%BB%A5cactus%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.8.</span> <span class="toc-text">7.主题配置教程(以cactus为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85cactus%E4%B8%BB%E9%A2%98"><span class="toc-number">1.8.1.</span> <span class="toc-text">安装cactus主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="toc-number">1.8.2.</span> <span class="toc-text">切换主题的风格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3"><span class="toc-number">1.8.3.</span> <span class="toc-text">导航栏相关</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.4.</span> <span class="toc-text">在导航栏添加搜索功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.5.</span> <span class="toc-text">新增标签功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.8.6.</span> <span class="toc-text">开启评论功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">1.8.7.</span> <span class="toc-text">增加数据分析</span></a></li></ol></li></ol></li></ol>
-      </div>
-    
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&text=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&is_video=false&description=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=windows基于hexo+github page 的个人博客搭建&body=Check out this article: https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&title=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&name=windows基于hexo+github page 的个人博客搭建&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/&t=windows基于hexo+github page 的个人博客搭建"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
 </div>
 
+            </div>
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2016-2024
-    nannankk
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-      --><li><a href="/">Home</a></li><!--
-    --><!--
-      --><li><a href="/about/">About</a></li><!--
-    --><!--
-      --><li><a href="/archives/">Writing</a></li><!--
-    --><!--
-      --><li><a href="/search/">Search</a></li><!--
-    --><!--
-      --><li><a target="_blank" rel="noopener" href="https://github.com/nannan-not-bd/nannan-not-bd.github.io">Projects</a></li><!--
-    -->
-      </ul>
-      <ul>
-        
-          <!-- 不蒜子统计 -->
-          <span id="busuanzi_container_site_pv">
-              本站总访问量<span id="busuanzi_value_site_pv"></span>次
-          </span>
-          <span class="post-meta-divider">|</span>
-          <span id="busuanzi_container_site_uv" style='display:none'>
-                  本站访客数<span id="busuanzi_value_site_uv"></span>人
-          </span>
-        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-        
-      </ul>
-    </nav>
-  </div>
-  
-</footer>
+    </div>
 
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">windows基于hexo+github page 的个人博客搭建</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows%E5%9F%BA%E4%BA%8Ehexo-github-page-%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA"><span class="nav-text">windows基于hexo+github page 的个人博客搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="nav-text">Hexo搭建步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85Git"><span class="nav-text">1. 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%AE%89%E8%A3%85nodejs"><span class="nav-text">2. 安装nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AE%89%E8%A3%85hexo"><span class="nav-text">3. 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-GitHub%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E4%BB%93%E5%BA%93"><span class="nav-text">4. GitHub创建个人仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%94%9F%E6%88%90SSH%E6%B7%BB%E5%8A%A0%E5%88%B0GitHub"><span class="nav-text">5. 生成SSH添加到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%B0%86hexo%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="nav-text">6. 将hexo部署到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-%E4%BB%A5cactus%E4%B8%BA%E4%BE%8B"><span class="nav-text">7.主题配置教程(以cactus为例)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85cactus%E4%B8%BB%E9%A2%98"><span class="nav-text">安装cactus主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E9%A3%8E%E6%A0%BC"><span class="nav-text">切换主题的风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9B%B8%E5%85%B3"><span class="nav-text">导航栏相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="nav-text">在导航栏添加搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E5%8A%9F%E8%83%BD"><span class="nav-text">新增标签功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%90%AF%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD"><span class="nav-text">开启评论功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-text">增加数据分析</span></a></li></ol></li></ol></li></ol>
 
     </div>
-    <!-- styles -->
+</div>
+        </div>
+    
+</div>
 
 
 
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">The Redefine Team</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        4 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
 
 
-    <!-- jquery -->
+    
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
-
+</main>
 
 
-<!-- clipboard -->
+    
+<script src="/js/libs/Swup.min.js"></script>
 
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="fa-regular fa-clone"></i>';
-    btn += '</span>';
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
     });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
+</script>
 
 
-<script src="/js/main.js"></script>
 
-<!-- search -->
 
-<!-- Baidu Analytics -->
 
-  <script type="text/javascript">
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?525108d47c2032a3eefc089ad329055f";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-        </script>
 
-<!-- Cloudflare Analytics -->
 
-<!-- Disqus Comments -->
+<script src="/js/tools/imageViewer.js" type="module"></script>
 
-<!-- utterances Comments -->
+<script src="/js/utils.js" type="module"></script>
 
-    <script>
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?525108d47c2032a3eefc089ad329055f";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      </script>
-      
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
 </body>
 </html>
