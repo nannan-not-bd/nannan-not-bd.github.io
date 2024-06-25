@@ -13,17 +13,17 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/06/24/从零开始的机器学习之旅/"/>
+    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/06/24/01.0-regression/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="​-Introduction of Machine&#x2F;Deep Learning -RegressionMachine Learning ≈ Looking for Function Different types of Functions  Regression:要找的函数,他的输出是一个数值 Classification:函数的输出，就说从设定好的选项里面，选择一个当作输出 Structured">
+        <meta name="description" content="-RegressionMachine Learning ≈ Looking for Function 1.Different types of Functions  Regression:要找的函数,他的输出是一个数值 Classification:函数的输出，就说从设定好的选项里面，选择一个当作输出 Structured Learning:机器产生有结构的东西的问题——学会创造  2.A Cas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从零开始的机器学习之旅">
-<meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/24/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/index.html">
+<meta property="og:title" content="【从零开始的机器学习之旅】01.0-Regression">
+<meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/24/01.0-Regression/index.html">
 <meta property="og:site_name" content="nannan_blog">
-<meta property="og:description" content="​-Introduction of Machine&#x2F;Deep Learning -RegressionMachine Learning ≈ Looking for Function Different types of Functions  Regression:要找的函数,他的输出是一个数值 Classification:函数的输出，就说从设定好的选项里面，选择一个当作输出 Structured">
+<meta property="og:description" content="-RegressionMachine Learning ≈ Looking for Function 1.Different types of Functions  Regression:要找的函数,他的输出是一个数值 Classification:函数的输出，就说从设定好的选项里面，选择一个当作输出 Structured Learning:机器产生有结构的东西的问题——学会创造  2.A Cas">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd0d1f1b-5cfd-4c2a-ac4f-82d529aee87f%2FUntitled.png?table=block&id=8e1c4258-904a-45ed-b6ae-42fad91776a1&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1020&userId=&cache=v2">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240624162438819.png">
@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbd81f13c-e588-4da0-bbf9-e722c8c52b8d%2FUntitled.png?table=block&id=65f1cd44-2a60-4526-b754-7c8c2cd77c6f&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=770&userId=&cache=v2">
 <meta property="og:image" content="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2b39749e-8024-4eb3-9076-b93467db4b54%2FUntitled.png?table=block&id=7b036522-d935-422e-8c6e-56ee194c0d67&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1190&userId=&cache=v2">
 <meta property="article:published_time" content="2024-06-24T09:32:12.000Z">
-<meta property="article:modified_time" content="2024-06-24T11:28:47.697Z">
+<meta property="article:modified_time" content="2024-06-25T13:54:12.247Z">
 <meta property="article:author" content="nannankk">
 <meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
@@ -73,7 +73,7 @@
     
     <title>
         
-            从零开始的机器学习之旅 -
+            【从零开始的机器学习之旅】01.0-Regression -
         
         Nannan blog
     </title>
@@ -766,7 +766,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -793,10 +793,10 @@ mjx-container[display="true"] + br {
             
                 
                 
-                <img src="/pic/20240624184006.png" alt="从零开始的机器学习之旅" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                <img src="/pic/20240624184006.png" alt="【从零开始的机器学习之旅】01.0-Regression" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
                 
                 <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">从零开始的机器学习之旅</h1>
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【从零开始的机器学习之旅】01.0-Regression</h1>
                 </div>
             
             </div>
@@ -824,8 +824,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-06-24 19:28:47</span>
-            <span class="mobile">2024-06-24 19:28:47</span>
+            <span class="desktop">2024-06-25 21:54:12</span>
+            <span class="mobile">2024-06-25 21:54:12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -879,15 +879,14 @@ mjx-container[display="true"] + br {
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="00-​-Introduction-of-Machine-Deep-Learning"><a href="#00-​-Introduction-of-Machine-Deep-Learning" class="headerlink" title="$00$​-Introduction of Machine/Deep Learning"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>​-Introduction of Machine/Deep Learning</h1><hr>
-<h1 id="01-Regression"><a href="#01-Regression" class="headerlink" title="$01$-Regression"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>-Regression</h1><p><strong>Machine Learning ≈ Looking for Function</strong></p>
-<h2 id="Different-types-of-Functions"><a href="#Different-types-of-Functions" class="headerlink" title="Different types of Functions"></a><strong>Different types of Functions</strong></h2><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd0d1f1b-5cfd-4c2a-ac4f-82d529aee87f%2FUntitled.png?table=block&id=8e1c4258-904a-45ed-b6ae-42fad91776a1&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1020&userId=&cache=v2" alt="img" style="zoom:50%;">
+            <h1 id="01-0-Regression"><a href="#01-0-Regression" class="headerlink" title="$01.0$-Regression"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="4.023ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1778 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(1000,0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1278,0)"></path></g></g></g></svg></mjx-container>-Regression</h1><p><strong>Machine Learning ≈ Looking for Function</strong></p>
+<h2 id="1-Different-types-of-Functions"><a href="#1-Different-types-of-Functions" class="headerlink" title="1.Different types of Functions"></a><strong>1.Different types of Functions</strong></h2><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fdd0d1f1b-5cfd-4c2a-ac4f-82d529aee87f%2FUntitled.png?table=block&id=8e1c4258-904a-45ed-b6ae-42fad91776a1&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1020&userId=&cache=v2" alt="img" style="zoom:50%;">
 
 <p>Regression:要找的函数,他的输出是一个数值</p>
 <p>Classification:函数的输出，就说从设定好的选项里面，选择一个当作输出</p>
 <p>Structured Learning:机器产生有结构的东西的问题——学会创造</p>
 <hr>
-<h2 id="A-Case-Study——预测频道的流量"><a href="#A-Case-Study——预测频道的流量" class="headerlink" title="A Case Study——预测频道的流量"></a>A Case Study——预测频道的流量</h2><h3 id="找到函数的三个步骤"><a href="#找到函数的三个步骤" class="headerlink" title="找到函数的三个步骤"></a>找到函数的三个步骤</h3><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240624162438819.png" alt="image-20240624162438819" style="zoom:50%;">
+<h2 id="2-A-Case-Study——预测频道的流量"><a href="#2-A-Case-Study——预测频道的流量" class="headerlink" title="2.A Case Study——预测频道的流量"></a>2.A Case Study——预测频道的流量</h2><h3 id="2-1找到函数的三个步骤"><a href="#2-1找到函数的三个步骤" class="headerlink" title="2.1找到函数的三个步骤"></a>2.1找到函数的三个步骤</h3><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240624162438819.png" alt="image-20240624162438819" style="zoom:50%;">
 
 <ol>
 <li>Function with Unknown Parameters(写出一个带有未知参数的函数) ⇒ <strong>Model</strong></li>
@@ -955,14 +954,14 @@ mjx-container[display="true"] + br {
 <img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ffceb5048-e9fd-455d-a109-a70824f0384d%2FUntitled.png?table=block&id=e0dadecc-7212-40b4-9ac9-1641d1ea42f2&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1520&userId=&cache=v2" alt="img" style="zoom: 33%;">
 
 <hr>
-<h2 id="Liner-Model（线性模型）"><a href="#Liner-Model（线性模型）" class="headerlink" title="Liner Model（线性模型）"></a>Liner Model（线性模型）</h2><p>根据周期性，修改模型⇒考虑<strong>前7天，甚至更多天</strong>的值</p>
+<h2 id="3-Liner-Model（线性模型）"><a href="#3-Liner-Model（线性模型）" class="headerlink" title="3.Liner Model（线性模型）"></a>3.Liner Model（线性模型）</h2><p>根据周期性，修改模型⇒考虑<strong>前7天，甚至更多天</strong>的值</p>
 <img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fb702c7bf-50af-4b83-b67c-56eb091063ff%2FUntitled.png?table=block&id=ab7ec465-2d33-40a7-90c4-2edaf68d2870&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1070&userId=&cache=v2" alt="img" style="zoom:50%;">
 
 <img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fe3e6b8a4-0813-4445-84b4-be1c21d3128e%2FUntitled.png?table=block&id=ac2b6d42-7e2d-4746-8f78-275a7ff5491d&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1130&userId=&cache=v2" alt="img" style="zoom:50%;">
 
 <p>Model 的Bias：一个模型无法模拟/描述真实的情况</p>
 <p>⇒解决方法：需要一个更复杂的、更有弹性的、有未知参数的function</p>
-<h2 id="⭐Piecewise-Linear-Curves（Sigmoid函数的意义）"><a href="#⭐Piecewise-Linear-Curves（Sigmoid函数的意义）" class="headerlink" title="⭐Piecewise Linear Curves（Sigmoid函数的意义）"></a>⭐Piecewise Linear Curves（Sigmoid函数的意义）</h2><h3 id="1-模型定义"><a href="#1-模型定义" class="headerlink" title="1.模型定义"></a>1.模型定义</h3><p>定义：由多段锯齿状的线段所组成的线</p>
+<h2 id="4-⭐Piecewise-Linear-Curves（Sigmoid函数的意义）"><a href="#4-⭐Piecewise-Linear-Curves（Sigmoid函数的意义）" class="headerlink" title="4.⭐Piecewise Linear Curves（Sigmoid函数的意义）"></a>4.⭐Piecewise Linear Curves（Sigmoid函数的意义）</h2><h3 id="4-1-模型定义"><a href="#4-1-模型定义" class="headerlink" title="4.1.模型定义"></a>4.1.模型定义</h3><p>定义：由多段锯齿状的线段所组成的线</p>
 <p>⇒可以看作是一个常数,再加上一堆蓝色的 Function<strong>（Hard Sigmoid)</strong></p>
 <blockquote>
 <p><strong>用一条曲线来近似描述这条蓝色的曲线:Sigmoid函数（S型的function）</strong></p>
@@ -1017,10 +1016,10 @@ mjx-container[display="true"] + br {
 <img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa09c88ca-2eb4-4a12-be91-1ca0e867a4c9%2FUntitled.png?table=block&id=adf4dff9-f0e4-425c-a7d4-d22fd5d7aad8&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=960&userId=&cache=v2" alt="img" style="zoom: 50%;">
 
 <p>一般地，将所有的参数统称为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g></g></g></svg></mjx-container>.（包含 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="9.353ex" height="2.921ex" role="img" focusable="false" viewBox="0 -1097 4134 1291"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44A" d="M436 683Q450 683 486 682T553 680Q604 680 638 681T677 682Q695 682 695 674Q695 670 692 659Q687 641 683 639T661 637Q636 636 621 632T600 624T597 615Q597 603 613 377T629 138L631 141Q633 144 637 151T649 170T666 200T690 241T720 295T759 362Q863 546 877 572T892 604Q892 619 873 628T831 637Q817 637 817 647Q817 650 819 660Q823 676 825 679T839 682Q842 682 856 682T895 682T949 681Q1015 681 1034 683Q1048 683 1048 672Q1048 666 1045 655T1038 640T1028 637Q1006 637 988 631T958 617T939 600T927 584L923 578L754 282Q586 -14 585 -15Q579 -22 561 -22Q546 -22 542 -17Q539 -14 523 229T506 480L494 462Q472 425 366 239Q222 -13 220 -15T215 -19Q210 -22 197 -22Q178 -22 176 -15Q176 -12 154 304T131 622Q129 631 121 633T82 637H58Q51 644 51 648Q52 671 64 683H76Q118 680 176 680Q301 680 313 683H323Q329 677 329 674T327 656Q322 641 318 637H297Q236 634 232 620Q262 160 266 136L501 550L499 587Q496 629 489 632Q483 636 447 637Q428 637 422 639T416 648Q416 650 418 660Q419 664 420 669T421 676T424 680T428 682T436 683Z"></path></g><g data-mml-node="mo" transform="translate(1048,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1492.7,0)"><g data-mml-node="mover"><g data-mml-node="mi"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g><g data-mml-node="mo" transform="translate(214.5,283) translate(-250 0)"><path data-c="20D7" d="M377 694Q377 702 382 708T397 714Q404 714 409 709Q414 705 419 690Q429 653 460 633Q471 626 471 615Q471 606 468 603T454 594Q411 572 379 531Q377 529 374 525T369 519T364 517T357 516Q350 516 344 521T337 536Q337 555 384 595H213L42 596Q29 605 29 615Q29 622 42 635H401Q377 673 377 694Z"></path></g></g></g><g data-mml-node="mo" transform="translate(1921.7,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(2366.3,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g><g data-mml-node="mo" transform="translate(2962,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path></g></g></g></svg></mjx-container>)</p>
-<h3 id="2-写出loss函数"><a href="#2-写出loss函数" class="headerlink" title="2. 写出loss函数"></a>2. 写出loss函数</h3><p>因为所有的参数统称为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g></g></g></svg></mjx-container>，所以Loss表示为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.362ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1928 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mo" transform="translate(681,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1070,0)"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g><g data-mml-node="mo" transform="translate(1539,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+<h3 id="4-2-写出loss函数"><a href="#4-2-写出loss函数" class="headerlink" title="4.2. 写出loss函数"></a>4.2. 写出loss函数</h3><p>因为所有的参数统称为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.061ex" height="1.618ex" role="img" focusable="false" viewBox="0 -705 469 715"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g></g></g></svg></mjx-container>，所以Loss表示为 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.362ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1928 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mo" transform="translate(681,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1070,0)"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g><g data-mml-node="mo" transform="translate(1539,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
 <p>设定的方式没有不同。</p>
 <p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240624165958305.png" alt="image-20240624165958305"></p>
-<h3 id="3-优化过程"><a href="#3-优化过程" class="headerlink" title="3.优化过程"></a>3.优化过程</h3><p>仍然是梯度下降。</p>
+<h3 id="4-3-优化过程"><a href="#4-3-优化过程" class="headerlink" title="4.3.优化过程"></a>4.3.优化过程</h3><p>仍然是梯度下降。</p>
 <p><strong>（1） 选定初始参数值（向量）</strong> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex;" xmlns="http://www.w3.org/2000/svg" width="2.049ex" height="1.97ex" role="img" focusable="false" viewBox="0 -705 905.6 870.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path></g><g data-mml-node="mn" transform="translate(502,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g></g></svg></mjx-container></p>
 <p><strong>（2）对每个参数求偏导/微分（即，求梯度向量）</strong></p>
 <p><strong>（3）更新参数，直至设定的次数</strong></p>
@@ -1035,14 +1034,14 @@ mjx-container[display="true"] + br {
 <p>Update：每次更新一次参数叫做一次 Update,</p>
 <p>Epoch：把所有的 Batch 都看过一遍,叫做一个 Epoch</p>
 <p>❗<strong>为什么要分batch?</strong>(之后会说，待填坑…)</p>
-<h3 id="模型变型⇒ReLU（Rectified-Linear-Unit，线性整流单元）"><a href="#模型变型⇒ReLU（Rectified-Linear-Unit，线性整流单元）" class="headerlink" title="模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）"></a>模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）</h3><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240624170332878.png" alt="image-20240624170332878"></p>
+<h3 id="4-4模型变型⇒ReLU（Rectified-Linear-Unit，线性整流单元）"><a href="#4-4模型变型⇒ReLU（Rectified-Linear-Unit，线性整流单元）" class="headerlink" title="4.4模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）"></a>4.4模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）</h3><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240624170332878.png" alt="image-20240624170332878"></p>
 <p><strong>激活函数（Activation Function）</strong></p>
-<h3 id="模型变型⇒多加几层"><a href="#模型变型⇒多加几层" class="headerlink" title="模型变型⇒多加几层"></a>模型变型⇒多加几层</h3><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa5da619b-1aa4-49aa-a7ef-c247f053ea59%2FUntitled.png?table=block&id=5dc8f86b-9b1f-4af4-8e5e-91874cdd22e9&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1190&userId=&cache=v2" alt="img" style="zoom:50%;">
+<h3 id="4-5模型变型⇒多加几层"><a href="#4-5模型变型⇒多加几层" class="headerlink" title="4.5模型变型⇒多加几层"></a>4.5模型变型⇒多加几层</h3><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fa5da619b-1aa4-49aa-a7ef-c247f053ea59%2FUntitled.png?table=block&id=5dc8f86b-9b1f-4af4-8e5e-91874cdd22e9&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=1190&userId=&cache=v2" alt="img" style="zoom:50%;">
 
 <blockquote>
 <p>做几次⇒模型的层数⇒超参数</p>
 </blockquote>
-<h2 id="正式引入：DeepLearning"><a href="#正式引入：DeepLearning" class="headerlink" title="正式引入：DeepLearning"></a>正式引入：DeepLearning</h2><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbd81f13c-e588-4da0-bbf9-e722c8c52b8d%2FUntitled.png?table=block&id=65f1cd44-2a60-4526-b754-7c8c2cd77c6f&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=770&userId=&cache=v2" alt="img" style="zoom:67%;">
+<h2 id="5-正式引入：DeepLearning"><a href="#5-正式引入：DeepLearning" class="headerlink" title="5.正式引入：DeepLearning"></a>5.正式引入：DeepLearning</h2><img lazyload="" src="/images/loading.svg" data-src="https://diamond-mule-bee.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fbd81f13c-e588-4da0-bbf9-e722c8c52b8d%2FUntitled.png?table=block&id=65f1cd44-2a60-4526-b754-7c8c2cd77c6f&spaceId=effd33e2-527b-43dc-aef5-7b5ee7b83428&width=770&userId=&cache=v2" alt="img" style="zoom:67%;">
 
 <p>有一个很有意思的问题：为什么神经网络要”深”而不要”胖”？</p>
 <p>第二个有意思的问题：那既然要”深”，为什么不能无限”深”？——<strong>Overfitting</strong>(后面会讲，待填坑…)</p>
@@ -1056,18 +1055,18 @@ mjx-container[display="true"] + br {
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 从零开始的机器学习之旅</li>
+        <li><strong>Title:</strong> 【从零开始的机器学习之旅】01.0-Regression</li>
         <li><strong>Author:</strong> Nannan</li>
         <li><strong>Created at
                 :</strong> 2024-06-24 17:32:12</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-06-24 19:28:47
+                    :</strong> 2024-06-25 21:54:12
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/24/从零开始的机器学习之旅/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/24/01.0-Regression/
         </li>
         <li>
             <strong>
@@ -1099,6 +1098,21 @@ mjx-container[display="true"] + br {
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/06/25/01.1-Deeplearning-general_guidance/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">【从零开始的机器学习之旅】01.1-Deeplearning-general_guidance</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
@@ -1171,8 +1185,8 @@ mjx-container[display="true"] + br {
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">从零开始的机器学习之旅</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#00-%E2%80%8B-Introduction-of-Machine-Deep-Learning"><span class="nav-text">​-Introduction of Machine&#x2F;Deep Learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#01-Regression"><span class="nav-text">-Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Different-types-of-Functions"><span class="nav-text">Different types of Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Case-Study%E2%80%94%E2%80%94%E9%A2%84%E6%B5%8B%E9%A2%91%E9%81%93%E7%9A%84%E6%B5%81%E9%87%8F"><span class="nav-text">A Case Study——预测频道的流量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%BE%E5%88%B0%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%89%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-text">找到函数的三个步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Liner-Model%EF%BC%88%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="nav-text">Liner Model（线性模型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90Piecewise-Linear-Curves%EF%BC%88Sigmoid%E5%87%BD%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89%EF%BC%89"><span class="nav-text">⭐Piecewise Linear Curves（Sigmoid函数的意义）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="nav-text">1.模型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%86%99%E5%87%BAloss%E5%87%BD%E6%95%B0"><span class="nav-text">2. 写出loss函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="nav-text">3.优化过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E8%AE%AD%E7%BB%83Batch-training"><span class="nav-text">批训练Batch training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%9E%8B%E2%87%92ReLU%EF%BC%88Rectified-Linear-Unit%EF%BC%8C%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%8D%95%E5%85%83%EF%BC%89"><span class="nav-text">模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%9E%8B%E2%87%92%E5%A4%9A%E5%8A%A0%E5%87%A0%E5%B1%82"><span class="nav-text">模型变型⇒多加几层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%BC%95%E5%85%A5%EF%BC%9ADeepLearning"><span class="nav-text">正式引入：DeepLearning</span></a></li></ol></li></ol>
+        <div class="page-title">【从零开始的机器学习之旅】01.0-Regression</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-0-Regression"><span class="nav-text">-Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Different-types-of-Functions"><span class="nav-text">1.Different types of Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-A-Case-Study%E2%80%94%E2%80%94%E9%A2%84%E6%B5%8B%E9%A2%91%E9%81%93%E7%9A%84%E6%B5%81%E9%87%8F"><span class="nav-text">2.A Case Study——预测频道的流量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E6%89%BE%E5%88%B0%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%89%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-text">2.1找到函数的三个步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Liner-Model%EF%BC%88%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="nav-text">3.Liner Model（线性模型）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E2%AD%90Piecewise-Linear-Curves%EF%BC%88Sigmoid%E5%87%BD%E6%95%B0%E7%9A%84%E6%84%8F%E4%B9%89%EF%BC%89"><span class="nav-text">4.⭐Piecewise Linear Curves（Sigmoid函数的意义）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E6%A8%A1%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="nav-text">4.1.模型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%86%99%E5%87%BAloss%E5%87%BD%E6%95%B0"><span class="nav-text">4.2. 写出loss函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="nav-text">4.3.优化过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E8%AE%AD%E7%BB%83Batch-training"><span class="nav-text">批训练Batch training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%9E%8B%E2%87%92ReLU%EF%BC%88Rectified-Linear-Unit%EF%BC%8C%E7%BA%BF%E6%80%A7%E6%95%B4%E6%B5%81%E5%8D%95%E5%85%83%EF%BC%89"><span class="nav-text">4.4模型变型⇒ReLU（Rectified Linear Unit，线性整流单元）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E6%A8%A1%E5%9E%8B%E5%8F%98%E5%9E%8B%E2%87%92%E5%A4%9A%E5%8A%A0%E5%87%A0%E5%B1%82"><span class="nav-text">4.5模型变型⇒多加几层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%AD%A3%E5%BC%8F%E5%BC%95%E5%85%A5%EF%BC%9ADeepLearning"><span class="nav-text">5.正式引入：DeepLearning</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -1205,7 +1219,7 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        4 posts in total
+                        5 posts in total
                     </span>
                     
                 </p>
