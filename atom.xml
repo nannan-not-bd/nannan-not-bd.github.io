@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-06-30T17:35:44.256Z</updated>
+  <updated>2024-07-01T10:33:29.946Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【从零开始的机器学习之旅】01.4-Logistic Regression(逻辑回归)</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/01/01.4-Logistic%20Regression/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/01/01.4-Logistic%20Regression/</id>
+    <title>【从零开始的机器学习之旅】06-Convolutional Neural Network(CNN)</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/01/06-Convolutional%20Neural%20Network(CNN)/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/01/06-Convolutional%20Neural%20Network(CNN)/</id>
+    <published>2024-07-01T10:00:12.000Z</published>
+    <updated>2024-07-01T10:33:29.946Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【从零开始的机器学习之旅】05-Logistic Regression(逻辑回归)</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/01/05-Logistic%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/01/05-Logistic%20Regression/</id>
     <published>2024-06-30T17:19:12.000Z</published>
-    <updated>2024-06-30T17:35:44.256Z</updated>
+    <updated>2024-07-01T10:11:55.115Z</updated>
     
     
       
@@ -42,11 +67,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】01.3-Classification:Probabilistic Generative Model(概率生成模型)</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/30/01.3-ClassificationProbabilistic%20Generative%20Model/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/30/01.3-ClassificationProbabilistic%20Generative%20Model/</id>
+    <title>【从零开始的机器学习之旅】04-Classification:Probabilistic Generative Model(概率生成模型)</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/30/04-ClassificationProbabilistic%20Generative%20Model/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/30/04-ClassificationProbabilistic%20Generative%20Model/</id>
     <published>2024-06-30T09:10:12.000Z</published>
-    <updated>2024-06-30T17:24:48.101Z</updated>
+    <updated>2024-07-01T10:28:09.137Z</updated>
     
     
       
@@ -67,11 +92,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】01.2-Regression Case</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/30/01.2-Regression%20Case/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/30/01.2-Regression%20Case/</id>
+    <title>【从零开始的机器学习之旅】03-Regression Case</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/30/03-Regression%20Case/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/30/03-Regression%20Case/</id>
     <published>2024-06-30T04:11:12.000Z</published>
-    <updated>2024-06-30T04:48:10.369Z</updated>
+    <updated>2024-07-01T10:11:41.432Z</updated>
     
     
       
@@ -92,11 +117,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】01.1-Deeplearning-general_guidance</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/25/01.1-Deeplearning-general_guidance/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/25/01.1-Deeplearning-general_guidance/</id>
+    <title>【从零开始的机器学习之旅】02-Deeplearning-general_guidance</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/</id>
     <published>2024-06-25T13:55:12.000Z</published>
-    <updated>2024-06-25T13:56:48.736Z</updated>
+    <updated>2024-07-01T10:11:29.274Z</updated>
     
     
       
@@ -117,11 +142,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】01.0-Regression</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/24/01.0-Regression/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/24/01.0-Regression/</id>
+    <title>【从零开始的机器学习之旅】01-Regression</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/24/01-Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/24/01-Regression/</id>
     <published>2024-06-24T09:32:12.000Z</published>
-    <updated>2024-06-25T13:54:12.247Z</updated>
+    <updated>2024-07-01T10:11:33.282Z</updated>
     
     
       
