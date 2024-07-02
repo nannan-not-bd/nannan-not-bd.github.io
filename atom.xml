@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-02T14:27:25.441Z</updated>
+  <updated>2024-07-02T14:29:22.325Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅠ</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)/</id>
-    <published>2024-07-02T14:25:00.000Z</published>
-    <updated>2024-07-02T14:27:25.441Z</updated>
+    <title>【从零开始的机器学习之旅】08-Self-attention</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/02/08-self-attention/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/02/08-self-attention/</id>
+    <published>2024-07-02T14:30:00.000Z</published>
+    <updated>2024-07-02T14:29:22.325Z</updated>
     
     
       
@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】08-Self-attention</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/02/08-self-attention/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/02/08-self-attention/</id>
-    <published>2024-07-01T16:28:00.000Z</published>
-    <updated>2024-07-02T14:20:33.392Z</updated>
+    <title>【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅠ</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)/</id>
+    <published>2024-07-02T14:25:00.000Z</published>
+    <updated>2024-07-02T14:27:25.441Z</updated>
     
     
       
