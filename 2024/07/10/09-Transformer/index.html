@@ -25,19 +25,19 @@
 <meta property="og:site_name" content="nannan_blog">
 <meta property="og:description" content="从零开始的机器学习之旅 -Transformer一、seq2seq1.含义输入一个序列，机器输出另一个序列，输出序列长度由机器决定。 文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。  2.应用① 自然语言处理（NLP问题），不过seq2seq有时候不一定是最佳的解决方法。 ② 应用于Seq2seq for Syntactic Parsing句">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194958522-809667541.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513195442615-1705415045.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215810385-266469716.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215921535-362828847.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220351632-415501105.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220758338-689966264.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220845073-1052698555.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513221528335-1141732730.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513222320623-1178479128.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223639111-620234648.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224032161-316248630.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/a4069a2544024ddbb3f9561adbd6b2ea.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144246476.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144259690.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144308538.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144317876.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144325370.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144333821.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144340216.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144346739.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144352527.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144359082.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144408095.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144414760.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144512559.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709164922237.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165126659.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165218119.png">
@@ -57,11 +57,11 @@
 <meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg">
 <meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg">
 <meta property="article:published_time" content="2024-07-10T14:30:00.000Z">
-<meta property="article:modified_time" content="2024-07-10T06:39:49.026Z">
+<meta property="article:modified_time" content="2024-07-10T06:46:40.761Z">
 <meta property="article:author" content="nannankk">
 <meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png">
+<meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240710144246476.png">
     
     
     <!--- Icon Part-->
@@ -846,8 +846,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-07-10 14:39:49</span>
-            <span class="mobile">2024-07-10 14:39:49</span>
+            <span class="desktop">2024-07-10 14:46:40</span>
+            <span class="mobile">2024-07-10 14:46:40</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -904,14 +904,14 @@ mjx-container[display="true"] + br {
             <h1 id="从零开始的机器学习之旅"><a href="#从零开始的机器学习之旅" class="headerlink" title="从零开始的机器学习之旅"></a>从零开始的机器学习之旅</h1><hr>
 <h1 id="09-Transformer"><a href="#09-Transformer" class="headerlink" title="$09$-Transformer"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>-Transformer</h1><h2 id="一、seq2seq"><a href="#一、seq2seq" class="headerlink" title="一、seq2seq"></a>一、seq2seq</h2><h3 id="1-含义"><a href="#1-含义" class="headerlink" title="1.含义"></a>1.含义</h3><p>输入一个序列，机器输出另一个序列，输出序列长度由机器决定。</p>
 <p>文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144246476.png" alt="image-20240710144246476"></p>
 <h3 id="2-应用"><a href="#2-应用" class="headerlink" title="2.应用"></a>2.应用</h3><p>① <strong>自然语言处理（NLP问题），</strong>不过seq2seq有时候不一定是最佳的解决方法。</p>
 <p>② 应用于<strong>Seq2seq for Syntactic Parsing句法分析（文法剖析）</strong>，例如，给机器一段文字，Deep learning is very powerful，机器要做的事情是产生一个<strong>文法的剖析树</strong> 。</p>
 <p>输出结果（剖析树）告诉我们，deep 加 learning 合起来是一个名词短语，very 加 powerful 合起来是一个形容词短语，形容词短语加 is 以后会变成一个动词短语，动词短语加名词片语合起来是一个句子</p>
 <p>文法剖析要做的事情就是产生这样子的一个 Syntactic tree，所以在用 deep learning 解决 文法剖析的任务里面，<strong>输入是一段文字（一个Sequence），输出是一个树状的结构，（可以把他看作是一个Sequence，一个代表句法分析树的序列）</strong></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194958522-809667541.png" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144259690.png" alt="image-20240710144259690"></p>
 <p>③ 应用于 <strong>multi-label classification（多标签分类问题：同一个对象可以属于多个class）</strong></p>
-<p> <img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513195442615-1705415045.png" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144308538.png" alt="image-20240710144308538"></p>
 <p> 区分：</p>
 <ul>
 <li>multi-class classification：为样本从数个 class 中选择某一个 class（多对一）</li>
@@ -919,37 +919,26 @@ mjx-container[display="true"] + br {
 </ul>
 <p>难点：每篇文章对应几个 class 不好确定 ⇒ seq2seq 决定要输出几个</p>
 <p>④ <strong>Object Detection 物体检测</strong></p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215810385-266469716.png" alt="img" style="zoom:67%;">
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144317876.png" alt="image-20240710144317876"></p>
 <h3 id="3-Seq2seq-实现方式"><a href="#3-Seq2seq-实现方式" class="headerlink" title="3. Seq2seq 实现方式"></a>3. Seq2seq 实现方式</h3><p>seq2seq’s model = Encder（编码器） + Decoder（解码器）</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215921535-362828847.png" alt="img" style="zoom:67%;">
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144325370.png" alt="image-20240710144325370"></p>
 <p>这两部分可以使用RNN或transformer实现，seq2seq主要是为了解决输入和输出长度不确定的情况。</p>
 <p><strong>Encoder：</strong>将输入（文字、语音、视频等）编码为单个向量，这个向量可以看成是全部输入的 <strong>抽象表示</strong>。</p>
 <p><strong>Decoder：</strong>接受 encoder 输出的向量，逐步解码，一次输出一个结果，每次输出会影响下一次的输出，开头加入 <bos> 表示开始解码， <eos> 表示输出结束。</eos></bos></p>
 <h2 id="二、Encoder-Decoder"><a href="#二、Encoder-Decoder" class="headerlink" title="二、Encoder & Decoder"></a>二、Encoder &amp; Decoder</h2><h3 id="1-Encoder"><a href="#1-Encoder" class="headerlink" title="1.Encoder"></a>1.Encoder</h3><p>可以使用：Self-attention，RNN，CNN</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220351632-415501105.png" alt="img" style="zoom: 80%;">
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144333821.png" alt="image-20240710144333821"></p>
 <p>我们来仔细解释一下这个encoder：</p>
 <p>A、encoder 就是通过多层 block（模块），将输入转换成向量。每一个 block 都包含若干层（ self-attention 和 fully connect 等网络结构 )，每个 block 输入一排向量，输出相同数量的一排向量。</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220758338-689966264.png" alt="img" style="zoom:67%;">
-
- 
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144340216.png" alt="image-20240710144340216"></p>
 <p>B、 block 的内部细节构成如下（在 input 送入 block 之前，需先进行 positional encoding，这个知识点在 self - attention 中有提过）。</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220845073-1052698555.png" alt="img" style="zoom: 50%;">
-
- 
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144346739.png" alt="image-20240710144346739"></p>
 <p>C 、 它考虑所有输入向量后的输出向量，其中 b 是原来的 input 向量，经过<font color="red">残差网络（residual connection：把 a vector 加上它的 b input vector 作为 output ）</font>和标准化(Layer Norm)后，送到全连接神经网络 FC ，由于在 FC network 中也有 residual 的架构，因此需要再经过一组 残差网络 + 标准化 后得到输出。（注意：这里的标准化是 layer normalization 而不是 batch normalization）。这个输出才是 residual network 里一个 block 的输出。</p>
 <blockquote>
 <p>batch normalization：对 不同的 example 不同 feature 的 同一个 dimention 去计算平均值 mean 和标准差 standard deviation。<br>layer normalization：对 同一个 example 同一个 feature的 不同 dimention 去计算平均值 mean 和标准差 standard deviation。</p>
 </blockquote>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513221528335-1141732730.png" alt="img" style="zoom:67%;">
-
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144352527.png" alt="image-20240710144352527"></p>
 <h3 id="2-Decoder"><a href="#2-Decoder" class="headerlink" title="2. Decoder"></a>2. Decoder</h3><p>decoder主要有两种：AT（autoregressive自回归模型）与 NAT（non-autoregressive非自回归），Decoder 要做的事情：产生最终的输出结果</p>
-<h4 id="2-1-Autoregressive-AT"><a href="#2-1-Autoregressive-AT" class="headerlink" title="2.1  Autoregressive(AT)"></a>2.1  Autoregressive(AT)</h4><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513222320623-1178479128.png" alt="img" style="zoom:67%;">
-
+<h4 id="2-1-Autoregressive-AT"><a href="#2-1-Autoregressive-AT" class="headerlink" title="2.1  Autoregressive(AT)"></a>2.1  Autoregressive(AT)</h4><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144359082.png" alt="image-20240710144359082"></p>
 <ol>
 <li><p>向 Decoder 输入 Encoder 产生的向量</p>
 </li>
@@ -968,11 +957,11 @@ mjx-container[display="true"] + br {
 <ol start="4">
 <li>再把上一步的输出当做下一个的输入。（在本例中，第二次 Decoder 把 “机” 当做是 Decoder 的 Input，在上一步 “机” 是 Decoder 的输出结果）经过一系列相同的操作后我们会得到第二次 Decoder 的输出，再作为第三次的输入，继续输出后续的文字，以此类推……</li>
 </ol>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223639111-620234648.png" alt="img"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144408095.png" alt="image-20240710144408095"></p>
 <p>让我们看看Decoder的细节：</p>
 <details class="blue" data-header-exclude=""><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
               <div class="content">
-              <img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224032161-316248630.png" alt="img" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/a4069a2544024ddbb3f9561adbd6b2ea.png" alt="img" style="zoom:67%;"><p>对比一下encoder和decoder：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709164922237.png" alt="image-20240709164922237" style="zoom:67%;"><p>如果我们吧decoder中间那块盖起来，我们发现好像二者没有那么大的区别。</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165126659.png" alt="image-20240709165126659" style="zoom:67%;"><p>不过decoder多了一个masked。</p><p> 什么意思呢？</p><p>让我们看看原来的Self-attention：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165218119.png" alt="image-20240709165218119" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165244599.png" alt="image-20240709165244599" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165343159.png" alt="image-20240709165343159" style="zoom:67%;">
+              <p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144414760.png" alt="image-20240710144414760"></p><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144512559.png" alt="image-20240710144512559"></p><p>对比一下encoder和decoder：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709164922237.png" alt="image-20240709164922237" style="zoom:67%;"><p>如果我们吧decoder中间那块盖起来，我们发现好像二者没有那么大的区别。</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165126659.png" alt="image-20240709165126659" style="zoom:67%;"><p>不过decoder多了一个masked。</p><p> 什么意思呢？</p><p>让我们看看原来的Self-attention：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165218119.png" alt="image-20240709165218119" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165244599.png" alt="image-20240709165244599" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165343159.png" alt="image-20240709165343159" style="zoom:67%;">
               </div>
             </details>
 
@@ -1074,7 +1063,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-07-10 14:39:49
+                    :</strong> 2024-07-10 14:46:40
             </li>
         
         <li>
