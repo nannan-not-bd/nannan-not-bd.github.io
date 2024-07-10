@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Nannan">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/07/10/09-transformer/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="从零开始的机器学习之旅 -Transformer一、seq2seq1.含义输入一个序列，机器输出另一个序列，输出序列长度由机器决定。 文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。  2.应用① 自然语言处理（NLP问题），不过seq2seq有时候不一定是最佳的解决方法。 ② 应用于Seq2seq for Syntactic Parsing句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【从零开始的机器学习之旅】09-Transformer">
+<meta property="og:url" content="https://nannan-not-bd.github.io/2024/07/10/09-Transformer/index.html">
+<meta property="og:site_name" content="nannan_blog">
+<meta property="og:description" content="从零开始的机器学习之旅 -Transformer一、seq2seq1.含义输入一个序列，机器输出另一个序列，输出序列长度由机器决定。 文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。  2.应用① 自然语言处理（NLP问题），不过seq2seq有时候不一定是最佳的解决方法。 ② 应用于Seq2seq for Syntactic Parsing句">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194958522-809667541.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513195442615-1705415045.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215810385-266469716.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215921535-362828847.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220351632-415501105.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220758338-689966264.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220845073-1052698555.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513221528335-1141732730.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513222320623-1178479128.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223639111-620234648.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224032161-316248630.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a4069a2544024ddbb3f9561adbd6b2ea.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709164922237.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165126659.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165218119.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165244599.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165343159.png">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9F%A9%E9%98%B5%E5%9B%BE.jpg">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223902912-150605920.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224558824-886649908.png">
+<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224934186-1197754631.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174008265.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174401532.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174549919.png">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90.gif">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%BB%93%E6%9E%9C-2.gif">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg">
+<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg">
+<meta property="article:published_time" content="2024-07-10T14:30:00.000Z">
+<meta property="article:modified_time" content="2024-07-10T06:39:49.026Z">
+<meta property="article:author" content="nannankk">
+<meta property="article:tag" content="deep learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【从零开始的机器学习之旅】09-Transformer -
+        
+        Nannan blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"nannan-not-bd.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":5,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"Hello ^-^!","subtitle":{"text":["hang on to your dreams."],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":true},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"One Last Kiss","artist":"Sliverk","url":"https://lu-sycdn.kuwo.cn/de4291378bb409a00845e5e5cd33e9de/667bad2d/resource/n1/81/89/98948063.mp3?bitrate$128&from=vip","cover":"https://tse4-mm.cn.bing.net/th/id/OIP-C.aWUUp3bSqM2gVXQ_sX9PSgHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7"},{"name":"命运石之门0:アマデウス(Amadeus)","artist":"梨花三音","url":"https://lt-sycdn.kuwo.cn/cd7702a42ec6a8e950c5babf9b6bc42e/667a9495/resource/n3/6/2/1428374309.mp3?bitrate$128&from=vip","cover":"https://ts4.cn.mm.bing.net/th?id=OVP.10eEPxdb1YjZBgEB4F-POgEsC7&w=197&h=110&c=7&rs=1&qlt=90&o=6&pid=1.7"},{"name":"残酷な天使のテーゼ","artist":"高橋洋子","url":"https://m801.music.126.net/20240626142103/b3de367ff82ca991608b32d75a21f2c0/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/5572001767/725c/be1e/470e/63847b804170162587d21b5a11fde956.mp3","cover":"https://tse2-mm.cn.bing.net/th/id/OIP-C.aopkysN8ewxxdSV7E76F5AHaHa?w=191&h=191&c=7&r=0&o=5&pid=1.7"}]},"mermaid":{"enable":true,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"ShuoShuo":{"icon":"fa-solid fa-comment-dots","path":"/shuoshuo"},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://www.cnblogs.com/nannandbk","Blog":"https://github.com/nannan-not-bd/nannan-not-bd.github.io","Friends":"https://home.cnblogs.com/u/magicat"}},"Links":{"icon":"fa-regular fa-link","submenus":{"Github":"https://github.com/nannan-not-bd","cblog":"https://www.cnblogs.com/nannandbk"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Gallery":{"path":"/masonry","icon":"fa-solid fa-image"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"ShuoShuo":{"path":"/shuoshuo","icon":"fa-solid fa-comment-dots"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+
+    <!--自定义看板娘-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="/live2d-widget/autoload.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+
+<meta name="generator" content="Hexo 7.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="nannan_blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Nannan blog
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Nannan blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/shuoshuo"
+                                        >
+                                    <i class="fa-solid fa-comment-dots fa-fw"></i>
+                                    SHUOSHUO
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/nannandbk">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/nannan-not-bd/nannan-not-bd.github.io">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://home.cnblogs.com/u/magicat">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-link fa-fw"></i>
+                                    LINKS
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/nannan-not-bd">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://www.cnblogs.com/nannandbk">
+                                                    CBLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/shuoshuo"
+                        >
+                            <span>
+                                SHUOSHUO
+                            </span>
+                            
+                                <i class="fa-solid fa-comment-dots fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.cnblogs.com/nannandbk">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/nannan-not-bd/nannan-not-bd.github.io">BLOG</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://home.cnblogs.com/u/magicat">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Links"
+                        >
+                            <span>
+                                LINKS
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Links">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/nannan-not-bd">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://www.cnblogs.com/nannandbk">CBLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/masonry"
+                        >
+                            <span>Gallery</span>
+                            <i class="fa-solid fa-image fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="/pic/xx.jfif" alt="【从零开始的机器学习之旅】09-Transformer" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【从零开始的机器学习之旅】09-Transformer</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/redefine-avatar.svg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Nannan</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-07-10 22:30</span>
+        <span class="mobile">2024-07-10 22:30</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-07-10 14:39:49</span>
+            <span class="mobile">2024-07-10 14:39:49</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/deep-learning/">deep learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h1 id="从零开始的机器学习之旅"><a href="#从零开始的机器学习之旅" class="headerlink" title="从零开始的机器学习之旅"></a>从零开始的机器学习之旅</h1><hr>
+<h1 id="09-Transformer"><a href="#09-Transformer" class="headerlink" title="$09$-Transformer"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>-Transformer</h1><h2 id="一、seq2seq"><a href="#一、seq2seq" class="headerlink" title="一、seq2seq"></a>一、seq2seq</h2><h3 id="1-含义"><a href="#1-含义" class="headerlink" title="1.含义"></a>1.含义</h3><p>输入一个序列，机器输出另一个序列，输出序列长度由机器决定。</p>
+<p>文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194013504-288020567.png" alt="img"></p>
+<h3 id="2-应用"><a href="#2-应用" class="headerlink" title="2.应用"></a>2.应用</h3><p>① <strong>自然语言处理（NLP问题），</strong>不过seq2seq有时候不一定是最佳的解决方法。</p>
+<p>② 应用于<strong>Seq2seq for Syntactic Parsing句法分析（文法剖析）</strong>，例如，给机器一段文字，Deep learning is very powerful，机器要做的事情是产生一个<strong>文法的剖析树</strong> 。</p>
+<p>输出结果（剖析树）告诉我们，deep 加 learning 合起来是一个名词短语，very 加 powerful 合起来是一个形容词短语，形容词短语加 is 以后会变成一个动词短语，动词短语加名词片语合起来是一个句子</p>
+<p>文法剖析要做的事情就是产生这样子的一个 Syntactic tree，所以在用 deep learning 解决 文法剖析的任务里面，<strong>输入是一段文字（一个Sequence），输出是一个树状的结构，（可以把他看作是一个Sequence，一个代表句法分析树的序列）</strong></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513194958522-809667541.png" alt="img"></p>
+<p>③ 应用于 <strong>multi-label classification（多标签分类问题：同一个对象可以属于多个class）</strong></p>
+<p> <img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513195442615-1705415045.png" alt="img"></p>
+<p> 区分：</p>
+<ul>
+<li>multi-class classification：为样本从数个 class 中选择某一个 class（多对一）</li>
+<li>multi-label classification：同一个样本可以属于多个 class （一对多）</li>
+</ul>
+<p>难点：每篇文章对应几个 class 不好确定 ⇒ seq2seq 决定要输出几个</p>
+<p>④ <strong>Object Detection 物体检测</strong></p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215810385-266469716.png" alt="img" style="zoom:67%;">
+
+<h3 id="3-Seq2seq-实现方式"><a href="#3-Seq2seq-实现方式" class="headerlink" title="3. Seq2seq 实现方式"></a>3. Seq2seq 实现方式</h3><p>seq2seq’s model = Encder（编码器） + Decoder（解码器）</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513215921535-362828847.png" alt="img" style="zoom:67%;">
+
+<p>这两部分可以使用RNN或transformer实现，seq2seq主要是为了解决输入和输出长度不确定的情况。</p>
+<p><strong>Encoder：</strong>将输入（文字、语音、视频等）编码为单个向量，这个向量可以看成是全部输入的 <strong>抽象表示</strong>。</p>
+<p><strong>Decoder：</strong>接受 encoder 输出的向量，逐步解码，一次输出一个结果，每次输出会影响下一次的输出，开头加入 <bos> 表示开始解码， <eos> 表示输出结束。</eos></bos></p>
+<h2 id="二、Encoder-Decoder"><a href="#二、Encoder-Decoder" class="headerlink" title="二、Encoder & Decoder"></a>二、Encoder &amp; Decoder</h2><h3 id="1-Encoder"><a href="#1-Encoder" class="headerlink" title="1.Encoder"></a>1.Encoder</h3><p>可以使用：Self-attention，RNN，CNN</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220351632-415501105.png" alt="img" style="zoom: 80%;">
+
+<p>我们来仔细解释一下这个encoder：</p>
+<p>A、encoder 就是通过多层 block（模块），将输入转换成向量。每一个 block 都包含若干层（ self-attention 和 fully connect 等网络结构 )，每个 block 输入一排向量，输出相同数量的一排向量。</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220758338-689966264.png" alt="img" style="zoom:67%;">
+
+ 
+
+<p>B、 block 的内部细节构成如下（在 input 送入 block 之前，需先进行 positional encoding，这个知识点在 self - attention 中有提过）。</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513220845073-1052698555.png" alt="img" style="zoom: 50%;">
+
+ 
+
+<p>C 、 它考虑所有输入向量后的输出向量，其中 b 是原来的 input 向量，经过<font color="red">残差网络（residual connection：把 a vector 加上它的 b input vector 作为 output ）</font>和标准化(Layer Norm)后，送到全连接神经网络 FC ，由于在 FC network 中也有 residual 的架构，因此需要再经过一组 残差网络 + 标准化 后得到输出。（注意：这里的标准化是 layer normalization 而不是 batch normalization）。这个输出才是 residual network 里一个 block 的输出。</p>
+<blockquote>
+<p>batch normalization：对 不同的 example 不同 feature 的 同一个 dimention 去计算平均值 mean 和标准差 standard deviation。<br>layer normalization：对 同一个 example 同一个 feature的 不同 dimention 去计算平均值 mean 和标准差 standard deviation。</p>
+</blockquote>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513221528335-1141732730.png" alt="img" style="zoom:67%;">
+
+<h3 id="2-Decoder"><a href="#2-Decoder" class="headerlink" title="2. Decoder"></a>2. Decoder</h3><p>decoder主要有两种：AT（autoregressive自回归模型）与 NAT（non-autoregressive非自回归），Decoder 要做的事情：产生最终的输出结果</p>
+<h4 id="2-1-Autoregressive-AT"><a href="#2-1-Autoregressive-AT" class="headerlink" title="2.1  Autoregressive(AT)"></a>2.1  Autoregressive(AT)</h4><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513222320623-1178479128.png" alt="img" style="zoom:67%;">
+
+<ol>
+<li><p>向 Decoder 输入 Encoder 产生的向量</p>
+</li>
+<li><p>在 Decoder 可能产生的文字库里多加一个标识字符 BEGIN ，它代表 “ Decoder 开始识别” 来提醒机器（BOS： begin of sentence）</p>
+</li>
+</ol>
+<blockquote>
+<p>NLP 的问题中，每一个 Token 用一个 One-Hot 的 Vector 来表示，其中正确的类别标识是 1，其他都是 0，其中 BEGIN 也是用 One-Hot Vector 来表示</p>
+</blockquote>
+<ol start="3">
+<li>经过 softmax 之后，Decoder 会输出一个和 输入的 <strong>Vocabulary Size</strong> 一样的向量长度的 向量结果。对比已知文字库，找到相似度最高的字符就是最终输出的字符。（这里“机”字 就是这个 Decoder 的第一个输出）</li>
+</ol>
+<blockquote>
+<p>Vocabulary Size：取决于你输出的单位。比如输出中文，则size是中文方块字的数目。</p>
+</blockquote>
+<ol start="4">
+<li>再把上一步的输出当做下一个的输入。（在本例中，第二次 Decoder 把 “机” 当做是 Decoder 的 Input，在上一步 “机” 是 Decoder 的输出结果）经过一系列相同的操作后我们会得到第二次 Decoder 的输出，再作为第三次的输入，继续输出后续的文字，以此类推……</li>
+</ol>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223639111-620234648.png" alt="img"></p>
+<p>让我们看看Decoder的细节：</p>
+<details class="blue" data-header-exclude=""><summary><i class="fa-solid fa-chevron-right"></i>Folding 测试： 点击查看更多 </summary>
+              <div class="content">
+              <img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224032161-316248630.png" alt="img" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="https://img-blog.csdnimg.cn/a4069a2544024ddbb3f9561adbd6b2ea.png" alt="img" style="zoom:67%;"><p>对比一下encoder和decoder：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709164922237.png" alt="image-20240709164922237" style="zoom:67%;"><p>如果我们吧decoder中间那块盖起来，我们发现好像二者没有那么大的区别。</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165126659.png" alt="image-20240709165126659" style="zoom:67%;"><p>不过decoder多了一个masked。</p><p> 什么意思呢？</p><p>让我们看看原来的Self-attention：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165218119.png" alt="image-20240709165218119" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165244599.png" alt="image-20240709165244599" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165343159.png" alt="image-20240709165343159" style="zoom:67%;">
+              </div>
+            </details>
+
+<h5 id="Why-masked？"><a href="#Why-masked？" class="headerlink" title="Why masked？"></a>Why masked？</h5><p>Consider how does decoder work</p>
+<p>由于解码器采用自回归auto-regressive，即 在过去时刻的输出作为当前时刻的输入，也就是说在预测时无法看到之后的输入输出，但是在注意力机制当中，可以看到完整的输入(每一个词都要和其他词做点积，计算相关性)，为了避免这种情况的发生，在解码器训练时，在预测t时刻的输出时，不应该能看到t时刻以后的输入。做法是：采用带掩码的Masked注意力机制,从而保证在t时刻无法看到t时刻以后的输入，保证训练和预测时的行为一致性。</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9F%A9%E9%98%B5%E5%9B%BE.jpg" alt="img" style="zoom:67%;">
+
+<p>自注意力机制明确的知道这句话有多少个单词，并且一次性给足，而掩码是分批次给，最后一次才给足。</p>
+<p>Masked（掩码） Self-Attention–&gt;在自注意力模型上面做了改进</p>
+<p>为什么要做这个改进：生成模型，生成单词，一个一个生成的</p>
+<p>当我们做生成任务的时候，我们也想对生成的这个单词做注意力计算，但是，生成的句子是一个一个单词生成的</p>
+<p>I have a dream</p>
+<ol>
+<li>I 第一次注意力计算，只有 I</li>
+<li>I have 第二次，只有 I 和 have</li>
+<li>I have a</li>
+<li>I have a dream</li>
+<li>I have a dream <eos></eos></li>
+</ol>
+<p>掩码自注意力机制应运而生</p>
+<p>掩码后 1</p>
+<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg" alt="img" style="zoom:67%;"></a></p>
+<p>掩码后2</p>
+<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg" alt="img" style="zoom:67%;"></a></p>
+<ol start="5">
+<li>机器自己决定输出的长度：一个特别的标识符 “END” 代表工作结束</li>
+</ol>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223902912-150605920.png" alt="img" style="zoom:67%;">
+
+<p><strong>缺点：</strong>如果Decoder 看到错误的输入，让 Decoder 产生错误的输出并被代入到下一步 Decoder 工作的输入中,会会造成 Error Propagation（一步错，步步错）⇒ 解决：Teacher Forcing技术（但是测试的时候 显然没有正确答案可以给 Decoder 看）</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224558824-886649908.png" alt="img" style="zoom:67%;">
+
+<p>由于 Teacher Forcing的存在，训练跟测试的情景不一致。<strong>Decoder 在训练的时候永远只看过正确的东西</strong>(也就是说在训练的时候给decoder看到正确的答案)，但是在测试的时候，仍然会导致一步错、步步错(测试的时候没有正确答案呀，它仍然有可能出错)。</p>
+<p><strong>解决：给 Decoder 的输入加一些错误的东西 ⇒ Scheduled Sampling(计划采样)（但是也会一定程度损害平行化的能力）</strong></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224934186-1197754631.png" alt="img"></p>
+<p> <strong>总结：</strong> 除了中间的部分，Encoder 跟 Decoder 并没有太大的差别。最后我们可以再做一个 Softmax，可以通过计算输出的概率分布与 Ground Truth 之间的 <strong>交叉熵（Cross Entropy）</strong>并求梯度实现优化，交叉熵的值越小越好。</p>
+<h4 id="2-2-Non-autoregressive-NAT"><a href="#2-2-Non-autoregressive-NAT" class="headerlink" title="2.2 Non-autoregressive(NAT)"></a>2.2 Non-autoregressive(NAT)</h4><p>AT v.s. NAT</p>
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174008265.png" alt="image-20240709174008265" style="zoom: 50%;">
+
+<p> <strong>①</strong> <strong>特点</strong>：NAT 不是依次有序进行 decoder 工作并挨个输出，而是一次性在输入时赋予 整个句子 一整排的 “BEGIN” 标识，把整个句子的 decoder <strong>结果一次性都输出</strong></p>
+<p> <strong>② 思路：如何确定BEGIN的个数：</strong></p>
+<ol>
+<li>另外训练一个 Classifier，输入 Encoder 的 Input vector，输出是一个数字（代表 Decoder 应该要输出的长度）</li>
+<li>给它若干个 BEGIN 的 Token，比如输出句子的最大长度不超过 300，就给 input 300 个 BEGIN token，然后就会相应地一次性输出 300 个字（遇到有输出 END 时表示这个句子输出结束），但是可能会比较耗费内存空间</li>
+</ol>
+<p><strong>③ 好处：</strong></p>
+<ol>
+<li>并行化。NAT 的 Decoder 不管 input 句子的长度大小，都是一次性输出完整的句子结果，所以在执行速度上 NAT 的 Decoder 比 AT 的 Decoder 要快</li>
+<li>容易控制输出长度。</li>
+</ol>
+<p><strong>④ 应用</strong>：</p>
+<p> 常用在语音合成，例如：利用其中一个 决定 NAT 的 Decoder 应该输出的长度的 Classifier，我们可以通过设置这个输出长度的大小以调整语音的速度。（如果要让输出的语音讲快一点，就把 Classifier 输出的长度数值 除以 N，它讲话速度就变成 N 倍速；同理，如果想要合成的语音变为慢速，就把 Classifier 输出的长度数值乘 N 倍）</p>
+<p><strong>⑤ 缺点</strong>：虽然 NAT 看起来有很多优点（尤其是并行化），但是 NAT 的 Decoder 实际上 Performance 往往都不如 AT 的 Decoder。为什么NAT 没有 AT 实际效果好? ⇒ <strong>Multi-Modality</strong></p>
+<p>现在我们就要来讲刚刚Decoder被遮起来的部分啦！</p>
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174401532.png" alt="image-20240709174401532" style="zoom:67%;">
+
+<p><strong>Cross attention</strong></p>
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174549919.png" alt="image-20240709174549919" style="zoom:67%;">
+
+ 
+
+<h2 id="三、Training过程"><a href="#三、Training过程" class="headerlink" title="三、Training过程"></a>三、Training过程</h2><p>以“我爱你”到“I am a student”为例，在训练过程中，encoder输入的是待翻译句子“我有一个梦想”，得到k，v；decoder输入的是“S I am a student”（S位起始符）；最终计算loss的label是“I am a student E”。</p>
+<p>生成一个词：</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90.gif" alt="img"></p>
+<p>生成所有词：</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%BB%93%E6%9E%9C-2.gif" alt="img"></p>
+<p>Transformer完整框架</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg" alt="img" style="zoom:67%;">
+
+<h2 id="四、Q-A"><a href="#四、Q-A" class="headerlink" title="四、Q & A"></a>四、Q &amp; A</h2><h3 id="Q1：为什么-Decoder-需要做-Mask"><a href="#Q1：为什么-Decoder-需要做-Mask" class="headerlink" title="Q1：为什么 Decoder 需要做 Mask"></a>Q1：为什么 Decoder 需要做 Mask</h3><p>机器翻译：源语句（我爱中国），目标语句（I love China）</p>
+<p><font color="red">为了解决训练阶段和测试阶段的 gap（不匹配）</font></p>
+<p>训练阶段：解码器会有输入，这个输入是目标语句，就是 I love China，通过已经生成的词，去让解码器更好的生成（每一次都会把所有信息告诉解码器）</p>
+<p>测试阶段：解码器也会有输入，但是此时，测试的时候是不知道目标语句是什么的，这个时候，你每生成一个词，就会有多一个词放入目标语句中，每次生成的时候，都是已经生成的词（测试阶段只会把已经生成的词告诉解码器）</p>
+<p>为了匹配，为了解决这个 gap，masked Self-Attention 就登场了，我在训练阶段，我就做一个 masked，当你生成第一个词，我啥也不告诉你，当你生成第二个词，我告诉第一个词</p>
+<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg" alt="img"></a></p>
+<h3 id="Q2：为什么-Encoder-给予-Decoders-的是-K、V-矩阵"><a href="#Q2：为什么-Encoder-给予-Decoders-的是-K、V-矩阵" class="headerlink" title="Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵"></a>Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵</h3><p>Q来源解码器，K=V来源于编码器</p>
+<p>Q是查询变量，Q 是已经生成的词</p>
+<p>K=V 是源语句</p>
+<p>当我们生成这个词的时候，通过已经生成的词和源语句做自注意力，就是确定源语句中哪些词对接下来的词的生成更有作用，首先他就能找到当前生成词</p>
+<p>我爱中国</p>
+<p>通过部分（生成的词）去全部（源语句）的里面挑重点</p>
+<p>Q 是源语句，K，V 是已经生成的词，源语句去已经生成的词里找重点 ，找信息，已经生成的词里面压根就没有下一个词</p>
+<p>解决了以前的 seq2seq 框架的问题</p>
+<p>lstm 做编码器（得到词向量 C），再用 lstm 做解码器做生成</p>
+<p>用这种方法去生成词，每一次生成词，都是通过 C 的全部信息去生成</p>
+<p>很多信息对于当前生成词而言都是没有意义的</p>
+<p>用 Pytorch 去构建 Transformer 的源码。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【从零开始的机器学习之旅】09-Transformer</li>
+        <li><strong>Author:</strong> Nannan</li>
+        <li><strong>Created at
+                :</strong> 2024-07-10 22:30:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-07-10 14:39:49
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/07/10/09-Transformer/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/deep-learning/">#deep learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/07/03/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A1/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅡ</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://waline-2-i1002770.deta.app',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: ['https://unpkg.com/@waline/emojis@1.2.0/bmoji','https://unpkg.com/@waline/emojis@1.2.0/weibo','https://unpkg.com/@waline/emojis@1.2.0/qq','https://unpkg.com/@waline/emojis@1.2.0/soul-emoji','https://unpkg.com/@waline/emojis@1.2.0/tw-emoji'],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">【从零开始的机器学习之旅】09-Transformer</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85"><span class="nav-text">从零开始的机器学习之旅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#09-Transformer"><span class="nav-text">-Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81seq2seq"><span class="nav-text">一、seq2seq</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%AB%E4%B9%89"><span class="nav-text">1.含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BA%94%E7%94%A8"><span class="nav-text">2.应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Seq2seq-%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">3. Seq2seq 实现方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Encoder-Decoder"><span class="nav-text">二、Encoder &amp; Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Encoder"><span class="nav-text">1.Encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Decoder"><span class="nav-text">2. Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Autoregressive-AT"><span class="nav-text">2.1  Autoregressive(AT)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Why-masked%EF%BC%9F"><span class="nav-text">Why masked？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Non-autoregressive-NAT"><span class="nav-text">2.2 Non-autoregressive(NAT)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Training%E8%BF%87%E7%A8%8B"><span class="nav-text">三、Training过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Q-A"><span class="nav-text">四、Q &amp; A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-Decoder-%E9%9C%80%E8%A6%81%E5%81%9A-Mask"><span class="nav-text">Q1：为什么 Decoder 需要做 Mask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-Encoder-%E7%BB%99%E4%BA%88-Decoders-%E7%9A%84%E6%98%AF-K%E3%80%81V-%E7%9F%A9%E9%98%B5"><span class="nav-text">Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Nannan</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        13 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="right-bottom-tools rss flex justify-center items-center">
+                <a class="flex justify-center items-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                <i class="fa-regular fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/libs/mermaid.min.js"></script>
+
+    
+<script src="/js/plugins/mermaid.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>

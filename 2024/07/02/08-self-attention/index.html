@@ -62,7 +62,7 @@
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240702125510811.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240702125940883.png">
 <meta property="article:published_time" content="2024-07-02T14:30:00.000Z">
-<meta property="article:modified_time" content="2024-07-02T14:29:22.325Z">
+<meta property="article:modified_time" content="2024-07-10T06:34:19.319Z">
 <meta property="article:author" content="nannankk">
 <meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
@@ -793,7 +793,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -851,8 +851,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-07-02 22:29:22</span>
-            <span class="mobile">2024-07-02 22:29:22</span>
+            <span class="desktop">2024-07-10 14:34:19</span>
+            <span class="mobile">2024-07-10 14:34:19</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -1058,6 +1058,16 @@ mjx-container[display="true"] + br {
 <img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240702122742041.png" alt="image-20240702122742041" style="zoom:67%;">
 
 <p>这些位置咨询可以hand-crafted 也可以 learned form data</p>
+<h3 id="5-1-why-need-Positional-Encoding"><a href="#5-1-why-need-Positional-Encoding" class="headerlink" title="5.1 why need Positional Encoding?"></a>5.1 why need Positional Encoding?</h3><p>优点：</p>
+<ol>
+<li>解决了长序列依赖问题</li>
+<li>可以并行</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>开销变大了</li>
+<li>既然可以并行，也就是说，词与词之间不存在顺序关系（打乱一句话，这句话里的每个词的词向量依然不会变），即无位置关系（既然没有，我就加一个，通过位置编码的形式加）</li>
+</ol>
 <h2 id="6-Self-addtention-的应用"><a href="#6-Self-addtention-的应用" class="headerlink" title="6. Self-addtention 的应用"></a>6. Self-addtention 的应用</h2><ol>
 <li>NLP</li>
 </ol>
@@ -1122,7 +1132,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-07-02 22:29:22
+                    :</strong> 2024-07-10 14:34:19
             </li>
         
         <li>
@@ -1159,11 +1169,26 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/07/03/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A1/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅡ</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/07/02/07-Recurrent%20Neural%20Network(RNN)/"
+                        href="/2024/07/02/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A0/"
                         >
                             <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅠ</span>
@@ -1231,7 +1256,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">【从零开始的机器学习之旅】08-Self-attention</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85"><span class="nav-text">从零开始的机器学习之旅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-Self-attention"><span class="nav-text">-Self-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Introduction"><span class="nav-text">1. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Vector-Set-as-Input"><span class="nav-text">1.1 Vector Set as Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-What-is-the-output"><span class="nav-text">1.2 What is the output?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-focus-of-this-lecture%E2%AD%90-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%B0%E9%87%8F%E7%9B%B8%E7%AD%89%E3%80%90%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F%E9%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E3%80%91-Rightarrow-Sequence-Labeling"><span class="nav-text">1.2.1 ( focus of this lecture⭐)输入输出数量相等【每一个向量都有一个标签】 Sequence Labeling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-%E6%95%B4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%BA%8F%E5%88%97%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E8%BE%93%E5%87%BA"><span class="nav-text">1.2.2 整个输入序列只有一个输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-%E7%94%B1%E6%A8%A1%E5%9E%8B%E5%86%B3%E5%AE%9A%E8%BE%93%E5%87%BA%E7%9A%84%E6%95%B0%E7%9B%AE%E3%80%90seq2seq%E3%80%91"><span class="nav-text">1.2.4 由模型决定输出的数目【seq2seq】</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Sequence-Labeling"><span class="nav-text">2. Sequence Labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Self-attention"><span class="nav-text">3. Self-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E7%89%B9%E7%82%B9"><span class="nav-text">3.1 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">3.2 基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E4%BB%8E%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E8%A7%92%E5%BA%A6%E5%88%86%E6%9E%90%E8%BF%90%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-text">3.3 从矩阵乘法的角度分析运作过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Multi-head-Self-attention-Different-types-of-relevance"><span class="nav-text">4. Multi-head Self-attention(Different types of relevance)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E7%89%B9%E7%82%B9"><span class="nav-text">4.1 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E8%AE%A1%E7%AE%97%E6%AD%A5%E9%AA%A4"><span class="nav-text">4.2 计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Positional-Encoding"><span class="nav-text">5.Positional Encoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Self-addtention-%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">6. Self-addtention 的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Self-attention-v-s-CNN"><span class="nav-text">7.Self-attention v.s. CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Self-attention-v-s-RNN"><span class="nav-text">8.Self-attention v.s. RNN</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85"><span class="nav-text">从零开始的机器学习之旅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#07-Self-attention"><span class="nav-text">-Self-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Introduction"><span class="nav-text">1. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Vector-Set-as-Input"><span class="nav-text">1.1 Vector Set as Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-What-is-the-output"><span class="nav-text">1.2 What is the output?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-focus-of-this-lecture%E2%AD%90-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%95%B0%E9%87%8F%E7%9B%B8%E7%AD%89%E3%80%90%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%90%91%E9%87%8F%E9%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E3%80%91-Rightarrow-Sequence-Labeling"><span class="nav-text">1.2.1 ( focus of this lecture⭐)输入输出数量相等【每一个向量都有一个标签】 Sequence Labeling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-%E6%95%B4%E4%B8%AA%E8%BE%93%E5%85%A5%E5%BA%8F%E5%88%97%E5%8F%AA%E6%9C%89%E4%B8%80%E4%B8%AA%E8%BE%93%E5%87%BA"><span class="nav-text">1.2.2 整个输入序列只有一个输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-4-%E7%94%B1%E6%A8%A1%E5%9E%8B%E5%86%B3%E5%AE%9A%E8%BE%93%E5%87%BA%E7%9A%84%E6%95%B0%E7%9B%AE%E3%80%90seq2seq%E3%80%91"><span class="nav-text">1.2.4 由模型决定输出的数目【seq2seq】</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Sequence-Labeling"><span class="nav-text">2. Sequence Labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Self-attention"><span class="nav-text">3. Self-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E7%89%B9%E7%82%B9"><span class="nav-text">3.1 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">3.2 基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E4%BB%8E%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E7%9A%84%E8%A7%92%E5%BA%A6%E5%88%86%E6%9E%90%E8%BF%90%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-text">3.3 从矩阵乘法的角度分析运作过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Multi-head-Self-attention-Different-types-of-relevance"><span class="nav-text">4. Multi-head Self-attention(Different types of relevance)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E7%89%B9%E7%82%B9"><span class="nav-text">4.1 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E8%AE%A1%E7%AE%97%E6%AD%A5%E9%AA%A4"><span class="nav-text">4.2 计算步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Positional-Encoding"><span class="nav-text">5.Positional Encoding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-why-need-Positional-Encoding"><span class="nav-text">5.1 why need Positional Encoding?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Self-addtention-%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">6. Self-addtention 的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Self-attention-v-s-CNN"><span class="nav-text">7.Self-attention v.s. CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Self-attention-v-s-RNN"><span class="nav-text">8.Self-attention v.s. RNN</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -1264,7 +1289,7 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        11 posts in total
+                        13 posts in total
                     </span>
                     
                 </p>
