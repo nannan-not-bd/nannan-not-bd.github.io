@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-12T17:19:47.591Z</updated>
+  <updated>2024-07-12T17:24:21.645Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《PyTorch深度学习实践》02.PyTorch实现Logistic Regression(分类问题)</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/12/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/12/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
+    <published>2024-07-12T12:52:41.000Z</published>
+    <updated>2024-07-12T17:24:21.645Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>雅思入门【阅读+听力】</title>
@@ -42,11 +67,11 @@
   </entry>
   
   <entry>
-    <title>《PyTorch深度学习实践》$01$.PyTorch实现Linear Regression</title>
+    <title>《PyTorch深度学习实践》01.PyTorch实现Linear Regression</title>
     <link href="https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
     <published>2024-07-11T12:52:41.000Z</published>
-    <updated>2024-07-12T17:22:50.537Z</updated>
+    <updated>2024-07-12T17:24:17.435Z</updated>
     
     
       
@@ -365,31 +390,6 @@
     
     
     <category term="deployment" scheme="https://nannan-not-bd.github.io/tags/deployment/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/14/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/14/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
-    <published>2024-06-14T12:52:41.000Z</published>
-    <updated>2024-07-12T17:22:40.913Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
     
   </entry>
   
