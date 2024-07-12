@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-10T06:48:19.594Z</updated>
+  <updated>2024-07-12T17:16:53.414Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
+    <published>2024-07-12T17:13:53.159Z</published>
+    <updated>2024-07-12T17:16:53.414Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
+    <published>2024-07-12T17:13:53.154Z</published>
+    <updated>2024-07-12T17:16:16.690Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>【从零开始的机器学习之旅】09-Transformer</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/10/09-Transformer/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/10/09-Transformer/</id>
-    <published>2024-07-10T14:30:00.000Z</published>
-    <updated>2024-07-10T06:48:19.594Z</updated>
+    <link href="https://nannan-not-bd.github.io/2024/07/09/09-Transformer/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/09/09-Transformer/</id>
+    <published>2024-07-09T14:30:00.000Z</published>
+    <updated>2024-07-10T07:16:52.734Z</updated>
     
     
       
@@ -96,7 +138,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A0/"/>
     <id>https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A0/</id>
     <published>2024-07-02T14:25:00.000Z</published>
-    <updated>2024-07-02T14:27:25.441Z</updated>
+    <updated>2024-07-10T07:17:06.553Z</updated>
     
     
       
@@ -315,6 +357,31 @@
     
     
     <category term="deployment" scheme="https://nannan-not-bd.github.io/tags/deployment/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>雅思入门【阅读+听力】</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/14/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/14/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/</id>
+    <published>2024-06-14T12:52:41.000Z</published>
+    <updated>2024-07-12T17:13:08.241Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://nannan-not-bd.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="IELTS" scheme="https://nannan-not-bd.github.io/tags/IELTS/"/>
     
   </entry>
   

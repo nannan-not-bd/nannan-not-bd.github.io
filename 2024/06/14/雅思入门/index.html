@@ -13,55 +13,44 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/07/10/09-transformer/"/>
+    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/06/14/雅思入门/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="从零开始的机器学习之旅 -Transformer一、seq2seq1.含义输入一个序列，机器输出另一个序列，输出序列长度由机器决定。 文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。  2.应用① 自然语言处理（NLP问题），不过seq2seq有时候不一定是最佳的解决方法。 ② 应用于Seq2seq for Syntactic Parsing句">
+        <meta name="description" content="1.雅思阅读零、预备 P1(Q1-Q13) (填空+判断) P2(Q14-Q26)(配对+判断+主旨)10 P3(Q27-Q40)(主旨+配对+填空&#x2F;判断)  60min之内完成,难在短时间之内找到答案，如果一道题在150s之内还没完成，请先放弃。 对应分数：  阅读考试必备：  注意熟词生意，同义词转换  题型说明：           做题步骤：    一、curriculum 课程大纲： L">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【从零开始的机器学习之旅】09-Transformer">
-<meta property="og:url" content="https://nannan-not-bd.github.io/2024/07/10/09-Transformer/index.html">
+<meta property="og:title" content="雅思入门【阅读+听力】">
+<meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/14/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="nannan_blog">
-<meta property="og:description" content="从零开始的机器学习之旅 -Transformer一、seq2seq1.含义输入一个序列，机器输出另一个序列，输出序列长度由机器决定。 文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。  2.应用① 自然语言处理（NLP问题），不过seq2seq有时候不一定是最佳的解决方法。 ② 应用于Seq2seq for Syntactic Parsing句">
+<meta property="og:description" content="1.雅思阅读零、预备 P1(Q1-Q13) (填空+判断) P2(Q14-Q26)(配对+判断+主旨)10 P3(Q27-Q40)(主旨+配对+填空&#x2F;判断)  60min之内完成,难在短时间之内找到答案，如果一道题在150s之内还没完成，请先放弃。 对应分数：  阅读考试必备：  注意熟词生意，同义词转换  题型说明：           做题步骤：    一、curriculum 课程大纲： L">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144246476.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144259690.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144308538.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144317876.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144325370.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144333821.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144340216.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144346739.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144352527.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144359082.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144408095.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144414760.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710144512559.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709164922237.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165126659.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165218119.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165244599.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709165343159.png">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9F%A9%E9%98%B5%E5%9B%BE.jpg">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223902912-150605920.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224558824-886649908.png">
-<meta property="og:image" content="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224934186-1197754631.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174008265.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174401532.png">
-<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240709174549919.png">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90.gif">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%BB%93%E6%9E%9C-2.gif">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg">
-<meta property="og:image" content="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg">
-<meta property="article:published_time" content="2024-07-10T14:30:00.000Z">
-<meta property="article:modified_time" content="2024-07-10T06:48:19.594Z">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708114324855.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708120712394.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121107838.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121324604.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121300658.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121040134.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121206515.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121222051.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121432160.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708121515735.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/12824314-30574a71aa04e6dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/356/format/webp">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708112819269.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708112845659.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113012133.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113035500.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113146214.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113213821.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113235938.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113258681.png">
+<meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240708113317170.png">
+<meta property="article:published_time" content="2024-06-14T12:52:41.000Z">
+<meta property="article:modified_time" content="2024-07-12T17:13:08.241Z">
 <meta property="article:author" content="nannankk">
-<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="IELTS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240710144246476.png">
+<meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240708114324855.png">
     
     
     <!--- Icon Part-->
@@ -73,7 +62,7 @@
     
     <title>
         
-            【从零开始的机器学习之旅】09-Transformer -
+            雅思入门【阅读+听力】 -
         
         Nannan blog
     </title>
@@ -780,7 +769,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -788,7 +777,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">13</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -815,10 +804,10 @@ mjx-container[display="true"] + br {
             
                 
                 
-                <img src="/pic/xx.jfif" alt="【从零开始的机器学习之旅】09-Transformer" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                <img src="/pic/es.jfif" alt="雅思入门【阅读+听力】" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
                 
                 <div class="w-full flex items-center absolute bottom-0 justify-start">
-                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【从零开始的机器学习之旅】09-Transformer</h1>
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">雅思入门【阅读+听力】</h1>
                 </div>
             
             </div>
@@ -832,22 +821,22 @@ mjx-container[display="true"] + br {
                     <div class="author flex items-center">
                         <span class="name text-default-text-color text-lg font-semibold">Nannan</span>
                         
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
                         
                     </div>
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-07-10 22:30</span>
-        <span class="mobile">2024-07-10 22:30</span>
+        <span class="desktop">2024-06-14 20:52:41</span>
+        <span class="mobile">2024-06-14 20:52:41</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-07-10 14:48:19</span>
-            <span class="mobile">2024-07-10 14:48:19</span>
+            <span class="desktop">2024-07-13 01:13:08</span>
+            <span class="mobile">2024-07-13 01:13:08</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -861,7 +850,7 @@ mjx-container[display="true"] + br {
                     
                         
                         <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                            <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
                         </li>
                     
                     
@@ -875,7 +864,7 @@ mjx-container[display="true"] + br {
             <ul>
                 
                     <li>
-                        <a href="/tags/deep-learning/">deep learning</a>&nbsp;
+                        <a href="/tags/IELTS/">IELTS</a>&nbsp;
                     </li>
                 
             </ul>
@@ -901,154 +890,125 @@ mjx-container[display="true"] + br {
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="从零开始的机器学习之旅"><a href="#从零开始的机器学习之旅" class="headerlink" title="从零开始的机器学习之旅"></a>从零开始的机器学习之旅</h1><hr>
-<h1 id="09-Transformer"><a href="#09-Transformer" class="headerlink" title="$09$-Transformer"></a><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>-Transformer</h1><h2 id="一、seq2seq"><a href="#一、seq2seq" class="headerlink" title="一、seq2seq"></a>一、seq2seq</h2><h3 id="1-含义"><a href="#1-含义" class="headerlink" title="1.含义"></a>1.含义</h3><p>输入一个序列，机器输出另一个序列，输出序列长度由机器决定。</p>
-<p>文本翻译：文本至文本；　　语音识别：语音至文本；　　语音合成：文本至语音；　　聊天机器人：语音至语音。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144246476.png" alt="image-20240710144246476"></p>
-<h3 id="2-应用"><a href="#2-应用" class="headerlink" title="2.应用"></a>2.应用</h3><p>① <strong>自然语言处理（NLP问题），</strong>不过seq2seq有时候不一定是最佳的解决方法。</p>
-<p>② 应用于<strong>Seq2seq for Syntactic Parsing句法分析（文法剖析）</strong>，例如，给机器一段文字，Deep learning is very powerful，机器要做的事情是产生一个<strong>文法的剖析树</strong> 。</p>
-<p>输出结果（剖析树）告诉我们，deep 加 learning 合起来是一个名词短语，very 加 powerful 合起来是一个形容词短语，形容词短语加 is 以后会变成一个动词短语，动词短语加名词片语合起来是一个句子</p>
-<p>文法剖析要做的事情就是产生这样子的一个 Syntactic tree，所以在用 deep learning 解决 文法剖析的任务里面，<strong>输入是一段文字（一个Sequence），输出是一个树状的结构，（可以把他看作是一个Sequence，一个代表句法分析树的序列）</strong></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144259690.png" alt="image-20240710144259690"></p>
-<p>③ 应用于 <strong>multi-label classification（多标签分类问题：同一个对象可以属于多个class）</strong></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144308538.png" alt="image-20240710144308538"></p>
-<p> 区分：</p>
-<ul>
-<li>multi-class classification：为样本从数个 class 中选择某一个 class（多对一）</li>
-<li>multi-label classification：同一个样本可以属于多个 class （一对多）</li>
+            <h1 id="1-雅思阅读"><a href="#1-雅思阅读" class="headerlink" title="1.雅思阅读"></a>1.雅思阅读</h1><h2 id="零、预备"><a href="#零、预备" class="headerlink" title="零、预备"></a>零、预备</h2><ul>
+<li>P1(Q1-Q13)<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container> (填空+判断)<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="4.651ex" height="1.819ex" role="img" focusable="false" viewBox="0 -666 2055.8 804"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container></li>
+<li>P2(Q14-Q26)<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>(配对+判断+主旨)<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.751ex" role="img" focusable="false" viewBox="0 -636 778 774"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g></g></g></svg></mjx-container>10</li>
+<li>P3(Q27-Q40)(主旨+配对+填空/判断)<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.312ex;" xmlns="http://www.w3.org/2000/svg" width="3.52ex" height="1.819ex" role="img" focusable="false" viewBox="0 -666 1555.8 804"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path></g><g data-mml-node="mn" transform="translate(1055.8,0)"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></g></g></g></svg></mjx-container></li>
 </ul>
-<p>难点：每篇文章对应几个 class 不好确定 ⇒ seq2seq 决定要输出几个</p>
-<p>④ <strong>Object Detection 物体检测</strong></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144317876.png" alt="image-20240710144317876"></p>
-<h3 id="3-Seq2seq-实现方式"><a href="#3-Seq2seq-实现方式" class="headerlink" title="3. Seq2seq 实现方式"></a>3. Seq2seq 实现方式</h3><p>seq2seq’s model = Encder（编码器） + Decoder（解码器）</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144325370.png" alt="image-20240710144325370"></p>
-<p>这两部分可以使用RNN或transformer实现，seq2seq主要是为了解决输入和输出长度不确定的情况。</p>
-<p><strong>Encoder：</strong>将输入（文字、语音、视频等）编码为单个向量，这个向量可以看成是全部输入的 <strong>抽象表示</strong>。</p>
-<p><strong>Decoder：</strong>接受 encoder 输出的向量，逐步解码，一次输出一个结果，每次输出会影响下一次的输出，开头加入 <bos> 表示开始解码， <eos> 表示输出结束。</eos></bos></p>
-<h2 id="二、Encoder-Decoder"><a href="#二、Encoder-Decoder" class="headerlink" title="二、Encoder & Decoder"></a>二、Encoder &amp; Decoder</h2><h3 id="1-Encoder"><a href="#1-Encoder" class="headerlink" title="1.Encoder"></a>1.Encoder</h3><p>可以使用：Self-attention，RNN，CNN</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144333821.png" alt="image-20240710144333821"></p>
-<p>我们来仔细解释一下这个encoder：</p>
-<p>A、encoder 就是通过多层 block（模块），将输入转换成向量。每一个 block 都包含若干层（ self-attention 和 fully connect 等网络结构 )，每个 block 输入一排向量，输出相同数量的一排向量。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144340216.png" alt="image-20240710144340216"></p>
-<p>B、 block 的内部细节构成如下（在 input 送入 block 之前，需先进行 positional encoding，这个知识点在 self - attention 中有提过）。</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144346739.png" alt="image-20240710144346739"></p>
-<p>C 、 它考虑所有输入向量后的输出向量，其中 b 是原来的 input 向量，经过<font color="red">残差网络（residual connection：把 a vector 加上它的 b input vector 作为 output ）</font>和标准化(Layer Norm)后，送到全连接神经网络 FC ，由于在 FC network 中也有 residual 的架构，因此需要再经过一组 残差网络 + 标准化 后得到输出。（注意：这里的标准化是 layer normalization 而不是 batch normalization）。这个输出才是 residual network 里一个 block 的输出。</p>
-<blockquote>
-<p>batch normalization：对 不同的 example 不同 feature 的 同一个 dimention 去计算平均值 mean 和标准差 standard deviation。<br>layer normalization：对 同一个 example 同一个 feature的 不同 dimention 去计算平均值 mean 和标准差 standard deviation。</p>
-</blockquote>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144352527.png" alt="image-20240710144352527"></p>
-<h3 id="2-Decoder"><a href="#2-Decoder" class="headerlink" title="2. Decoder"></a>2. Decoder</h3><p>decoder主要有两种：AT（autoregressive自回归模型）与 NAT（non-autoregressive非自回归），Decoder 要做的事情：产生最终的输出结果</p>
-<h4 id="2-1-Autoregressive-AT"><a href="#2-1-Autoregressive-AT" class="headerlink" title="2.1  Autoregressive(AT)"></a>2.1  Autoregressive(AT)</h4><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144359082.png" alt="image-20240710144359082"></p>
-<ol>
-<li><p>向 Decoder 输入 Encoder 产生的向量</p>
-</li>
-<li><p>在 Decoder 可能产生的文字库里多加一个标识字符 BEGIN ，它代表 “ Decoder 开始识别” 来提醒机器（BOS： begin of sentence）</p>
-</li>
-</ol>
-<blockquote>
-<p>NLP 的问题中，每一个 Token 用一个 One-Hot 的 Vector 来表示，其中正确的类别标识是 1，其他都是 0，其中 BEGIN 也是用 One-Hot Vector 来表示</p>
-</blockquote>
-<ol start="3">
-<li>经过 softmax 之后，Decoder 会输出一个和 输入的 <strong>Vocabulary Size</strong> 一样的向量长度的 向量结果。对比已知文字库，找到相似度最高的字符就是最终输出的字符。（这里“机”字 就是这个 Decoder 的第一个输出）</li>
-</ol>
-<blockquote>
-<p>Vocabulary Size：取决于你输出的单位。比如输出中文，则size是中文方块字的数目。</p>
-</blockquote>
-<ol start="4">
-<li>再把上一步的输出当做下一个的输入。（在本例中，第二次 Decoder 把 “机” 当做是 Decoder 的 Input，在上一步 “机” 是 Decoder 的输出结果）经过一系列相同的操作后我们会得到第二次 Decoder 的输出，再作为第三次的输入，继续输出后续的文字，以此类推……</li>
-</ol>
-<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144408095.png" alt="image-20240710144408095"></p>
-<p>让我们看看Decoder的细节：</p>
-<details class="blue" data-header-exclude=""><summary><i class="fa-solid fa-chevron-right"></i>Decoder的细节： 点击查看更多 </summary>
-              <div class="content">
-              <p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144414760.png" alt="image-20240710144414760"></p><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710144512559.png" alt="image-20240710144512559"></p><p>对比一下encoder和decoder：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709164922237.png" alt="image-20240709164922237" style="zoom:67%;"><p>如果我们吧decoder中间那块盖起来，我们发现好像二者没有那么大的区别。</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165126659.png" alt="image-20240709165126659" style="zoom:67%;"><p>不过decoder多了一个masked。</p><p> 什么意思呢？</p><p>让我们看看原来的Self-attention：</p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165218119.png" alt="image-20240709165218119" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165244599.png" alt="image-20240709165244599" style="zoom:67%;"><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709165343159.png" alt="image-20240709165343159" style="zoom:67%;">
-              </div>
-            </details>
+<p>60min之内完成,难在短时间之内找到答案，如果一道题在150s之内还没完成，请先放弃。</p>
+<p>对应分数：<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708114324855.png" alt="image-20240708114324855"></p>
+<hr>
+<p>阅读考试必备：</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708120712394.png" alt="image-20240708120712394"></p>
+<p>注意熟词生意，同义词转换</p>
+<hr>
+<p>题型说明：</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121107838.png" alt="image-20240708121107838"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121324604.png" alt="image-20240708121324604"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121300658.png" alt="image-20240708121300658"></p>
+<hr>
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121040134.png" alt="image-20240708121040134" style="zoom:80%;">
 
-<h5 id="Why-masked？"><a href="#Why-masked？" class="headerlink" title="Why masked？"></a>Why masked？</h5><p>Consider how does decoder work</p>
-<p>由于解码器采用自回归auto-regressive，即 在过去时刻的输出作为当前时刻的输入，也就是说在预测时无法看到之后的输入输出，但是在注意力机制当中，可以看到完整的输入(每一个词都要和其他词做点积，计算相关性)，为了避免这种情况的发生，在解码器训练时，在预测t时刻的输出时，不应该能看到t时刻以后的输入。做法是：采用带掩码的Masked注意力机制,从而保证在t时刻无法看到t时刻以后的输入，保证训练和预测时的行为一致性。</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E7%9F%A9%E9%98%B5%E5%9B%BE.jpg" alt="img" style="zoom:67%;">
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121206515.png" alt="image-20240708121206515">
 
-<p>自注意力机制明确的知道这句话有多少个单词，并且一次性给足，而掩码是分批次给，最后一次才给足。</p>
-<p>Masked（掩码） Self-Attention–&gt;在自注意力模型上面做了改进</p>
-<p>为什么要做这个改进：生成模型，生成单词，一个一个生成的</p>
-<p>当我们做生成任务的时候，我们也想对生成的这个单词做注意力计算，但是，生成的句子是一个一个单词生成的</p>
-<p>I have a dream</p>
-<ol>
-<li>I 第一次注意力计算，只有 I</li>
-<li>I have 第二次，只有 I 和 have</li>
-<li>I have a</li>
-<li>I have a dream</li>
-<li>I have a dream <eos></eos></li>
-</ol>
-<p>掩码自注意力机制应运而生</p>
-<p>掩码后 1</p>
-<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg" alt="img" style="zoom:67%;"></a></p>
-<p>掩码后2</p>
-<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map-softmax.jpg" alt="img" style="zoom:67%;"></a></p>
-<ol start="5">
-<li>机器自己决定输出的长度：一个特别的标识符 “END” 代表工作结束</li>
-</ol>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513223902912-150605920.png" alt="img" style="zoom:67%;">
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121222051.png" alt="image-20240708121222051"></p>
+<hr>
+<p>做题步骤：</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121432160.png" alt="image-20240708121432160"></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708121515735.png" alt="image-20240708121515735"></p>
+<hr>
+<h2 id="一、curriculum-课程大纲："><a href="#一、curriculum-课程大纲：" class="headerlink" title="一、curriculum 课程大纲："></a>一、curriculum 课程大纲：</h2><ul>
+<li>Lecture 1 总纲、单词题</li>
+<li>Lecture 2 句子题</li>
+<li>Lecture 3 段落题</li>
+<li>Lecture 4 匹配题</li>
+</ul>
+<p>将雅思阅读题型分为四种题型：<br> <strong>单词题</strong>：填空，简答题，填句子的题目，table，或者流程图。（简单题，花时间一定做得对）<br> <strong>句子题</strong>：中等难度，ture or false and not to given 判断、单选或者多选<br> <strong>段落题</strong>：比较难，选出中心思想<br> <strong>匹配题</strong>：查找信息的能力。<br> 没有标题的文章，会让我们选择标题。<br> 读每个段落首句，第二段，<strong>末段</strong>（重点），选中心思想。</p>
+<h2 id="二、总纲"><a href="#二、总纲" class="headerlink" title="二、总纲"></a>二、总纲</h2><p><strong>雅思真经阅读法：</strong></p>
+<ul>
+<li>3类vocabulary</li>
+<li>3类keywords</li>
+<li>6类grammar</li>
+</ul>
+<p><strong>提升阅读速度：</strong></p>
+<ul>
+<li>意群：不能默读，注意跳读，变速。读关键名词，不认识的单词跳读。不要精读雅思文章。</li>
+</ul>
+<p><strong>3类vocabulary：</strong><br> 题干中：account（账户），suggestopedia（主题词），resemble（相似的）</p>
+<p>如果在1-13题干+选项中有三个以上不认识的单词，词汇量是不够的。</p>
+<ul>
+<li>主题词不认识没关系。</li>
+<li>模板词 account for，description，statement，reference（提及），mention，detail …没有意义,但是要认识。</li>
+<li>同义替换 488/539 考点词，6类主题词</li>
+</ul>
+<p><strong>3类Keywords：</strong><br> 看题目，找原文出处很慢</p>
+<ul>
+<li>先读题2遍，理解题目，划关键词。</li>
+<li>直接找原文。</li>
+<li>眼球级单词，大写，数字</li>
+<li>朴素级单词，找同义替换（比如找中心思想，只需要找到两个对应的同义替换，就能做对）</li>
+<li>逻辑关系词：并列，转折，因果<br>  著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</li>
+</ul>
+<p><strong>总纲标注法：</strong><br>就是原题和原文之间的对应关系。一般情况下是对应的关系。</p>
+<p><strong>！！重点：</strong>快速阅读和对比阅读。<br>刘洪波不推荐精读。精读对阅读水平也是提升的。<br>先不用卡时间，一定要保证正确率。通过练习来缩短时间。</p>
+<h2 id="三、填空题"><a href="#三、填空题" class="headerlink" title="三、填空题"></a>三、<strong>填空题</strong></h2><p>填空题，summary，考察的并不是空格的名词而是，空格前后重要信息在原文中的同义替换。</p>
+<p>题目给出：A_____B<br> 定位到：A______???（B’）<br> 如果你不认识 B’ ，在原文中A定位的附近（三行），直接找B’或者你不认识的单词。答案就往往在这几个不认识的单词里面。</p>
+<p>the most important factor contributing to smog in BeiJing.<br> To meet this challenge，为了迎接这种挑战。</p>
+<p>真题中也有过，原文词性和答案词性不一样的情况。所以不一定是原词。</p>
+<h2 id="四、句子题：TFNG-Multiple-Choice"><a href="#四、句子题：TFNG-Multiple-Choice" class="headerlink" title="四、句子题：TFNG/Multiple Choice"></a>四、<strong>句子题：TFNG/Multiple Choice</strong></h2><p>一半的分数可能都是句子题。</p>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://upload-images.jianshu.io/upload_images/12824314-30574a71aa04e6dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/356/format/webp" alt="img"></p>
+<ul>
+<li><strong>True：</strong><br>  1.同义词改写 70%（如果有大量的原词出现，这就说明，这个题目肯定不是T）<br>  2.相邻句子归纳总结。<br>  3.不相邻的句子归纳总结。</li>
+<li><strong>Not Given：</strong><br>  1.添加信息，在原文中没有的一小部分区别。</li>
+<li><strong>False：</strong><br>  1.反义词，小心的把某个词改成反义词。<br>  2.关系驳斥，因果关系驳斥，</li>
+</ul>
+<p><strong>单选题 = true 题型</strong><br> 正确选项是true，其他选项是false或者not to given。</p>
+<p><strong>True：</strong><br> 1.同义词改写 70%（如果有大量的原词出现，这就说明，这个题目肯定不是T）<br> 2.相邻句子归纳总结。<br> 3.不相邻的句子归纳总结。</p>
+<p><strong>Not Given：</strong><br> 1.添加信息（具体型），在原文中没有的一小部分区别。<br> 2.关系不存在（两个段落之间有关系，很少出现）</p>
+<p><strong>False：</strong><br> 1.反义词，小心的把某个词改成反义词。<br> 2.关系驳斥，因果关系驳斥，</p>
+<p>做题技巧，在每一个题干前面加入是否这个词语，对照这个问题找答案，回答true or false，如果回答不知道，选择not to given。</p>
+<p>TFNG第三题（关系型）和第六题（具体型）命题一般是not to given</p>
+<p>false和NG之间的区别，如果关系找不着，选择NG；如果关系能找到，选择F。</p>
+<h2 id="五、中心思想题-heading"><a href="#五、中心思想题-heading" class="headerlink" title="五、中心思想题 heading"></a>五、中心思想题 heading</h2><p>一般的出题方式就是，第一个题目考1-5题的中心思想，第二个题目是一个细节题TFNG，一个summary或者是单选题。</p>
+<p>一般的中心思想。一般先做TFNG（一般都是中心句子），再做中心思想题目。</p>
+<h2 id="六、乱序匹配-match"><a href="#六、乱序匹配-match" class="headerlink" title="六、乱序匹配 match"></a>六、乱序匹配 match</h2><p><strong>最痛苦的就是乱序题，因为其不按照文章顺序来，但是我们还是要优先做细节题。</strong></p>
+<p>heading题 和 wich paragraphs。。。是不会同时出现的。</p>
+<p><strong>考场文章题型主要分为三类：</strong></p>
+<ul>
+<li><strong>class 1</strong>：总+分<br>  中心思想 heading + 细节题</li>
+<li><strong>class 2</strong>：总+分<br>  乱序选择 match + 细节题</li>
+<li><strong>class 3</strong>：<br>  文章划分为2、3个部分，每个部分针对出题</li>
+</ul>
+<p>练习class3（5篇），then class2 （3-5篇），then class1（3-5篇）</p>
+<ul>
+<li><strong>关系型匹配</strong>（人名和时间，动物和特点，建筑和建筑的特点）</li>
+<li><strong>句子匹配</strong>（上半句+下半句，直接通过上半句来定位，理解后来选择同义改写）</li>
+</ul>
+<p><strong>false 和 ng 的区别</strong>：</p>
+<ul>
+<li>false1：反义；</li>
+<li>false2：主客体关系混乱；</li>
+<li>ng1：题干中出现了不存在的词语；</li>
+<li>ng2：主题和客体之间的关系不存在；</li>
+</ul>
+<h1 id="2-雅思听力"><a href="#2-雅思听力" class="headerlink" title="2.雅思听力"></a>2.雅思听力</h1><h2 id="一、题型"><a href="#一、题型" class="headerlink" title="一、题型"></a>一、题型</h2><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708112819269.png" alt="image-20240708112819269" style="zoom: 50%;">
 
-<p><strong>缺点：</strong>如果Decoder 看到错误的输入，让 Decoder 产生错误的输出并被代入到下一步 Decoder 工作的输入中,会会造成 Error Propagation（一步错，步步错）⇒ 解决：Teacher Forcing技术（但是测试的时候 显然没有正确答案可以给 Decoder 看）</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224558824-886649908.png" alt="img" style="zoom:67%;">
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708112845659.png" alt="image-20240708112845659">
 
-<p>由于 Teacher Forcing的存在，训练跟测试的情景不一致。<strong>Decoder 在训练的时候永远只看过正确的东西</strong>(也就是说在训练的时候给decoder看到正确的答案)，但是在测试的时候，仍然会导致一步错、步步错(测试的时候没有正确答案呀，它仍然有可能出错)。</p>
-<p><strong>解决：给 Decoder 的输入加一些错误的东西 ⇒ Scheduled Sampling(计划采样)（但是也会一定程度损害平行化的能力）</strong></p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://img2022.cnblogs.com/blog/1757580/202205/1757580-20220513224934186-1197754631.png" alt="img"></p>
-<p> <strong>总结：</strong> 除了中间的部分，Encoder 跟 Decoder 并没有太大的差别。最后我们可以再做一个 Softmax，可以通过计算输出的概率分布与 Ground Truth 之间的 <strong>交叉熵（Cross Entropy）</strong>并求梯度实现优化，交叉熵的值越小越好。</p>
-<h4 id="2-2-Non-autoregressive-NAT"><a href="#2-2-Non-autoregressive-NAT" class="headerlink" title="2.2 Non-autoregressive(NAT)"></a>2.2 Non-autoregressive(NAT)</h4><p>AT v.s. NAT</p>
-<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174008265.png" alt="image-20240709174008265" style="zoom: 50%;">
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113012133.png" alt="image-20240708113012133" style="zoom:67%;">
 
-<p> <strong>①</strong> <strong>特点</strong>：NAT 不是依次有序进行 decoder 工作并挨个输出，而是一次性在输入时赋予 整个句子 一整排的 “BEGIN” 标识，把整个句子的 decoder <strong>结果一次性都输出</strong></p>
-<p> <strong>② 思路：如何确定BEGIN的个数：</strong></p>
-<ol>
-<li>另外训练一个 Classifier，输入 Encoder 的 Input vector，输出是一个数字（代表 Decoder 应该要输出的长度）</li>
-<li>给它若干个 BEGIN 的 Token，比如输出句子的最大长度不超过 300，就给 input 300 个 BEGIN token，然后就会相应地一次性输出 300 个字（遇到有输出 END 时表示这个句子输出结束），但是可能会比较耗费内存空间</li>
-</ol>
-<p><strong>③ 好处：</strong></p>
-<ol>
-<li>并行化。NAT 的 Decoder 不管 input 句子的长度大小，都是一次性输出完整的句子结果，所以在执行速度上 NAT 的 Decoder 比 AT 的 Decoder 要快</li>
-<li>容易控制输出长度。</li>
-</ol>
-<p><strong>④ 应用</strong>：</p>
-<p> 常用在语音合成，例如：利用其中一个 决定 NAT 的 Decoder 应该输出的长度的 Classifier，我们可以通过设置这个输出长度的大小以调整语音的速度。（如果要让输出的语音讲快一点，就把 Classifier 输出的长度数值 除以 N，它讲话速度就变成 N 倍速；同理，如果想要合成的语音变为慢速，就把 Classifier 输出的长度数值乘 N 倍）</p>
-<p><strong>⑤ 缺点</strong>：虽然 NAT 看起来有很多优点（尤其是并行化），但是 NAT 的 Decoder 实际上 Performance 往往都不如 AT 的 Decoder。为什么NAT 没有 AT 实际效果好? ⇒ <strong>Multi-Modality</strong></p>
-<p>现在我们就要来讲刚刚Decoder被遮起来的部分啦！</p>
-<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174401532.png" alt="image-20240709174401532" style="zoom:67%;">
+<h2 id="二、常见问题及难点"><a href="#二、常见问题及难点" class="headerlink" title="二、常见问题及难点"></a>二、常见问题及难点</h2><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113035500.png" alt="image-20240708113035500" style="zoom:67%;">
 
-<p><strong>Cross attention</strong></p>
-<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240709174549919.png" alt="image-20240709174549919" style="zoom:67%;">
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113146214.png" alt="image-20240708113146214" style="zoom:67%;">
 
- 
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113213821.png" alt="image-20240708113213821" style="zoom:67%;">
 
-<h2 id="三、Training过程"><a href="#三、Training过程" class="headerlink" title="三、Training过程"></a>三、Training过程</h2><p>以“我爱你”到“I am a student”为例，在训练过程中，encoder输入的是待翻译句子“我有一个梦想”，得到k，v；decoder输入的是“S I am a student”（S位起始符）；最终计算loss的label是“I am a student E”。</p>
-<p>生成一个词：</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%94%9F%E6%88%90.gif" alt="img"></p>
-<p>生成所有词：</p>
-<p><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E5%8A%A8%E6%80%81%E7%BB%93%E6%9E%9C-2.gif" alt="img"></p>
-<p>Transformer完整框架</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/tf-%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6.jpg" alt="img" style="zoom:67%;">
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113235938.png" alt="image-20240708113235938" style="zoom:67%;">
 
-<h2 id="四、Q-A"><a href="#四、Q-A" class="headerlink" title="四、Q & A"></a>四、Q &amp; A</h2><h3 id="Q1：为什么-Decoder-需要做-Mask"><a href="#Q1：为什么-Decoder-需要做-Mask" class="headerlink" title="Q1：为什么 Decoder 需要做 Mask"></a>Q1：为什么 Decoder 需要做 Mask</h3><p>机器翻译：源语句（我爱中国），目标语句（I love China）</p>
-<p><font color="red">为了解决训练阶段和测试阶段的 gap（不匹配）</font></p>
-<p>训练阶段：解码器会有输入，这个输入是目标语句，就是 I love China，通过已经生成的词，去让解码器更好的生成（每一次都会把所有信息告诉解码器）</p>
-<p>测试阶段：解码器也会有输入，但是此时，测试的时候是不知道目标语句是什么的，这个时候，你每生成一个词，就会有多一个词放入目标语句中，每次生成的时候，都是已经生成的词（测试阶段只会把已经生成的词告诉解码器）</p>
-<p>为了匹配，为了解决这个 gap，masked Self-Attention 就登场了，我在训练阶段，我就做一个 masked，当你生成第一个词，我啥也不告诉你，当你生成第二个词，我告诉第一个词</p>
-<p><a target="_blank" rel="noopener" href="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg"><img lazyload="" src="/images/loading.svg" data-src="https://imgmd.oss-cn-shanghai.aliyuncs.com/BERT_IMG/mask-attention-map.jpg" alt="img"></a></p>
-<h3 id="Q2：为什么-Encoder-给予-Decoders-的是-K、V-矩阵"><a href="#Q2：为什么-Encoder-给予-Decoders-的是-K、V-矩阵" class="headerlink" title="Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵"></a>Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵</h3><p>Q来源解码器，K=V来源于编码器</p>
-<p>Q是查询变量，Q 是已经生成的词</p>
-<p>K=V 是源语句</p>
-<p>当我们生成这个词的时候，通过已经生成的词和源语句做自注意力，就是确定源语句中哪些词对接下来的词的生成更有作用，首先他就能找到当前生成词</p>
-<p>我爱中国</p>
-<p>通过部分（生成的词）去全部（源语句）的里面挑重点</p>
-<p>Q 是源语句，K，V 是已经生成的词，源语句去已经生成的词里找重点 ，找信息，已经生成的词里面压根就没有下一个词</p>
-<p>解决了以前的 seq2seq 框架的问题</p>
-<p>lstm 做编码器（得到词向量 C），再用 lstm 做解码器做生成</p>
-<p>用这种方法去生成词，每一次生成词，都是通过 C 的全部信息去生成</p>
-<p>很多信息对于当前生成词而言都是没有意义的</p>
-<p>用 Pytorch 去构建 Transformer 的源码。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113258681.png" alt="image-20240708113258681" style="zoom:67%;">
+
+<h2 id="三、学习计划"><a href="#三、学习计划" class="headerlink" title="三、学习计划"></a>三、学习计划</h2><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240708113317170.png" alt="image-20240708113317170" style="zoom:67%;">
+
 
         </div>
 
@@ -1056,18 +1016,18 @@ mjx-container[display="true"] + br {
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 【从零开始的机器学习之旅】09-Transformer</li>
+        <li><strong>Title:</strong> 雅思入门【阅读+听力】</li>
         <li><strong>Author:</strong> Nannan</li>
         <li><strong>Created at
-                :</strong> 2024-07-10 22:30:00</li>
+                :</strong> 2024-06-14 20:52:41</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-07-10 14:48:19
+                    :</strong> 2024-07-13 01:13:08
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/07/10/09-Transformer/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/14/雅思入门/
         </li>
         <li>
             <strong>
@@ -1089,7 +1049,7 @@ mjx-container[display="true"] + br {
             <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
                     <li class="tag-item mx-0.5">
-                        <a href="/tags/deep-learning/">#deep learning</a>&nbsp;
+                        <a href="/tags/IELTS/">#IELTS</a>&nbsp;
                     </li>
                 
             </ul>
@@ -1100,14 +1060,29 @@ mjx-container[display="true"] + br {
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/06/14/Deploy%20a%20personal%20blog/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">windows基于hexo+github page 的个人博客搭建</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/07/03/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A1/"
+                        href="/2024/06/14/hello-world/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">【从零开始的机器学习之旅】07-Recurrent Neural Network(RNN) PartⅡ</span>
+                                <span class="post-nav-title-item">Hello World</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -1171,8 +1146,8 @@ mjx-container[display="true"] + br {
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">【从零开始的机器学习之旅】09-Transformer</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85"><span class="nav-text">从零开始的机器学习之旅</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#09-Transformer"><span class="nav-text">-Transformer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81seq2seq"><span class="nav-text">一、seq2seq</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%90%AB%E4%B9%89"><span class="nav-text">1.含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BA%94%E7%94%A8"><span class="nav-text">2.应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Seq2seq-%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text">3. Seq2seq 实现方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Encoder-Decoder"><span class="nav-text">二、Encoder &amp; Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Encoder"><span class="nav-text">1.Encoder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Decoder"><span class="nav-text">2. Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-Autoregressive-AT"><span class="nav-text">2.1  Autoregressive(AT)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Why-masked%EF%BC%9F"><span class="nav-text">Why masked？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-Non-autoregressive-NAT"><span class="nav-text">2.2 Non-autoregressive(NAT)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Training%E8%BF%87%E7%A8%8B"><span class="nav-text">三、Training过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81Q-A"><span class="nav-text">四、Q &amp; A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-Decoder-%E9%9C%80%E8%A6%81%E5%81%9A-Mask"><span class="nav-text">Q1：为什么 Decoder 需要做 Mask</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88-Encoder-%E7%BB%99%E4%BA%88-Decoders-%E7%9A%84%E6%98%AF-K%E3%80%81V-%E7%9F%A9%E9%98%B5"><span class="nav-text">Q2：为什么 Encoder 给予 Decoders 的是 K、V 矩阵</span></a></li></ol></li></ol></li></ol>
+        <div class="page-title">雅思入门【阅读+听力】</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%9B%85%E6%80%9D%E9%98%85%E8%AF%BB"><span class="nav-text">1.雅思阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E3%80%81%E9%A2%84%E5%A4%87"><span class="nav-text">零、预备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81curriculum-%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2%EF%BC%9A"><span class="nav-text">一、curriculum 课程大纲：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%80%BB%E7%BA%B2"><span class="nav-text">二、总纲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="nav-text">三、填空题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%8F%A5%E5%AD%90%E9%A2%98%EF%BC%9ATFNG-Multiple-Choice"><span class="nav-text">四、句子题：TFNG&#x2F;Multiple Choice</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%B8%AD%E5%BF%83%E6%80%9D%E6%83%B3%E9%A2%98-heading"><span class="nav-text">五、中心思想题 heading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%B9%B1%E5%BA%8F%E5%8C%B9%E9%85%8D-match"><span class="nav-text">六、乱序匹配 match</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B"><span class="nav-text">2.雅思听力</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%A2%98%E5%9E%8B"><span class="nav-text">一、题型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%8F%8A%E9%9A%BE%E7%82%B9"><span class="nav-text">二、常见问题及难点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92"><span class="nav-text">三、学习计划</span></a></li></ol></li></ol>
 
     </div>
 </div>
@@ -1205,7 +1180,7 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        13 posts in total
+                        16 posts in total
                     </span>
                     
                 </p>
