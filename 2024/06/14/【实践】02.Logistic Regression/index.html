@@ -13,17 +13,17 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/07/13/【实践】02.logistic regression/"/>
+    <link rel="canonical" href="https://nannan-not-bd.github.io/2024/06/14/【实践】02.logistic regression/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)一、Regression v.s. Classification How to map: R -&gt; [0,1] ?  Sigmoid functions   二、Logistic Function1.Logistic Regression Model 2.Loss function f">
+        <meta name="description" content="《PyTorch深度学习实践》.PyTorch实现Logistic Regression(分类问题)一、Regression v.s. Classification How to map: R -&gt; [0,1] ?  Sigmoid functions   二、Logistic Function1.Logistic Regression Model 2.Loss function for B">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nannan_blog">
-<meta property="og:url" content="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/index.html">
+<meta property="og:title" content="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)">
+<meta property="og:url" content="https://nannan-not-bd.github.io/2024/06/14/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/index.html">
 <meta property="og:site_name" content="nannan_blog">
-<meta property="og:description" content="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)一、Regression v.s. Classification How to map: R -&gt; [0,1] ?  Sigmoid functions   二、Logistic Function1.Logistic Regression Model 2.Loss function f">
+<meta property="og:description" content="《PyTorch深度学习实践》.PyTorch实现Logistic Regression(分类问题)一、Regression v.s. Classification How to map: R -&gt; [0,1] ?  Sigmoid functions   二、Logistic Function1.Logistic Regression Model 2.Loss function for B">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710190754854.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710191246571.png">
@@ -34,9 +34,10 @@
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710200010003.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710200204630.png">
 <meta property="og:image" content="https://nannan-not-bd.github.io/pic/image-20240710200306053.png">
-<meta property="article:published_time" content="2024-07-12T17:13:53.159Z">
-<meta property="article:modified_time" content="2024-07-12T17:16:53.414Z">
+<meta property="article:published_time" content="2024-06-14T12:52:41.000Z">
+<meta property="article:modified_time" content="2024-07-12T17:22:40.913Z">
 <meta property="article:author" content="nannankk">
+<meta property="article:tag" content="deep learning">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nannan-not-bd.github.io/pic/image-20240710190754854.png">
     
@@ -49,6 +50,8 @@
     <!--- Page Info-->
     
     <title>
+        
+            《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题) -
         
         Nannan blog
     </title>
@@ -123,7 +126,119 @@
     <script src="/live2d-widget/autoload.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="nannan_blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="nannan_blog" type="application/atom+xml">
 </head>
 
 
@@ -643,7 +758,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -676,8 +791,12 @@
 
         <div class="article-title relative w-full">
             
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3"></h1>
+                
+                
+                <img src="/pic/5cd86bad2e6afc9155a3d085053f0b8c.jpg" alt="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</h1>
                 </div>
             
             </div>
@@ -698,20 +817,47 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2024-07-13 01:13:53</span>
-        <span class="mobile">2024-07-13 01:13:53</span>
+        <span class="desktop">2024-06-14 20:52:41</span>
+        <span class="mobile">2024-06-14 20:52:41</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-07-13 01:16:53</span>
-            <span class="mobile">2024-07-13 01:16:53</span>
+            <span class="desktop">2024-07-13 01:22:40</span>
+            <span class="mobile">2024-07-13 01:22:40</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/deep-learning/">deep learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -733,69 +879,24 @@
 
 
         <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h1 id="《PyTorch深度学习实践》-02-PyTorch实现Logistic-Regression-分类问题"><a href="#《PyTorch深度学习实践》-02-PyTorch实现Logistic-Regression-分类问题" class="headerlink" title="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)"></a>《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</h1><h2 id="一、Regression-v-s-Classification"><a href="#一、Regression-v-s-Classification" class="headerlink" title="一、Regression v.s. Classification"></a>一、Regression v.s. Classification</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710190754854.png"
-                      alt="image-20240710190754854"
-                ></p>
+            <h1 id="《PyTorch深度学习实践》-02-PyTorch实现Logistic-Regression-分类问题"><a href="#《PyTorch深度学习实践》-02-PyTorch实现Logistic-Regression-分类问题" class="headerlink" title="《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)"></a>《PyTorch深度学习实践》<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 1000 688"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500,0)"></path></g></g></g></svg></mjx-container>.PyTorch实现Logistic Regression(分类问题)</h1><h2 id="一、Regression-v-s-Classification"><a href="#一、Regression-v-s-Classification" class="headerlink" title="一、Regression v.s. Classification"></a>一、Regression v.s. Classification</h2><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710190754854.png" alt="image-20240710190754854"></p>
 <p>How to map: R -&gt; [0,1] ?</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710191246571.png"
-                      alt="image-20240710191246571"
-                ></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710191246571.png" alt="image-20240710191246571"></p>
 <p>Sigmoid functions</p>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710191517202.png"
-                      alt="image-20240710191517202" style="zoom:67%;" 
-                >
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710191517202.png" alt="image-20240710191517202" style="zoom:67%;">
 
-<h2 id="二、Logistic-Function"><a href="#二、Logistic-Function" class="headerlink" title="二、Logistic Function"></a>二、Logistic Function</h2><h3 id="1-Logistic-Regression-Model"><a href="#1-Logistic-Regression-Model" class="headerlink" title="1.Logistic Regression Model"></a>1.Logistic Regression Model</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710191617071.png"
-                      alt="image-20240710191617071"
-                ></p>
-<h3 id="2-Loss-function-for-Binary-Classification"><a href="#2-Loss-function-for-Binary-Classification" class="headerlink" title="2.Loss function for Binary Classification"></a>2.Loss function for Binary Classification</h3><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710195806388.png"
-                      alt="image-20240710195806388"
-                ></p>
+<h2 id="二、Logistic-Function"><a href="#二、Logistic-Function" class="headerlink" title="二、Logistic Function"></a>二、Logistic Function</h2><h3 id="1-Logistic-Regression-Model"><a href="#1-Logistic-Regression-Model" class="headerlink" title="1.Logistic Regression Model"></a>1.Logistic Regression Model</h3><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710191617071.png" alt="image-20240710191617071"></p>
+<h3 id="2-Loss-function-for-Binary-Classification"><a href="#2-Loss-function-for-Binary-Classification" class="headerlink" title="2.Loss function for Binary Classification"></a>2.Loss function for Binary Classification</h3><p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710195806388.png" alt="image-20240710195806388"></p>
 <p>BCE损失：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710195853670.png"
-                      alt="image-20240710195853670"
-                ></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710195853670.png" alt="image-20240710195853670"></p>
 <h3 id="3-Implementation-of-Logistic-Regression"><a href="#3-Implementation-of-Logistic-Regression" class="headerlink" title="3. Implementation of Logistic Regression"></a>3. Implementation of Logistic Regression</h3><p>Init:</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710200010003.png"
-                      alt="image-20240710200010003"
-                ></p>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710200010003.png" alt="image-20240710200010003"></p>
 <p>BCELoss:</p>
-<img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710200204630.png"
-                      alt="image-20240710200204630" style="zoom:67%;" 
-                >
+<img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710200204630.png" alt="image-20240710200204630" style="zoom:67%;">
 
 <p>4个步骤：</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/pic/image-20240710200306053.png"
-                      alt="image-20240710200306053"
-                ></p>
-<h2 id="三、Code"><a href="#三、Code" class="headerlink" title="三、Code"></a>三、Code</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line">x_data = torch.Tensor([[<span class="number">1.0</span>],[<span class="number">2.0</span>],[<span class="number">3.0</span>]])</span><br><span class="line">y_data = torch.Tensor([[<span class="number">2.0</span>],[<span class="number">4.0</span>],[<span class="number">6.0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LogisticRegressionModel</span>(torch.nn.Model):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(LogisticRegressionModel,self.__init__)</span><br><span class="line">        self.liner = torch.nn.liner(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        y_pred = F.sigmoid(self.liner(x))</span><br><span class="line">        <span class="keyword">return</span> y_pred</span><br><span class="line"></span><br><span class="line">model = LogisticRegressionModel()</span><br><span class="line"></span><br><span class="line">criterion = torch.nn.BCELoss(size_average=<span class="literal">False</span>)</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(),lr=<span class="number">0.01</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    y_pred = model(x_data)</span><br><span class="line">    loss = criterion(y_pred,y_data)</span><br><span class="line">    <span class="built_in">print</span>(epoch,loss)</span><br><span class="line"></span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;w=&#x27;</span>,model.liner.weight.item())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b=&#x27;</span>,model.liner.bias.item())</span><br><span class="line"></span><br><span class="line">x_test = torch.Tensor([<span class="number">4.0</span>])</span><br><span class="line">y_test = model(x_test)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;y_pred=&#x27;</span>,y_test.data)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p><img lazyload="" src="/images/loading.svg" data-src="/pic/image-20240710200306053.png" alt="image-20240710200306053"></p>
+<h2 id="三、Code"><a href="#三、Code" class="headerlink" title="三、Code"></a>三、Code</h2><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line"></span><br><span class="line">x_data = torch.Tensor([[<span class="number">1.0</span>],[<span class="number">2.0</span>],[<span class="number">3.0</span>]])</span><br><span class="line">y_data = torch.Tensor([[<span class="number">2.0</span>],[<span class="number">4.0</span>],[<span class="number">6.0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LogisticRegressionModel</span>(torch.nn.Model):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(LogisticRegressionModel,self.__init__)</span><br><span class="line">        self.liner = torch.nn.liner(<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        y_pred = F.sigmoid(self.liner(x))</span><br><span class="line">        <span class="keyword">return</span> y_pred</span><br><span class="line"></span><br><span class="line">model = LogisticRegressionModel()</span><br><span class="line"></span><br><span class="line">criterion = torch.nn.BCELoss(size_average=<span class="literal">False</span>)</span><br><span class="line">optimizer = torch.optim.SGD(model.parameters(),lr=<span class="number">0.01</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    y_pred = model(x_data)</span><br><span class="line">    loss = criterion(y_pred,y_data)</span><br><span class="line">    <span class="built_in">print</span>(epoch,loss)</span><br><span class="line"></span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'w='</span>,model.liner.weight.item())</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'b='</span>,model.liner.bias.item())</span><br><span class="line"></span><br><span class="line">x_test = torch.Tensor([<span class="number">4.0</span>])</span><br><span class="line">y_test = model(x_test)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'y_pred='</span>,y_test.data)</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 
         </div>
@@ -804,18 +905,18 @@
             <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> </li>
+        <li><strong>Title:</strong> 《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</li>
         <li><strong>Author:</strong> Nannan</li>
         <li><strong>Created at
-                :</strong> 2024-07-13 01:13:53</li>
+                :</strong> 2024-06-14 20:52:41</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-07-13 01:16:53
+                    :</strong> 2024-07-13 01:22:40
             </li>
         
         <li>
-            <strong>Link:</strong> https://redefine.ohevan.com/2024/07/13/【实践】02.Logistic Regression/
+            <strong>Link:</strong> https://redefine.ohevan.com/2024/06/14/【实践】02.Logistic Regression/
         </li>
         <li>
             <strong>
@@ -834,20 +935,43 @@
         
 
         
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+                
+                    <li class="tag-item mx-0.5">
+                        <a href="/tags/deep-learning/">#deep learning</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
 
         
             <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/06/14/Deploy%20a%20personal%20blog/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">windows基于hexo+github page 的个人博客搭建</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
                 
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"
+                        href="/2024/06/14/hello-world/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item"></span>
+                                <span class="post-nav-title-item">Hello World</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -911,8 +1035,8 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title"></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%8APyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%E3%80%8B-02-PyTorch%E5%AE%9E%E7%8E%B0Logistic-Regression-%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="nav-text">《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Regression-v-s-Classification"><span class="nav-text">一、Regression v.s. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Logistic-Function"><span class="nav-text">二、Logistic Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Logistic-Regression-Model"><span class="nav-text">1.Logistic Regression Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Loss-function-for-Binary-Classification"><span class="nav-text">2.Loss function for Binary Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Implementation-of-Logistic-Regression"><span class="nav-text">3. Implementation of Logistic Regression</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Code"><span class="nav-text">三、Code</span></a></li></ol></li></ol>
+        <div class="page-title">《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%8APyTorch%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AE%9E%E8%B7%B5%E3%80%8B-02-PyTorch%E5%AE%9E%E7%8E%B0Logistic-Regression-%E5%88%86%E7%B1%BB%E9%97%AE%E9%A2%98"><span class="nav-text">《PyTorch深度学习实践》.PyTorch实现Logistic Regression(分类问题)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Regression-v-s-Classification"><span class="nav-text">一、Regression v.s. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Logistic-Function"><span class="nav-text">二、Logistic Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Logistic-Regression-Model"><span class="nav-text">1.Logistic Regression Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Loss-function-for-Binary-Classification"><span class="nav-text">2.Loss function for Binary Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Implementation-of-Logistic-Regression"><span class="nav-text">3. Implementation of Logistic Regression</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Code"><span class="nav-text">三、Code</span></a></li></ol></li></ol>
 
     </div>
 </div>

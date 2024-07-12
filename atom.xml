@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-12T17:16:53.414Z</updated>
+  <updated>2024-07-12T17:19:47.591Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
-    <published>2024-07-12T17:13:53.159Z</published>
-    <updated>2024-07-12T17:16:53.414Z</updated>
+    <title>雅思入门【阅读+听力】</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/12/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/12/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/</id>
+    <published>2024-07-12T12:52:41.000Z</published>
+    <updated>2024-07-12T17:19:47.591Z</updated>
     
     
       
@@ -34,15 +34,19 @@
     
     
     
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="IELTS" scheme="https://nannan-not-bd.github.io/tags/IELTS/"/>
     
   </entry>
   
   <entry>
-    <title></title>
-    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
-    <published>2024-07-12T17:13:53.154Z</published>
-    <updated>2024-07-12T17:16:16.690Z</updated>
+    <title>《PyTorch深度学习实践》$01$.PyTorch实现Linear Regression</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
+    <published>2024-07-11T12:52:41.000Z</published>
+    <updated>2024-07-12T17:22:50.537Z</updated>
     
     
       
@@ -55,6 +59,10 @@
     
     
     
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Deeplearing" scheme="https://nannan-not-bd.github.io/tags/Deeplearing/"/>
     
   </entry>
   
@@ -361,11 +369,11 @@
   </entry>
   
   <entry>
-    <title>雅思入门【阅读+听力】</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/14/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/14/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/</id>
+    <title>《PyTorch深度学习实践》$02$.PyTorch实现Logistic Regression(分类问题)</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/14/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/14/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
     <published>2024-06-14T12:52:41.000Z</published>
-    <updated>2024-07-12T17:13:08.241Z</updated>
+    <updated>2024-07-12T17:22:40.913Z</updated>
     
     
       
@@ -378,10 +386,10 @@
     
     
     
-    <category term="教程" scheme="https://nannan-not-bd.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="IELTS" scheme="https://nannan-not-bd.github.io/tags/IELTS/"/>
+    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
     
   </entry>
   
