@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-18T17:48:18.739Z</updated>
+  <updated>2024-07-18T17:50:41.526Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>《PyTorch深度学习实践》03.Multiple Dimension Input</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/</id>
-    <published>2024-07-13T12:52:41.000Z</published>
-    <updated>2024-07-18T17:48:18.739Z</updated>
+    <title>《PyTorch深度学习实践》05.Softmax Classifier</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/</id>
+    <published>2024-07-13T14:52:41.000Z</published>
+    <updated>2024-07-18T17:50:41.526Z</updated>
     
     
       
@@ -45,8 +45,8 @@
     <title>《PyTorch深度学习实践》04.Dataset and DataLoader</title>
     <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9104.Dataset%20and%20DataLoader/"/>
     <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9104.Dataset%20and%20DataLoader/</id>
-    <published>2024-07-13T12:52:41.000Z</published>
-    <updated>2024-07-18T17:48:34.403Z</updated>
+    <published>2024-07-13T13:52:41.000Z</published>
+    <updated>2024-07-18T17:50:38.981Z</updated>
     
     
       
@@ -67,11 +67,11 @@
   </entry>
   
   <entry>
-    <title>《PyTorch深度学习实践》05.Softmax Classifier</title>
-    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/"/>
-    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/</id>
+    <title>《PyTorch深度学习实践》03.Multiple Dimension Input</title>
+    <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/"/>
+    <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/</id>
     <published>2024-07-13T12:52:41.000Z</published>
-    <updated>2024-07-18T17:48:57.327Z</updated>
+    <updated>2024-07-18T17:48:18.739Z</updated>
     
     
       
