@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-07-23T16:04:03.323Z</updated>
+  <updated>2024-09-29T15:21:48.673Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://nannan-not-bd.github.io/2024/09/29/hello-world/"/>
+    <id>https://nannan-not-bd.github.io/2024/09/29/hello-world/</id>
+    <published>2024-09-29T15:20:11.237Z</published>
+    <updated>2024-09-29T15:21:48.673Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>雅思听力方法和技巧</title>
     <link href="https://nannan-not-bd.github.io/2024/07/24/%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E5%B7%A7/"/>
     <id>https://nannan-not-bd.github.io/2024/07/24/%E9%9B%85%E6%80%9D%E5%90%AC%E5%8A%9B%E6%96%B9%E6%B3%95%E5%92%8C%E6%8A%80%E5%B7%A7/</id>
     <published>2024-07-24T12:52:41.000Z</published>
-    <updated>2024-07-23T16:04:03.323Z</updated>
+    <updated>2024-09-29T15:22:04.061Z</updated>
     
     
       
@@ -46,7 +67,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/"/>
     <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9105.Softmax%20Classifier/</id>
     <published>2024-07-13T14:52:41.000Z</published>
-    <updated>2024-07-18T17:50:41.526Z</updated>
+    <updated>2024-09-29T15:20:41.792Z</updated>
     
     
       
@@ -71,7 +92,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9104.Dataset%20and%20DataLoader/"/>
     <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9104.Dataset%20and%20DataLoader/</id>
     <published>2024-07-13T13:52:41.000Z</published>
-    <updated>2024-07-18T17:50:38.981Z</updated>
+    <updated>2024-09-29T15:20:36.923Z</updated>
     
     
       
@@ -96,7 +117,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/"/>
     <id>https://nannan-not-bd.github.io/2024/07/13/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9103.Multiple%20Dimension%20Input/</id>
     <published>2024-07-13T12:52:41.000Z</published>
-    <updated>2024-07-18T17:48:18.739Z</updated>
+    <updated>2024-09-29T15:20:32.050Z</updated>
     
     
       
@@ -121,7 +142,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/12/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/07/12/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9102.Logistic%20Regression/</id>
     <published>2024-07-12T12:52:41.000Z</published>
-    <updated>2024-07-12T17:24:21.645Z</updated>
+    <updated>2024-09-29T15:20:25.898Z</updated>
     
     
       
@@ -146,7 +167,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/12/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/"/>
     <id>https://nannan-not-bd.github.io/2024/07/12/%E9%9B%85%E6%80%9D%E5%85%A5%E9%97%A8/</id>
     <published>2024-07-12T12:52:41.000Z</published>
-    <updated>2024-07-12T17:19:47.591Z</updated>
+    <updated>2024-09-29T15:21:59.179Z</updated>
     
     
       
@@ -171,7 +192,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
     <published>2024-07-11T12:52:41.000Z</published>
-    <updated>2024-07-12T17:24:17.435Z</updated>
+    <updated>2024-09-29T15:20:20.810Z</updated>
     
     
       
@@ -196,7 +217,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/09/09-Transformer/"/>
     <id>https://nannan-not-bd.github.io/2024/07/09/09-Transformer/</id>
     <published>2024-07-09T14:30:00.000Z</published>
-    <updated>2024-07-10T07:16:52.734Z</updated>
+    <updated>2024-09-29T15:21:38.443Z</updated>
     
     
       
@@ -221,7 +242,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/03/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A1/"/>
     <id>https://nannan-not-bd.github.io/2024/07/03/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A1/</id>
     <published>2024-07-03T14:25:00.000Z</published>
-    <updated>2024-07-10T06:35:12.141Z</updated>
+    <updated>2024-09-29T15:21:27.969Z</updated>
     
     
       
@@ -246,7 +267,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/02/08-self-attention/"/>
     <id>https://nannan-not-bd.github.io/2024/07/02/08-self-attention/</id>
     <published>2024-07-02T14:30:00.000Z</published>
-    <updated>2024-07-10T06:34:19.319Z</updated>
+    <updated>2024-09-29T15:21:32.972Z</updated>
     
     
       
@@ -271,7 +292,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A0/"/>
     <id>https://nannan-not-bd.github.io/2024/07/02/07-Recurrent%20Neural%20Network(RNN)%20part%E2%85%A0/</id>
     <published>2024-07-02T14:25:00.000Z</published>
-    <updated>2024-07-10T07:17:06.553Z</updated>
+    <updated>2024-09-29T15:21:22.661Z</updated>
     
     
       
@@ -296,7 +317,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/01/06-Convolutional%20Neural%20Network(CNN)/"/>
     <id>https://nannan-not-bd.github.io/2024/07/01/06-Convolutional%20Neural%20Network(CNN)/</id>
     <published>2024-07-01T10:30:12.000Z</published>
-    <updated>2024-07-01T16:28:14.196Z</updated>
+    <updated>2024-09-29T15:21:12.182Z</updated>
     
     
       
@@ -321,7 +342,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/01/05-Logistic%20Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/07/01/05-Logistic%20Regression/</id>
     <published>2024-06-30T17:19:12.000Z</published>
-    <updated>2024-07-01T10:11:55.115Z</updated>
+    <updated>2024-09-29T15:21:07.429Z</updated>
     
     
       
@@ -346,32 +367,7 @@
     <link href="https://nannan-not-bd.github.io/2024/06/30/04-ClassificationProbabilistic%20Generative%20Model/"/>
     <id>https://nannan-not-bd.github.io/2024/06/30/04-ClassificationProbabilistic%20Generative%20Model/</id>
     <published>2024-06-30T09:10:12.000Z</published>
-    <updated>2024-07-01T10:28:09.137Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【从零开始的机器学习之旅】03-Regression Case</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/30/03-Regression%20Case/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/30/03-Regression%20Case/</id>
-    <published>2024-06-30T04:11:12.000Z</published>
-    <updated>2024-07-01T10:11:41.432Z</updated>
+    <updated>2024-09-29T15:21:01.979Z</updated>
     
     
       
@@ -396,7 +392,32 @@
     <link href="https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/"/>
     <id>https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/</id>
     <published>2024-06-25T13:55:12.000Z</published>
-    <updated>2024-07-01T10:11:29.274Z</updated>
+    <updated>2024-09-29T15:20:52.062Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【从零开始的机器学习之旅】03-Regression Case</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/</id>
+    <published>2024-06-25T13:55:12.000Z</published>
+    <updated>2024-09-29T15:25:45.125Z</updated>
     
     
       
@@ -421,7 +442,7 @@
     <link href="https://nannan-not-bd.github.io/2024/06/24/01-Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/06/24/01-Regression/</id>
     <published>2024-06-24T09:32:12.000Z</published>
-    <updated>2024-07-01T10:11:33.282Z</updated>
+    <updated>2024-09-29T15:20:46.856Z</updated>
     
     
       
@@ -446,7 +467,7 @@
     <link href="https://nannan-not-bd.github.io/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/"/>
     <id>https://nannan-not-bd.github.io/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/</id>
     <published>2024-06-15T03:02:12.000Z</published>
-    <updated>2024-06-24T10:59:23.262Z</updated>
+    <updated>2024-09-29T15:21:54.033Z</updated>
     
     
       
@@ -473,7 +494,7 @@
     <link href="https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"/>
     <id>https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/</id>
     <published>2024-06-14T12:52:41.000Z</published>
-    <updated>2024-06-25T14:14:38.494Z</updated>
+    <updated>2024-09-29T15:21:43.368Z</updated>
     
     
       
@@ -490,27 +511,6 @@
     
     
     <category term="deployment" scheme="https://nannan-not-bd.github.io/tags/deployment/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/14/hello-world/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/14/hello-world/</id>
-    <published>2024-06-14T02:14:19.883Z</published>
-    <updated>2024-06-24T11:29:59.403Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
     
   </entry>
   
