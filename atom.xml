@@ -225,7 +225,7 @@
     <link href="https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/"/>
     <id>https://nannan-not-bd.github.io/2024/07/11/%E3%80%90%E5%AE%9E%E8%B7%B5%E3%80%9101.Linear%20Regression/</id>
     <published>2024-07-11T12:52:41.000Z</published>
-    <updated>2024-09-29T15:20:20.810Z</updated>
+    <updated>2024-09-30T11:15:09.684Z</updated>
     
     
       
@@ -241,7 +241,7 @@
     <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="Deeplearing" scheme="https://nannan-not-bd.github.io/tags/Deeplearing/"/>
+    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
     
   </entry>
   
@@ -421,11 +421,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】02-Deeplearning-general_guidance</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/</id>
+    <title>【从零开始的机器学习之旅】03-Regression Case</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/</id>
     <published>2024-06-25T13:55:12.000Z</published>
-    <updated>2024-09-29T15:20:52.062Z</updated>
+    <updated>2024-09-29T15:25:45.125Z</updated>
     
     
       
@@ -446,11 +446,11 @@
   </entry>
   
   <entry>
-    <title>【从零开始的机器学习之旅】03-Regression Case</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/25/03-Regression%20Case/</id>
+    <title>【从零开始的机器学习之旅】02-Deeplearning-general_guidance</title>
+    <link href="https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/"/>
+    <id>https://nannan-not-bd.github.io/2024/06/25/02-Deeplearning-general_guidance/</id>
     <published>2024-06-25T13:55:12.000Z</published>
-    <updated>2024-09-29T15:25:45.125Z</updated>
+    <updated>2024-09-29T15:20:52.062Z</updated>
     
     
       
