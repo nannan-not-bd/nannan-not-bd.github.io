@@ -6,7 +6,7 @@
   <link href="https://nannan-not-bd.github.io/atom.xml" rel="self"/>
   
   <link href="https://nannan-not-bd.github.io/"/>
-  <updated>2024-09-29T15:21:48.673Z</updated>
+  <updated>2023-08-20T02:43:00.068Z</updated>
   <id>https://nannan-not-bd.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://nannan-not-bd.github.io/2024/09/29/hello-world/"/>
-    <id>https://nannan-not-bd.github.io/2024/09/29/hello-world/</id>
-    <published>2024-09-29T15:20:11.237Z</published>
-    <updated>2024-09-29T15:21:48.673Z</updated>
+    <title></title>
+    <link href="https://nannan-not-bd.github.io/2024/09/30/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(II)/"/>
+    <id>https://nannan-not-bd.github.io/2024/09/30/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(II)/</id>
+    <published>2024-09-30T09:22:20.024Z</published>
+    <updated>2023-08-20T02:43:00.068Z</updated>
     
     
       
@@ -34,6 +34,60 @@
     
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>2020 CCPC河南省赛</title>
+    <link href="https://nannan-not-bd.github.io/2024/09/30/2020CCPC%E6%B2%B3%E5%8D%97%E7%9C%81%E8%B5%9B%20E(%E7%A6%BB%E6%95%A3%E5%8C%96%20+%20%E5%B7%AE%E5%88%86)/"/>
+    <id>https://nannan-not-bd.github.io/2024/09/30/2020CCPC%E6%B2%B3%E5%8D%97%E7%9C%81%E8%B5%9B%20E(%E7%A6%BB%E6%95%A3%E5%8C%96%20+%20%E5%B7%AE%E5%88%86)/</id>
+    <published>2024-09-30T09:15:00.000Z</published>
+    <updated>2024-09-30T09:15:06.821Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://nannan-not-bd.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="XCPC" scheme="https://nannan-not-bd.github.io/tags/XCPC/"/>
+    
+    <category term="algorithm" scheme="https://nannan-not-bd.github.io/tags/algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023 ICPC香港 AHK</title>
+    <link href="https://nannan-not-bd.github.io/2024/09/30/The%202023%20ICPC%20Asia%20Hong%20Kong%20Regional%20Programming%20Contest%20(The%201st%20Universal%20Cup,%20Stage%202Hong%20Kong)%20%20%20%20AHK/"/>
+    <id>https://nannan-not-bd.github.io/2024/09/30/The%202023%20ICPC%20Asia%20Hong%20Kong%20Regional%20Programming%20Contest%20(The%201st%20Universal%20Cup,%20Stage%202Hong%20Kong)%20%20%20%20AHK/</id>
+    <published>2024-09-30T09:15:00.000Z</published>
+    <updated>2024-09-30T09:20:07.849Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://nannan-not-bd.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="XCPC" scheme="https://nannan-not-bd.github.io/tags/XCPC/"/>
+    
+    <category term="algorithm" scheme="https://nannan-not-bd.github.io/tags/algorithm/"/>
     
   </entry>
   
@@ -459,58 +513,6 @@
     
     
     <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>藕的博客园文章</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/15/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E6%96%87%E7%AB%A0/</id>
-    <published>2024-06-15T03:02:12.000Z</published>
-    <updated>2024-09-29T15:21:54.033Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="技术学习" scheme="https://nannan-not-bd.github.io/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="deep learning" scheme="https://nannan-not-bd.github.io/tags/deep-learning/"/>
-    
-    <category term="algorithm" scheme="https://nannan-not-bd.github.io/tags/algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows基于hexo+github page 的个人博客搭建</title>
-    <link href="https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/"/>
-    <id>https://nannan-not-bd.github.io/2024/06/14/Deploy%20a%20personal%20blog/</id>
-    <published>2024-06-14T12:52:41.000Z</published>
-    <updated>2024-09-29T15:21:43.368Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="教程" scheme="https://nannan-not-bd.github.io/categories/%E6%95%99%E7%A8%8B/"/>
-    
-    
-    <category term="deployment" scheme="https://nannan-not-bd.github.io/tags/deployment/"/>
     
   </entry>
   
