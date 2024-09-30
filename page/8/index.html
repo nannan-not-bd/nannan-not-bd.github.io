@@ -778,7 +778,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -786,7 +786,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">95</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -874,7 +874,7 @@ mjx-container[display="true"] + br {
 </div>
                 <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -882,7 +882,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">82</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">95</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -909,25 +909,690 @@ mjx-container[display="true"] + br {
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/2023/08/12/%E5%9B%9B(3)%E3%80%81%E5%B8%A6%E6%9D%83%E5%B9%B6%E6%9F%A5%E9%9B%86Weighted%20Disjoint-set/">
-                            带权并查集
+                        <a href="/2023/09/07/Dashboard%20-%202022%20International%20Collegiate%20Programming%20Contest,%20Jinan%20Site%20-%20Codeforces/">
+                            2022 ICPC 济南 AEKM
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
-                            Weighted Disjoint-set(带权并查集)eg带权并查集 给你个变量，一开始不知道这些数是多少。
-你要执行次操作。
-
-1 l r x，给你一条线索，表示，如果与已知条件矛盾，那么忽略这次操作。
-2 l r回答，如果现在的线索无法推出答案...
+                            2022 International Collegiate Programming Contest, Jinan Site - Codeforces      AEKMA. Tower思路：思维+贪心
+由于我们只能进行和\ 的操作。显然的，我们能大幅...
                         
                     </div>
 
                     <div class="home-article-meta-info-container">
     <div class="home-article-meta-info">
         <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Aug 12 2023 22:01:00 GMT+0800">
+            <span class="home-article-date" data-date="Thu Sep 07 2023 19:01:12 GMT+0800">
+                
+                    2023-09-07
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/XCPC/">XCPC</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/09/07/Dashboard%20-%202022%20International%20Collegiate%20Programming%20Contest,%20Jinan%20Site%20-%20Codeforces/">Read more<span class="seo-reader-text">2022 ICPC 济南 AEKM</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/09/05/%E5%9B%9B(2)%E3%80%81ST%E8%A1%A8%20ST%20table/">
+                            ST表
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            ST table1.思想一般用于解决RMQ (Range Minimum/Maximum Query)问题。
+倍增的思想1—&gt;2—&gt;4—&gt;8—&gt;16
+我们先处理出所有区间长度为1的最小值
+表示左端点为，区间长度为的区间的最小值...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Sep 05 2023 19:32:00 GMT+0800">
+                
+                    2023-09-05
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Data-structure/">Data structure</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/09/05/%E5%9B%9B(2)%E3%80%81ST%E8%A1%A8%20ST%20table/">Read more<span class="seo-reader-text">ST表</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/22/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(I)/">
+                            The 2022 ICPC 网络赛第一场 CDH
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            The 2022 ICPC Asia Regionals Online Contest (I)C Delete the Tree题意：想要删掉一棵树，你可以做以下两种操作：
+
+删除：删除一个点以及和它连的边
+收缩：选择一个点它直接连有个点，我们可以把...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 22 2023 00:28:23 GMT+0800">
+                
+                    2023-08-22
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/XCPC/">XCPC</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/22/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(I)/">Read more<span class="seo-reader-text">The 2022 ICPC 网络赛第一场 CDH</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/21/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(II)/">
+                            The 2022 ICPC网络赛第二场ABEFJ
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            The 2022 ICPC Asia Regionals Online Contest (II).mdA Yet Another Remainder题意：给你一个正整数，但是这个数被隐藏起来了。你问了电脑个问题，第轮，的第个问题：，让，,你将得到的值...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 21 2023 23:50:00 GMT+0800">
+                
+                    2023-08-21
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/XCPC/">XCPC</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/21/The%202022%20ICPC%20Asia%20Regionals%20Online%20Contest%20(II)/">Read more<span class="seo-reader-text">The 2022 ICPC网络赛第二场ABEFJ</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/19/%E5%8B%BE%E8%82%A1%E6%95%B0%E7%9A%84%E7%A5%9E%E5%A5%87%E6%80%A7%E8%B4%A8/">
+                            勾股数的神奇性质
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            勾股数的神奇性质性质1:较大的两个数之和等于这组数最小值的平方。勾股数只有两种：奇数偶数奇数偶数偶数偶数
+性质2：一个正奇数(除了1)与两个和等于此数的平方的连续正整数的一组勾股数。​	比如一正奇数，那么以为最小值的一组勾股数：
+性质3：一个正偶数(...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Aug 19 2023 18:15:00 GMT+0800">
+                
+                    2023-08-19
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Number-theory/">Number theory</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/19/%E5%8B%BE%E8%82%A1%E6%95%B0%E7%9A%84%E7%A5%9E%E5%A5%87%E6%80%A7%E8%B4%A8/">Read more<span class="seo-reader-text">勾股数的神奇性质</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/15/%E5%85%AD(%E4%BA%8C)%E3%80%81%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/">
+                            树上倍增
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            树上倍增一、一点理解最近遇到几个关于树上倍增问题。本人太菜，有时候想不到用倍增，这里做个总结。
+树上倍增核心就是：，含义是向上跳步到的位置，然后用进行转移。
+树上倍增常见应用就是：快速幂、线性（RMQ问题）、树（LCA问题）。
+那么我们怎么去理解这个...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 15 2023 21:11:00 GMT+0800">
+                
+                    2023-08-15
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Data-structure/">Data structure</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/15/%E5%85%AD(%E4%BA%8C)%E3%80%81%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E/">Read more<span class="seo-reader-text">树上倍增</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/15/%E5%85%AD%E3%80%81%E5%80%8D%E5%A2%9E%EF%BC%8CDFS%E5%BA%8F%EF%BC%8C%E6%AC%A7%E6%8B%89%E5%BA%8F/">
+                            倍增，DFS序，欧拉序
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            倍增，DFS序，欧拉序一、倍增倍增的应用①树上回想一下之前学的倍增法求。是怎么求的呢？
+对于是往上跳步可以到达的点
+因为，所以一个节点的代的祖先是其代的祖先的的祖先.
+即：
+倍增表打好了，那怎么求呢？假设，第一步把，跳到同一个高度。如果跳到的还不是同...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 15 2023 20:37:00 GMT+0800">
+                
+                    2023-08-15
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Data-structure/">Data structure</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/15/%E5%85%AD%E3%80%81%E5%80%8D%E5%A2%9E%EF%BC%8CDFS%E5%BA%8F%EF%BC%8C%E6%AC%A7%E6%8B%89%E5%BA%8F/">Read more<span class="seo-reader-text">倍增，DFS序，欧拉序</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/15/2021%20ICPC%20%E4%B8%8A%E6%B5%B7%20DEHI/">
+                            2021 ICPC南京站
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            2021 ICPC 上海 DEHI链接：The 2021 ICPC Asia Shanghai Regional Programming Contest 
+D. Strange Fractions题意：给你，让你找正整数，使得。如果不存在，输出   ...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 15 2023 20:00:41 GMT+0800">
+                
+                    2023-08-15
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/XCPC/">XCPC</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/15/2021%20ICPC%20%E4%B8%8A%E6%B5%B7%20DEHI/">Read more<span class="seo-reader-text">2021 ICPC南京站</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/12/%E4%B8%80%E3%80%81%E6%A0%91/">
+                            树
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            树一、树的重心概念和性质（1）.概念
+树的重心也叫树的质心。对于一棵树个节点的无根树，找到一个点，使得把树变成以该点为根的有根树时，最大子树的结点数最小。换句话说，删除这个点后最大连通块（一定是树）的结点数最小。
+（2）.性质
+1.树中所有点到某个点...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Aug 12 2023 23:55:00 GMT+0800">
+                
+                    2023-08-12
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Graph-theory/">Graph theory</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/08/12/%E4%B8%80%E3%80%81%E6%A0%91/">Read more<span class="seo-reader-text">树</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2023/08/12/%E5%9B%9B(4)%E3%80%81%E7%A7%8D%E7%B1%BB%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                            种类并查集
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            种类并查集一、种类并查集定义定义：把一个集合中的元素根据他们的不同关系进行分类与合并。朋友的朋友是朋友。敌人的敌人也是朋友。种类并查集做的事情就是：不让两个有敌对关系的人在同一个队伍里面。
+二、几个比较板的题目例题1： [P2024 NOI2001]...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Aug 12 2023 22:59:00 GMT+0800">
                 
                     2023-08-12
                 
@@ -970,674 +1635,7 @@ mjx-container[display="true"] + br {
         
     </div>
 
-    <a href="/2023/08/12/%E5%9B%9B(3)%E3%80%81%E5%B8%A6%E6%9D%83%E5%B9%B6%E6%9F%A5%E9%9B%86Weighted%20Disjoint-set/">Read more<span class="seo-reader-text">带权并查集</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/08/12/%E4%B8%89%E3%80%81%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
-                            最小生成树
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            最小生成树一、最小生成树定义最小生成树定义：在一张带权无向图中，最小生成树是一棵生成树，它的边权值之和最小。
-什么是生成树？
-生成树是一棵包含原图所有顶点的树，它的边的集合是原图的一个子集，并且任意两点之间有且只有一条简单路径。
-二、常见求最小生成树...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sat Aug 12 2023 15:58:00 GMT+0800">
-                
-                    2023-08-12
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Graph-theory/">Graph theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/12/%E4%B8%89%E3%80%81%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">Read more<span class="seo-reader-text">最小生成树</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/08/09/%E4%BA%94%E3%80%81%E5%89%B2%E7%82%B9%E3%80%81%E5%89%B2%E8%BE%B9%E3%80%81%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/">
-                            割点、割边、双连通分量
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            割点、割边、双连通分量一、双连通分量、割点、割边1.割点定义：对于一个无向图，如果把一个点删除后这个图的极大连通分量数增加了，那么这个点就是这个图的割点(又称割顶)。人话将就是：把这个点删了,一个图会变成不连通的两个部分，我们把这个点称之为割点。
-!...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Aug 09 2023 19:12:00 GMT+0800">
-                
-                    2023-08-09
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Graph-theory/">Graph theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/09/%E4%BA%94%E3%80%81%E5%89%B2%E7%82%B9%E3%80%81%E5%89%B2%E8%BE%B9%E3%80%81%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/">Read more<span class="seo-reader-text">割点、割边、双连通分量</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/08/02/%E5%85%AB%E3%80%81%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0and%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">
-                            数论函数/莫比乌斯反演
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            数论函数/莫比乌斯反演1.1积性函数数论函数：可以认为是定义在整数上的函数。
-1)积性函数定义(a,b) = 1,f(a,b) = f(a)f(b)
-2)积性函数性质
-对于积性函数，是被所有处的值决定的,即积性函数的值完全由素数的幂次决定
- a = ...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Aug 02 2023 22:25:00 GMT+0800">
-                
-                    2023-08-02
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Number-theory/">Number theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/08/02/%E5%85%AB%E3%80%81%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0and%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">Read more<span class="seo-reader-text">数论函数/莫比乌斯反演</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/07/31/%E5%85%AD%E3%80%81%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F%E5%92%8C2-SAT/">
-                            差分约束系统和2-SAT
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            差分约束系统和介两类题都是偏建模的题，什么意思嘞，人话就是原本不是图论的题我们通过建模转化为图论的题。
-其中差分约束背后的逻辑的最短路，是。
-一、差分约束系统1.1 差分约束介绍和求解1.1.1 介绍差分约束系统是下面 这种形式的多元一次不等式组(为...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Mon Jul 31 2023 17:16:00 GMT+0800">
-                
-                    2023-07-31
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Graph-theory/">Graph theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/31/%E5%85%AD%E3%80%81%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F%E5%92%8C2-SAT/">Read more<span class="seo-reader-text">差分约束系统和2-SAT</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/07/28/%E5%9B%9B%E3%80%81%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/">
-                            强连通分量
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            强连通分量一、强连通分量1.DFS森林和强连通分(1)DFS Forest
-Tree Edge指树边
-Back Edge指连向祖先的边(返祖边)
-Forward Edge指连向子孙的边(前向边，它主要是在搜索的时候遇到了一个已经访问过的结点，但是这个...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jul 28 2023 18:06:00 GMT+0800">
-                
-                    2023-07-28
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Graph-theory/">Graph theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/28/%E5%9B%9B%E3%80%81%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/">Read more<span class="seo-reader-text">强连通分量</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/07/11/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%A4%A7/">
-                            区间第K大
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            区间第K大对于每个数我们考虑它对答案的贡献是多少，它在哪些区间里是第k大的
-这道题我们用双向链表实现
-for(i = 1~n)，把值为i的位置从链表里面删除
-![image-20230711202559663](C:\Users\Zhou Yanan...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Jul 11 2023 20:37:00 GMT+0800">
-                
-                    2023-07-11
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Data-structure/">Data structure</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/11/%E5%8C%BA%E9%97%B4%E7%AC%ACk%E5%A4%A7/">Read more<span class="seo-reader-text">区间第K大</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/07/05/%E5%9B%9B(1)%E3%80%81%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91Cartesian%20tree/">
-                            笛卡尔树
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            Cartesian tree(笛卡尔树)1.概念比如拿最小的当根建树，中序遍历是原数组
-![image-20230628161913801](C:\Users\Zhou Yanan\AppData\Roaming\Typora\typora-user...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Wed Jul 05 2023 11:21:00 GMT+0800">
-                
-                    2023-07-05
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Data-structure/">Data structure</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/05/%E5%9B%9B(1)%E3%80%81%E7%AC%9B%E5%8D%A1%E5%B0%94%E6%A0%91Cartesian%20tree/">Read more<span class="seo-reader-text">笛卡尔树</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/07/02/%E4%B8%83%E3%80%81Order%20and%20primitive%20root%20and%20exponential%20equations(%E9%98%B6%E3%80%81%E5%8E%9F%E6%A0%B9%E5%92%8C%E6%8C%87%E6%95%B0%E6%96%B9%E7%A8%8B)/">
-                            阶、原根和指数方程
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            Order and primitive root and exponential equations(阶、原根和指数方程)一、概念1、阶阶：上面的x就是阶 
-2、原根的阶为的数
-3、指数方程(BSGS)BSGS(baby step giant ste...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Sun Jul 02 2023 21:41:00 GMT+0800">
-                
-                    2023-07-02
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Number-theory/">Number theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/07/02/%E4%B8%83%E3%80%81Order%20and%20primitive%20root%20and%20exponential%20equations(%E9%98%B6%E3%80%81%E5%8E%9F%E6%A0%B9%E5%92%8C%E6%8C%87%E6%95%B0%E6%96%B9%E7%A8%8B)/">Read more<span class="seo-reader-text">阶、原根和指数方程</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                
-                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
-                    <h3 class="home-article-title">
-                        <a href="/2023/06/30/%E5%85%AD%E3%80%81Combinatorial%20Number/">
-                            组合数学
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content markdown-body">
-                        
-                            Combinatorial Number一、组合数取模1： 例题：回答T组询问，输出的值。$C_{n}^{m} = \dfrac{n!}{m!(n-m)!}\dfrac{a}{b} \bmod pa \bmod p(b \bmod p)^{-1}$即...
-                        
-                    </div>
-
-                    <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Fri Jun 30 2023 18:29:00 GMT+0800">
-                
-                    2023-06-30
-                
-            </span>
-        </span>
-        
-            <span class="home-article-category">
-                <i class="fa-solid fa-folders"></i>&nbsp;
-            <ul>
-                
-                
-                    
-                        
-                        <li>
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%AD%A6%E4%B9%A0/">技术学习</a>&nbsp;
-                        </li>
-                    
-                    
-                
-            </ul>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/algorithm/">algorithm</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Number-theory/">Number theory</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/06/30/%E5%85%AD%E3%80%81Combinatorial%20Number/">Read more<span class="seo-reader-text">组合数学</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2023/08/12/%E5%9B%9B(4)%E3%80%81%E7%A7%8D%E7%B1%BB%E5%B9%B6%E6%9F%A5%E9%9B%86/">Read more<span class="seo-reader-text">种类并查集</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -1647,7 +1645,7 @@ for(i = 1~n)，把值为i的位置从链表里面删除
 
     <div class="home-paginator px-7 py-5">
         <div class="paginator">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/"><i class="fa-regular fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
 
     </div>
@@ -1677,7 +1675,7 @@ for(i = 1~n)，把值为i的位置从链表里面删除
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        82 posts in total
+                        95 posts in total
                     </span>
                     
                 </p>
